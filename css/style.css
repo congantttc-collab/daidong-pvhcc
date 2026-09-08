@@ -90,8 +90,9 @@ body{
     background:#ffd54f;
     border-top:1px solid #e6b800;
     border-bottom:1px solid #e6b800;
+    position: relative;
+    z-index: 1;
 }
-
 .notice-wrap{
     display:flex;
     align-items:center;
