@@ -84,7 +84,51 @@ body{
   background:rgba(255,255,255,.15);
   color:var(--gold);
 }
+/* ===== THANH THÔNG BÁO ===== */
 
+.notice-bar{
+    background:#ffd54f;
+    border-top:1px solid #e6b800;
+    border-bottom:1px solid #e6b800;
+}
+
+.notice-wrap{
+    display:flex;
+    align-items:center;
+    overflow:hidden;
+}
+
+.notice-title{
+    background:#b30000;
+    color:#fff;
+    font-weight:700;
+    padding:12px 18px;
+    white-space:nowrap;
+}
+
+.notice-marquee{
+    flex:1;
+    overflow:hidden;
+    position:relative;
+}
+
+.notice-track{
+    display:inline-block;
+    white-space:nowrap;
+    padding-left:100%;
+    color:#7a0000;
+    font-weight:600;
+    animation:marquee 22s linear infinite;
+}
+
+@keyframes marquee{
+    from{
+        transform:translateX(0);
+    }
+    to{
+        transform:translateX(-100%);
+    }
+}
 /* HERO */
 
 .hero{
