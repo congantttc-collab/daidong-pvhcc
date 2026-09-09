@@ -1,5 +1,20 @@
 [
   {
-    "date": "2026-09-02"
+    "thu":"Thứ Hai",
+    "ngay":"08/09/2026",
+    "noiDung":"Tiếp nhận hồ sơ hành chính",
+    "gio":"07:30"
+  },
+  {
+    "thu":"Thứ Ba",
+    "ngay":"09/09/2026",
+    "noiDung":"Họp cải cách hành chính",
+    "gio":"14:00"
+  },
+  {
+    "thu":"Thứ Tư",
+    "ngay":"10/09/2026",
+    "noiDung":"Tiếp công dân định kỳ",
+    "gio":"08:00"
   }
 ]
