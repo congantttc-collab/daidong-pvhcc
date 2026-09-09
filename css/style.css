@@ -513,10 +513,11 @@ section h2{
 
 .calendar-date-box{
     width:82px;
-    text-align:center;
+    min-width:82px;
     background:#fff3f3;
     border-radius:14px;
     padding:10px;
+    text-align:center;
 }
 
 .calendar-date-box small{
@@ -527,11 +528,12 @@ section h2{
 }
 
 .calendar-date-box .day{
+    display:block;
     font-size:34px;
     font-weight:800;
-    color:#222;
     line-height:1;
-    margin:6px 0;
+    color:#222;
+    margin:4px 0;
 }
 
 .calendar-date-box span{
@@ -558,13 +560,13 @@ section h2{
 }
 
 .calendar-status{
-    background:#fde8e8;
-    color:var(--red);
+    background:#fde2e2;
+    color:#d70018;
     padding:8px 18px;
     border-radius:999px;
     font-weight:700;
+    font-size:14px;
 }
-
 .calendar-time{
     border:2px solid #f59e0b;
     color:#b45309;
