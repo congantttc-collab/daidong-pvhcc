@@ -480,6 +480,58 @@ section h2{
     background:var(--red);
     color:#fff;
 }
+/* ===== LỊCH CÔNG TÁC ===== */
+
+.calendar-list{
+    display:flex;
+    flex-direction:column;
+    gap:14px;
+}
+
+.calendar-item{
+    background:#fff;
+    border-radius:14px;
+    padding:18px 22px;
+    border-left:5px solid var(--red);
+    box-shadow:0 3px 12px rgba(0,0,0,.05);
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    transition:.3s;
+}
+
+.calendar-item:hover{
+    transform:translateY(-3px);
+    box-shadow:0 8px 20px rgba(0,0,0,.10);
+}
+
+.calendar-day{
+    font-size:15px;
+    font-weight:700;
+    color:var(--red);
+}
+
+.calendar-date{
+    color:#777;
+    font-size:13px;
+    margin:4px 0;
+}
+
+.calendar-content h4{
+    margin:0;
+    font-size:18px;
+    color:#222;
+}
+
+.calendar-time{
+    background:#fff2f2;
+    color:var(--red);
+    padding:8px 14px;
+    border-radius:30px;
+    font-weight:700;
+    min-width:72px;
+    text-align:center;
+}
 /* ===== FOOTER ===== */
 
 footer{
