@@ -29,3 +29,43 @@ fetch("./data/vanban.json")
   .catch(error => {
     console.error("Lỗi đọc vanban.json:", error);
   });
+// ===== LỊCH CÔNG TÁC =====
+
+fetch("./data/calendar.json")
+.then(r=>r.json())
+.then(data=>{
+
+    const box=document.getElementById("calendar-list");
+    if(!box) return;
+
+    box.innerHTML="";
+
+    data.forEach(item=>{
+
+        box.innerHTML += `
+        <div class="calendar-item">
+
+            <div class="calendar-content">
+
+                <div class="calendar-day">
+                    ${item.thu}
+                </div>
+
+                <div class="calendar-date">
+                    ${item.ngay}
+                </div>
+
+                <h4>${item.noiDung}</h4>
+
+            </div>
+
+            <div class="calendar-time">
+                ${item.gio}
+            </div>
+
+        </div>
+        `;
+
+    });
+
+});
