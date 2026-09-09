@@ -1,20 +1,29 @@
 [
   {
-    "thu":"Thứ Hai",
-    "ngay":"08/09/2026",
+    "thu":"THỨ HAI",
+    "ngay":"08",
+    "thang":"09/2026",
     "noiDung":"Tiếp nhận hồ sơ hành chính",
-    "gio":"07:30"
+    "diaDiem":"Phòng Một cửa",
+    "gio":"07:30",
+    "trangThai":"Tiếp dân"
   },
   {
-    "thu":"Thứ Ba",
-    "ngay":"09/09/2026",
+    "thu":"THỨ BA",
+    "ngay":"09",
+    "thang":"09/2026",
     "noiDung":"Họp cải cách hành chính",
-    "gio":"14:00"
+    "diaDiem":"Hội trường UBND",
+    "gio":"14:00",
+    "trangThai":"Họp"
   },
   {
-    "thu":"Thứ Tư",
-    "ngay":"10/09/2026",
+    "thu":"THỨ TƯ",
+    "ngay":"10",
+    "thang":"09/2026",
     "noiDung":"Tiếp công dân định kỳ",
-    "gio":"08:00"
+    "diaDiem":"Phòng Tiếp dân",
+    "gio":"08:00",
+    "trangThai":"Tiếp dân"
   }
 ]
