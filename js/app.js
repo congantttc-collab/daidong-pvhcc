@@ -45,22 +45,36 @@ fetch("./data/calendar.json")
         box.innerHTML += `
         <div class="calendar-item">
 
-            <div class="calendar-content">
+            <div class="calendar-left">
 
-                <div class="calendar-day">
-                    ${item.thu}
+                <div class="calendar-date-box">
+                    <small>${item.thu}</small>
+                    <div class="day">${item.ngay}</div>
+                    <span>${item.thang}</span>
                 </div>
 
-                <div class="calendar-date">
-                    ${item.ngay}
-                </div>
+                <div class="calendar-content">
 
-                <h4>${item.noiDung}</h4>
+                    <h4>${item.noiDung}</h4>
+
+                    <div class="calendar-location">
+                        📍 ${item.diaDiem}
+                    </div>
+
+                </div>
 
             </div>
 
-            <div class="calendar-time">
-                ${item.gio}
+            <div class="calendar-right">
+
+                <div class="calendar-status">
+                    ${item.trangThai}
+                </div>
+
+                <div class="calendar-time">
+                    ${item.gio}
+                </div>
+
             </div>
 
         </div>
