@@ -6,33 +6,32 @@
     "loai":"Quyết định",
     "pdf":"assets/pdf/35-QD-UBND.pdf"
   },
-]
   {
-    "so": "112/TB-UBND",
-    "ngay": "07/09/2026",
-    "tieuDe": "Thông báo lịch tiếp công dân định kỳ tháng 9 năm 2026",
-    "loai": "Thông báo",
-    "pdf": "#"
+    "so":"112/TB-UBND",
+    "ngay":"07/09/2026",
+    "tieuDe":"Thông báo lịch tiếp công dân định kỳ tháng 9 năm 2026",
+    "loai":"Thông báo",
+    "pdf":"#"
   },
   {
-    "so": "98/KH-UBND",
-    "ngay": "06/09/2026",
-    "tieuDe": "Kế hoạch thực hiện cải cách hành chính năm 2026",
-    "loai": "Kế hoạch",
-    "pdf": "#"
+    "so":"98/KH-UBND",
+    "ngay":"06/09/2026",
+    "tieuDe":"Kế hoạch thực hiện cải cách hành chính năm 2026",
+    "loai":"Kế hoạch",
+    "pdf":"#"
   },
   {
-    "so": "81/CV-UBND",
-    "ngay": "05/09/2026",
-    "tieuDe": "Công văn hướng dẫn tiếp nhận hồ sơ trực tuyến mức độ toàn trình",
-    "loai": "Công văn",
-    "pdf": "#"
+    "so":"81/CV-UBND",
+    "ngay":"05/09/2026",
+    "tieuDe":"Công văn hướng dẫn tiếp nhận hồ sơ trực tuyến mức độ toàn trình",
+    "loai":"Công văn",
+    "pdf":"#"
   },
   {
-    "so": "75/TB-PVHCC",
-    "ngay": "04/09/2026",
-    "tieuDe": "Thông báo thời gian làm việc của Trung tâm PVHCC xã Đại Đồng",
-    "loai": "Thông báo",
-    "pdf": "#"
+    "so":"75/TB-PVHCC",
+    "ngay":"04/09/2026",
+    "tieuDe":"Thông báo thời gian làm việc của Trung tâm PVHCC xã Đại Đồng",
+    "loai":"Thông báo",
+    "pdf":"#"
   }
 ]
