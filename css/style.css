@@ -480,20 +480,20 @@ section h2{
     background:var(--red);
     color:#fff;
 }
-/* ===== LỊCH CÔNG TÁC ===== */
+/* ===== LỊCH CÔNG TÁC V2 ===== */
 
 .calendar-list{
     display:flex;
     flex-direction:column;
-    gap:14px;
+    gap:16px;
 }
 
 .calendar-item{
     background:#fff;
-    border-radius:14px;
+    border-radius:16px;
+    border-left:6px solid var(--red);
     padding:18px 22px;
-    border-left:5px solid var(--red);
-    box-shadow:0 3px 12px rgba(0,0,0,.05);
+    box-shadow:0 6px 18px rgba(0,0,0,.06);
     display:flex;
     justify-content:space-between;
     align-items:center;
@@ -502,35 +502,76 @@ section h2{
 
 .calendar-item:hover{
     transform:translateY(-3px);
-    box-shadow:0 8px 20px rgba(0,0,0,.10);
+    box-shadow:0 12px 28px rgba(0,0,0,.10);
 }
 
-.calendar-day{
-    font-size:15px;
-    font-weight:700;
+.calendar-left{
+    display:flex;
+    align-items:center;
+    gap:18px;
+}
+
+.calendar-date-box{
+    width:82px;
+    text-align:center;
+    background:#fff3f3;
+    border-radius:14px;
+    padding:10px;
+}
+
+.calendar-date-box small{
+    display:block;
     color:var(--red);
+    font-weight:700;
+    font-size:12px;
 }
 
-.calendar-date{
+.calendar-date-box .day{
+    font-size:34px;
+    font-weight:800;
+    color:#222;
+    line-height:1;
+    margin:6px 0;
+}
+
+.calendar-date-box span{
     color:#777;
-    font-size:13px;
-    margin:4px 0;
+    font-size:12px;
 }
 
 .calendar-content h4{
-    margin:0;
-    font-size:18px;
+    margin:0 0 8px;
+    font-size:22px;
     color:#222;
 }
 
-.calendar-time{
-    background:#fff2f2;
+.calendar-location{
+    color:#666;
+    font-size:15px;
+}
+
+.calendar-right{
+    display:flex;
+    flex-direction:column;
+    align-items:flex-end;
+    gap:12px;
+}
+
+.calendar-status{
+    background:#fde8e8;
     color:var(--red);
-    padding:8px 14px;
-    border-radius:30px;
+    padding:8px 18px;
+    border-radius:999px;
     font-weight:700;
-    min-width:72px;
-    text-align:center;
+}
+
+.calendar-time{
+    border:2px solid #f59e0b;
+    color:#b45309;
+    background:#fff;
+    padding:8px 18px;
+    border-radius:999px;
+    font-weight:700;
 }
 /* ===== FOOTER ===== */
 
