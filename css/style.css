@@ -411,6 +411,75 @@ section h2{
     text-decoration:none;
     font-weight:700;
 }
+/* ===== VĂN BẢN ===== */
+
+.documents{
+    background:#fff;
+}
+
+.document-list{
+    display:grid;
+    gap:16px;
+    margin-top:30px;
+}
+
+.document-item{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    background:#fff;
+    border:1px solid #eee;
+    border-left:5px solid var(--red);
+    border-radius:12px;
+    padding:18px 22px;
+    transition:.25s;
+}
+
+.document-item:hover{
+    box-shadow:0 8px 20px rgba(0,0,0,.08);
+    transform:translateY(-2px);
+}
+
+.document-info small{
+    color:#888;
+    display:block;
+    margin-bottom:6px;
+}
+
+.document-info h4{
+    color:#222;
+    margin:0;
+    font-size:17px;
+}
+
+.doc-tag{
+    background:#fdecec;
+    color:var(--red);
+    padding:6px 12px;
+    border-radius:20px;
+    font-size:13px;
+    font-weight:700;
+}
+
+.center-btn{
+    text-align:center;
+    margin-top:28px;
+}
+
+.btn-outline{
+    display:inline-block;
+    padding:12px 24px;
+    border:2px solid var(--red);
+    color:var(--red);
+    border-radius:30px;
+    text-decoration:none;
+    font-weight:700;
+}
+
+.btn-outline:hover{
+    background:var(--red);
+    color:#fff;
+}
 /* ===== FOOTER ===== */
 
 footer{
