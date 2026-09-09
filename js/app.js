@@ -1,14 +1,14 @@
-// ===== Văn bản mới ban hành =====
+// ===== VĂN BẢN MỚI BAN HÀNH =====
 fetch("data/vanban.json")
   .then(res => res.json())
   .then(data => {
-    const list = document.getElementById("document-list");
+    const list = document.getElementById("vanban-list");
     if (!list) return;
 
     list.innerHTML = "";
 
     data.forEach(item => {
-      const html = `
+      list.innerHTML += `
         <a class="document-item" href="${item.pdf}" target="_blank">
           <div class="document-info">
             <small>${item.ngay} • ${item.so}</small>
@@ -21,6 +21,6 @@ fetch("data/vanban.json")
           </div>
         </a>
       `;
-      list.innerHTML += html;
     });
-  });
+  })
+  .catch(err => console.error("Lỗi đọc vanban.json:", err));
