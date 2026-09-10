@@ -943,14 +943,10 @@ footer iframe{
 }
 
 .article-wrap{
-    max-width:900px;
-    margin:auto;
-    background:#fff;
-    padding:40px;
-    border-radius:18px;
-    box-shadow:0 10px 30px rgba(0,0,0,.08);
+    max-width:1050px;
+    margin:32px auto;
+    padding:0 20px;
 }
-
 .breadcrumb{
     font-size:14px;
     color:#777;
