@@ -47,14 +47,15 @@ body{
 
 .title h1{
     color:#FFD54F;
-    font-size:28px;
+    font-size:30px;
     font-weight:800;
     margin:0;
     line-height:1.2;
+    text-transform:uppercase;
 }
 
 .title h2{
-    color:#fff;
+    color:#FFFFFF;
     font-size:18px;
     font-weight:600;
     margin:4px 0 0;
