@@ -1,6 +1,7 @@
 [
   {
     "id": 1,
+    "ma": "HT-001"
     "linhVuc": "Hộ tịch",
     "ten": "Đăng ký khai sinh",
     "thoiHan": "Trong ngày",
@@ -10,6 +11,7 @@
   },
   {
     "id": 2,
+    "ma": "HT-002"
     "linhVuc": "Hộ tịch",
     "ten": "Đăng ký kết hôn",
     "thoiHan": "03 ngày",
@@ -19,6 +21,7 @@
   },
   {
     "id": 3,
+    "ma": "HT-003"
     "linhVuc": "Chứng thực",
     "ten": "Chứng thực bản sao từ bản chính",
     "thoiHan": "Trong ngày",
@@ -28,6 +31,7 @@
   },
   {
     "id": 4,
+    "ma": "HT-004"
     "linhVuc": "Đất đai",
     "ten": "Xác nhận nguồn gốc đất",
     "thoiHan": "05 ngày",
