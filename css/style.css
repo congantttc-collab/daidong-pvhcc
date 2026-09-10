@@ -454,7 +454,17 @@ section h2{
     background:linear-gradient(transparent,rgba(0,0,0,.78));
     color:#fff;
 }
-
+.featured-category{
+    display:inline-block;
+    background:rgba(220,0,24,.88);
+    color:#fff;
+    padding:6px 12px;
+    border-radius:20px;
+    font-size:12px;
+    font-weight:700;
+    letter-spacing:.5px;
+    margin-bottom:10px;
+}
 .featured-overlay h3{
     font-size:28px;
     margin:10px 0;
