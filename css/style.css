@@ -364,11 +364,12 @@ section h2{
     font-weight:600;
 }
 .procedure-code{
-    color:#777;
-    font-size:13px;
-    font-weight:600;
-    margin:8px 0 4px;
-    letter-spacing:.3px;
+    color:#666;
+    font-size:12px;
+    font-weight:700;
+    text-transform:uppercase;
+    margin:10px 0 6px;
+    letter-spacing:.5px;
 }
 .procedure-card h3{
     margin:8px 0;
