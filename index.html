@@ -135,6 +135,48 @@
     </div>
   </div>
 </section>
+  <section class="search-section">
+  <div class="container">
+
+    <h2>TRA CỨU THỦ TỤC HÀNH CHÍNH</h2>
+
+    <div class="section-desc">
+      Tìm kiếm nhanh thủ tục, thành phần hồ sơ, lệ phí và thời hạn giải quyết.
+    </div>
+
+    <div class="search-box">
+
+      <input
+        type="text"
+        id="searchInput"
+        placeholder="Nhập tên thủ tục (VD: Khai sinh, Chứng thực...)">
+
+      <button id="searchBtn">
+        🔍 Tra cứu
+      </button>
+
+    </div>
+
+    <div class="filter-group">
+
+      <button class="filter-btn active" data-field="all">Tất cả</button>
+
+      <button class="filter-btn" data-field="Hộ tịch">Hộ tịch</button>
+
+      <button class="filter-btn" data-field="Chứng thực">Chứng thực</button>
+
+      <button class="filter-btn" data-field="Đất đai">Đất đai</button>
+
+      <button class="filter-btn" data-field="Khác">Khác</button>
+
+    </div>
+
+    <div id="search-result" class="search-result">
+      <!-- procedures.js sẽ hiển thị kết quả -->
+    </div>
+
+  </div>
+</section>
 <section class="services">
 
   <div class="container">
