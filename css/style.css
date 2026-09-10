@@ -260,6 +260,75 @@ section h2{
     font-weight:700;
     line-height:1.5;
 }
+/* ===== TRA CỨU THỦ TỤC ===== */
+
+.search-section{
+    background:#f5f7fb;
+    padding:70px 0;
+}
+
+.search-box{
+    max-width:760px;
+    margin:30px auto 20px;
+    display:flex;
+    background:#fff;
+    border-radius:60px;
+    overflow:hidden;
+    box-shadow:0 8px 25px rgba(0,0,0,.08);
+}
+
+.search-box input{
+    flex:1;
+    border:none;
+    padding:18px 24px;
+    font-size:16px;
+    outline:none;
+}
+
+.search-box button{
+    border:none;
+    background:var(--red);
+    color:#fff;
+    padding:0 28px;
+    font-size:16px;
+    font-weight:700;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.search-box button:hover{
+    background:#900012;
+}
+
+.filter-group{
+    display:flex;
+    justify-content:center;
+    gap:12px;
+    flex-wrap:wrap;
+    margin-bottom:35px;
+}
+
+.filter-btn{
+    border:2px solid #ddd;
+    background:#fff;
+    padding:10px 20px;
+    border-radius:30px;
+    font-weight:600;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.filter-btn:hover,
+.filter-btn.active{
+    background:var(--red);
+    border-color:var(--red);
+    color:#fff;
+}
+
+.search-result{
+    max-width:900px;
+    margin:auto;
+}
 /* GRID DỊCH VỤ */
 
 .section-desc{
