@@ -1,42 +1,26 @@
 [
   {
     "id": 1,
-    "ma": "HT-001",
+    "ma": "1.001193",
     "linhVuc": "Hộ tịch",
     "ten": "Đăng ký khai sinh",
     "thoiHan": "Trong ngày",
     "lePhi": "Miễn phí",
     "mucDo": "Toàn trình",
-    "bieuMau": "assets/pdf/khai-sinh.pdf"
+    "doiTuong": "Cá nhân",
+    "bieuMau": "assets/pdf/khai-sinh.pdf",
+    "dvc": https://lienthong.dichvucong.gov.vn/#/?vneid=1
   },
   {
     "id": 2,
-    "ma": "HT-002",
+    "ma": "1.000894",
     "linhVuc": "Hộ tịch",
     "ten": "Đăng ký kết hôn",
     "thoiHan": "03 ngày",
     "lePhi": "Miễn phí",
     "mucDo": "Toàn trình",
-    "bieuMau": "assets/pdf/ket-hon.pdf"
-  },
-  {
-    "id": 3,
-    "ma": "CT-001",
-    "linhVuc": "Chứng thực",
-    "ten": "Chứng thực bản sao từ bản chính",
-    "thoiHan": "Trong ngày",
-    "lePhi": "2.000đ/trang",
-    "mucDo": "Một phần",
-    "bieuMau": "assets/pdf/chung-thuc.pdf"
-  },
-  {
-    "id": 4,
-    "ma": "DD-001",
-    "linhVuc": "Đất đai",
-    "ten": "Xác nhận nguồn gốc đất",
-    "thoiHan": "05 ngày",
-    "lePhi": "Theo quy định",
-    "mucDo": "Trực tiếp",
-    "bieuMau": "assets/pdf/dat-dai.pdf"
+    "doiTuong": "Cá nhân",
+    "bieuMau": "assets/pdf/ket-hon.pdf",
+    "dvc": https://dichvucong.gov.vn/thu-tuc-hanh-chinh/019d2bfd-3fac-7489-b53b-a15eb239a6fe
   }
 ]
