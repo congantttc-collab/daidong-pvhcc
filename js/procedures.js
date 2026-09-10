@@ -27,11 +27,15 @@ function renderResults(list) {
     <div class="procedure-card">
 
       <div class="procedure-top">
-        <span class="field">${item.linhVuc}</span>
-        <span class="level">${item.mucDo}</span>
-      </div>
+  <span class="field">${item.linhVuc}</span>
+  <span class="level">${item.mucDo}</span>
+</div>
 
-      <h3>${item.ten}</h3>
+<div class="procedure-code">
+  Mã thủ tục: ${item.ma}
+</div>
+
+<h3>${item.ten}</h3>
 
       <div class="procedure-info">
         ⏱ ${item.thoiHan} &nbsp;&nbsp; • &nbsp;&nbsp;
