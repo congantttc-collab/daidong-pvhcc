@@ -9,8 +9,8 @@ fetch("data/news.json")
 
     const first = data[0];
 
-    featured.innerHTML = `
-        <a class="featured-card" href="${first.link}">
+  featured.innerHTML = `
+    <a class="featured-card" href="pages/article.html?id=${first.id}">
             <img src="${first.image}" alt="${first.title}">
             <div class="featured-overlay">
                <span class="featured-category">TIN NỔI BẬT</span>
@@ -24,7 +24,7 @@ fetch("data/news.json")
 
     data.slice(1,5).forEach(item=>{
         sidebar.innerHTML += `
-        <a class="news-mini" href="${item.link}">
+      <a class="news-mini" href="pages/article.html?id=${item.id}">
             <img src="${item.image}" alt="${item.title}">
             <div>
                 <small>${item.date}</small>
