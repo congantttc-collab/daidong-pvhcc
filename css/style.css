@@ -1051,3 +1051,14 @@ footer iframe{
     text-decoration:none;
     font-weight:600;
 }
+.article-summary{
+    background:#fff5f5;
+    border-left:5px solid #d70018;
+    padding:18px 20px;
+    margin:22px 0;
+    border-radius:10px;
+    font-size:17px;
+    line-height:1.8;
+    color:#374151;
+    font-weight:500;
+}
