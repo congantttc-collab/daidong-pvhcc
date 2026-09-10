@@ -37,14 +37,25 @@ function renderResults(list) {
 
 <h3>${item.ten}</h3>
 
-      <div class="procedure-info">
-        ⏱ ${item.thoiHan} &nbsp;&nbsp; • &nbsp;&nbsp;
-        💰 ${item.lePhi}
-      </div>
+     <div class="procedure-info">
+  ⏱ ${item.thoiHan} &nbsp;&nbsp;•&nbsp;&nbsp; 💰 ${item.lePhi}
+</div>
 
-      <a href="${item.bieuMau}" target="_blank" class="download-btn">
-        📄 Tải biểu mẫu
-      </a>
+<div class="procedure-actions">
+
+  <a href="${item.bieuMau}"
+     target="_blank"
+     class="download-btn">
+     📄 Biểu mẫu
+  </a>
+
+  <a href="${item.dvc}"
+     target="_blank"
+     class="dvc-btn">
+     🌐 Nộp trực tuyến
+  </a>
+
+</div>
 
     </div>
   `).join("");
