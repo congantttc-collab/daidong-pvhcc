@@ -46,25 +46,20 @@ body{
 }
 
 .title h1{
-    color:#FFD54F;
-    font-size:30px;
+    color:#FFD700;
+    font-size:34px;
     font-weight:800;
     margin:0;
     line-height:1.2;
     text-transform:uppercase;
-}
-
-.title h2{
-    color:#FFFFFF;
-    font-size:18px;
-    font-weight:600;
-    margin:4px 0 0;
+    letter-spacing:.5px;
 }
 
 .title p{
-    color:#FFE5E5;
-    font-size:14px;
-    margin:4px 0 0;
+    color:#FFFFFF;
+    font-size:15px;
+    font-weight:500;
+    margin:6px 0 0;
 }
 
 /* MENU */
