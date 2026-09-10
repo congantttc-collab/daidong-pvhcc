@@ -9,7 +9,7 @@
     "mucDo": "Toàn trình",
     "doiTuong": "Cá nhân",
     "bieuMau": "assets/pdf/khai-sinh.pdf",
-    "dvc": https://lienthong.dichvucong.gov.vn/#/?vneid=1
+    "dvc": "https://lienthong.dichvucong.gov.vn/#/?vneid=1"
   },
   {
     "id": 2,
@@ -21,6 +21,6 @@
     "mucDo": "Toàn trình",
     "doiTuong": "Cá nhân",
     "bieuMau": "assets/pdf/ket-hon.pdf",
-    "dvc": https://dichvucong.gov.vn/thu-tuc-hanh-chinh/019d2bfd-3fac-7489-b53b-a15eb239a6fe
+    "dvc": "https://dichvucong.gov.vn/thu-tuc-hanh-chinh/019d2bfd-3fac-7489-b53b-a15eb239a6fe"
   }
 ]
