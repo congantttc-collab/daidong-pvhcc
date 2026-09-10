@@ -28,7 +28,7 @@ fetch("data/news.json")
             <img src="${item.image}" alt="${item.title}">
             <div>
                 <small>${item.date}</small>
-                <h4>${item.title}</h4>
+               <h4>${item.title} →</h4>
             </div>
         </a>
         `;
