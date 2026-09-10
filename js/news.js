@@ -13,7 +13,7 @@ fetch("data/news.json")
         <a class="featured-card" href="${first.link}">
             <img src="${first.image}" alt="${first.title}">
             <div class="featured-overlay">
-                <span class="featured-category">${first.category}</span>
+               <span class="featured-category">TIN NỔI BẬT</span>
                 <h3>${first.title}</h3>
                 <div class="featured-date">${first.date}</div>
             </div>
