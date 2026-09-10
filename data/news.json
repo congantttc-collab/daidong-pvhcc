@@ -1,37 +1,47 @@
 [
   {
-    "date":"08/09/2026",
-    "category":"Hoạt động",
-     "title":"Khai trương Trung tâm Phục vụ Hành chính công xã Đại Đồng",
-    "image":"assets/banner/hero.jpg",
-    "link":"pages/tin-1.html"
+    "id": 1,
+    "date": "08/09/2026",
+    "category": "Hoạt động",
+    "title": "Khai trương Trung tâm Phục vụ Hành chính công xã Đại Đồng",
+    "image": "assets/banner/hero.jpg",
+    "summary": "Trung tâm Phục vụ Hành chính công xã Đại Đồng chính thức khai trương, đánh dấu bước chuyển đổi mạnh mẽ trong cải cách hành chính.",
+    "content": "<p><strong>Sáng ngày 08/09/2026</strong>, UBND xã Đại Đồng chính thức khai trương Trung tâm Phục vụ Hành chính công nhằm nâng cao chất lượng phục vụ người dân và doanh nghiệp.</p><p>Trung tâm được đầu tư theo mô hình hành chính hiện đại, bố trí khu vực tiếp nhận, hướng dẫn, số hóa hồ sơ và trả kết quả theo cơ chế một cửa.</p><h2>Mục tiêu phục vụ</h2><ul><li>Tiếp nhận và giải quyết thủ tục hành chính nhanh chóng.</li><li>100% hồ sơ được theo dõi trên môi trường số.</li><li>Hỗ trợ nộp hồ sơ trực tuyến mức độ toàn trình.</li></ul>"
   },
   {
-    "date":"07/09/2026",
-    "category":"Thông báo",
-    "title":"Hướng dẫn nộp hồ sơ trực tuyến mức độ toàn trình",
-    "image":"assets/banner/hero.jpg",
-    "link":"pages/tin-2.html"
+    "id": 2,
+    "date": "07/09/2026",
+    "category": "Thông báo",
+    "title": "Hướng dẫn nộp hồ sơ trực tuyến mức độ toàn trình",
+    "image": "assets/banner/hero.jpg",
+    "summary": "Hướng dẫn người dân thực hiện nộp hồ sơ trực tuyến trên Cổng Dịch vụ công Quốc gia.",
+    "content": "<p>Người dân có thể thực hiện nộp hồ sơ trực tuyến thông qua Cổng Dịch vụ công Quốc gia với tài khoản VNeID hoặc tài khoản định danh điện tử.</p>"
   },
   {
-    "date":"06/09/2026",
-    "category":"Thông báo",
-    "title":"Thông báo tiếp nhận thủ tục hành chính theo mô hình mới",
-    "image":"assets/banner/hero.jpg",
-    "link":"pages/tin-3.html"
+    "id": 3,
+    "date": "06/09/2026",
+    "category": "Thông báo",
+    "title": "Thông báo tiếp nhận thủ tục hành chính theo mô hình mới",
+    "image": "assets/banner/hero.jpg",
+    "summary": "Thông báo triển khai tiếp nhận hồ sơ theo mô hình Trung tâm PVHCC xã.",
+    "content": "<p>Trung tâm PVHCC xã Đại Đồng thực hiện tiếp nhận và giải quyết thủ tục hành chính theo mô hình mới kể từ tháng 9/2026.</p>"
   },
   {
-    "date":"05/09/2026",
-    "category":"Chuyển đổi số",
-    "title":"Triển khai số hóa hồ sơ và kết quả giải quyết TTHC",
-    "image":"assets/banner/hero.jpg",
-    "link":"pages/tin-4.html"
+    "id": 4,
+    "date": "05/09/2026",
+    "category": "Chuyển đổi số",
+    "title": "Triển khai số hóa hồ sơ và kết quả giải quyết TTHC",
+    "image": "assets/banner/hero.jpg",
+    "summary": "Đẩy mạnh số hóa hồ sơ và kết quả giải quyết thủ tục hành chính.",
+    "content": "<p>Việc số hóa hồ sơ giúp giảm thời gian xử lý, nâng cao tính minh bạch và tạo thuận lợi cho người dân khi tra cứu kết quả.</p>"
   },
   {
-    "date":"04/09/2026",
-    "category":"Hoạt động",
-    "title":"Hội nghị giao ban triển khai nhiệm vụ tháng 9",
-    "image":"assets/banner/hero.jpg",
-    "link":"pages/tin-5.html"
+    "id": 5,
+    "date": "04/09/2026",
+    "category": "Hoạt động",
+    "title": "Hội nghị giao ban triển khai nhiệm vụ tháng 9",
+    "image": "assets/banner/hero.jpg",
+    "summary": "Hội nghị đánh giá kết quả và triển khai nhiệm vụ trọng tâm tháng 9.",
+    "content": "<p>Hội nghị do đồng chí Phó Chủ tịch UBND xã chủ trì với sự tham gia của toàn thể cán bộ, công chức Trung tâm PVHCC.</p>"
   }
 ]
