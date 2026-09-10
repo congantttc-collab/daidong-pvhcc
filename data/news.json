@@ -2,6 +2,7 @@
   {
     "date":"08/09/2026",
     "category":"Hoạt động",
+    <span class="featured-category">TIN NỔI BẬT</span>
     "title":"Khai trương Trung tâm Phục vụ Hành chính công xã Đại Đồng",
     "image":"assets/banner/hero.jpg",
     "link":"pages/tin-1.html"
@@ -9,6 +10,7 @@
   {
     "date":"07/09/2026",
     "category":"Thông báo",
+    <span class="featured-category">TIN NỔI BẬT</span>
     "title":"Hướng dẫn nộp hồ sơ trực tuyến mức độ toàn trình",
     "image":"assets/banner/hero.jpg",
     "link":"pages/tin-2.html"
@@ -16,6 +18,7 @@
   {
     "date":"06/09/2026",
     "category":"Thông báo",
+    <span class="featured-category">TIN NỔI BẬT</span>
     "title":"Thông báo tiếp nhận thủ tục hành chính theo mô hình mới",
     "image":"assets/banner/hero.jpg",
     "link":"pages/tin-3.html"
@@ -23,6 +26,7 @@
   {
     "date":"05/09/2026",
     "category":"Chuyển đổi số",
+    <span class="featured-category">TIN NỔI BẬT</span>
     "title":"Triển khai số hóa hồ sơ và kết quả giải quyết TTHC",
     "image":"assets/banner/hero.jpg",
     "link":"pages/tin-4.html"
@@ -30,6 +34,7 @@
   {
     "date":"04/09/2026",
     "category":"Hoạt động",
+    <span class="featured-category">TIN NỔI BẬT</span>
     "title":"Hội nghị giao ban triển khai nhiệm vụ tháng 9",
     "image":"assets/banner/hero.jpg",
     "link":"pages/tin-5.html"
