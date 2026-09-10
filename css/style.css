@@ -36,13 +36,12 @@ body{
     gap:18px;
 }
 
-.logo img{
-    width:68px;
-    height:68px;
-    border-radius:50%;
-    background:#fff;
-    padding:5px;
-    object-fit:cover;
+.logo{
+    display:flex;
+    align-items:center;
+    gap:16px;
+    text-decoration:none;   /* Bỏ gạch chân */
+    color:inherit;          /* Không dùng màu xanh link */
 }
 
 .title h1{
