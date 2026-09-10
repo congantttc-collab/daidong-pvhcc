@@ -1,10 +1,38 @@
 [
   {
-    "name": "Đăng ký khai sinh",
-    "field": "Hộ tịch"
+    "id": 1,
+    "linhVuc": "Hộ tịch",
+    "ten": "Đăng ký khai sinh",
+    "thoiHan": "Trong ngày",
+    "lePhi": "Miễn phí",
+    "mucDo": "Toàn trình",
+    "bieuMau": "assets/pdf/khai-sinh.pdf"
   },
   {
-    "name": "Đăng ký kết hôn",
-    "field": "Hộ tịch"
+    "id": 2,
+    "linhVuc": "Hộ tịch",
+    "ten": "Đăng ký kết hôn",
+    "thoiHan": "03 ngày",
+    "lePhi": "Miễn phí",
+    "mucDo": "Toàn trình",
+    "bieuMau": "assets/pdf/ket-hon.pdf"
+  },
+  {
+    "id": 3,
+    "linhVuc": "Chứng thực",
+    "ten": "Chứng thực bản sao từ bản chính",
+    "thoiHan": "Trong ngày",
+    "lePhi": "2.000đ/trang",
+    "mucDo": "Một phần",
+    "bieuMau": "assets/pdf/chung-thuc.pdf"
+  },
+  {
+    "id": 4,
+    "linhVuc": "Đất đai",
+    "ten": "Xác nhận nguồn gốc đất",
+    "thoiHan": "05 ngày",
+    "lePhi": "Theo quy định",
+    "mucDo": "Trực tiếp",
+    "bieuMau": "assets/pdf/dat-dai.pdf"
   }
 ]
