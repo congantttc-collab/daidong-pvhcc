@@ -43,7 +43,15 @@ body{
     text-decoration:none;   /* Bỏ gạch chân */
     color:inherit;          /* Không dùng màu xanh link */
 }
-
+.logo img{
+    width:72px;
+    height:72px;
+    object-fit:contain;
+    border-radius:50%;
+    background:#fff;
+    padding:4px;
+    flex-shrink:0;
+}
 .title h1{
     color:#FFD700;
     font-size:34px;
