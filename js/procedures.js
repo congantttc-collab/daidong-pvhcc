@@ -47,19 +47,22 @@ function renderResults(list) {
 }
 
 // Tìm kiếm
+function normalizeText(str){
+    return str
+      .toLowerCase()
+      .normalize("NFD")
+      .replace(/[\u0300-\u036f]/g,"")
+      .replace(/đ/g,"d");
+}
 function searchProcedure() {
 
-  const keyword = document
-    .getElementById("searchInput")
-    .value.toLowerCase();
+ const keyword = normalizeText(
+  document.getElementById("searchInput").value
+);
 
-  let result = procedures.filter(item =>
-    item.ten.toLowerCase().includes(keyword)
-  );
-
-  if (currentField !== "all") {
-    result = result.filter(item => item.linhVuc === currentField);
-  }
+let result = procedures.filter(item =>
+  normalizeText(item.ten).includes(keyword)
+);
 
   renderResults(result);
 }
