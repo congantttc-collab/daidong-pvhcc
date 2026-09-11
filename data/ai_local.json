@@ -6,11 +6,13 @@
     "email": "hccdaidong@nghean.gov.vn",
     "working_hours": "Thứ Hai đến Thứ Sáu: 07:30 - 17:00"
   },
+
   "citizen_reception": {
     "day": "Thứ Tư hằng tuần",
     "time": "08:00 - 11:30",
     "location": "Phòng Tiếp công dân - Trung tâm PVHCC"
   },
+
   "staff": [
     {
       "field": "Hộ tịch",
@@ -27,46 +29,48 @@
       "name": "Cán bộ Địa chính",
       "phone": "0984 803 163"
     }
-   ],
+  ],
+
+  "synonyms": {
+    "khai sinh": [
+      "khai sinh",
+      "đăng ký khai sinh",
+      "giấy khai sinh",
+      "làm khai sinh",
+      "con mới sinh",
+      "em bé mới sinh"
+    ],
+    "khai tử": [
+      "khai tử",
+      "giấy khai tử",
+      "người mất",
+      "qua đời",
+      "đăng ký khai tử"
+    ],
+    "chứng thực": [
+      "chứng thực",
+      "công chứng",
+      "sao y",
+      "photo công chứng",
+      "chứng thực bản sao"
+    ],
+    "kết hôn": [
+      "kết hôn",
+      "đăng ký kết hôn",
+      "giấy kết hôn",
+      "làm kết hôn"
+    ],
+    "đất đai": [
+      "đất đai",
+      "sổ đỏ",
+      "tách thửa",
+      "chuyển nhượng",
+      "cấp sổ",
+      "biến động đất"
+    ]
+  },
+
   "dvc_links": {
-    "synonyms": {
-  "khai sinh": [
-    "khai sinh",
-    "đăng ký khai sinh",
-    "giấy khai sinh",
-    "làm khai sinh",
-    "con mới sinh",
-    "em bé mới sinh"
-  ],
-  "khai tử": [
-    "khai tử",
-    "giấy khai tử",
-    "người mất",
-    "qua đời",
-    "đăng ký khai tử"
-  ],
-  "chứng thực": [
-    "chứng thực",
-    "công chứng",
-    "sao y",
-    "photo công chứng",
-    "chứng thực bản sao"
-  ],
-  "kết hôn": [
-    "kết hôn",
-    "đăng ký kết hôn",
-    "giấy kết hôn",
-    "làm kết hôn"
-  ],
-  "đất đai": [
-    "đất đai",
-    "sổ đỏ",
-    "tách thửa",
-    "chuyển nhượng",
-    "cấp sổ",
-    "biến động đất"
-  ]
-}
     "khai sinh": "https://dichvucong.gov.vn/p/home/dvc-tthc-thu-tuc-hanh-chinh-chi-tiet.html?ma_thu_tuc=140183",
     "khai tử": "https://thutuc.dichvucong.gov.vn/p/home/dvc-tthc-thu-tuc-hanh-chinh-chi-tiet.html?ma_thu_tuc=111706",
     "kết hôn": "https://thutuc.dichvucong.gov.vn/p/home/dvc-tthc-thu-tuc-hanh-chinh-chi-tiet.html?ma_thu_tuc=123713",
