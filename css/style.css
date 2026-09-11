@@ -1385,11 +1385,21 @@ footer iframe{
     flex-direction:column;
 }
 
-.ai-chat.active{
+.ai-chat.open{
     display:flex;
 }
 
 .ai-header{
+  .ai-title{
+    flex:1;
+}
+
+.ai-header-img{
+    width:82px;
+    height:82px;
+    object-fit:contain;
+    margin:0 8px;
+}
     background:#d70018;
     color:#fff;
     padding:16px 18px;
@@ -1411,10 +1421,10 @@ footer iframe{
     background:none;
     border:none;
     color:#fff;
-    font-size:20px;
+    font-size:28px;
     cursor:pointer;
+    margin-left:6px;
 }
-
 .ai-body{
     flex:1;
     height:320px;
