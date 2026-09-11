@@ -3,11 +3,9 @@
     "field": "Tư pháp - Hộ tịch",
     "search": "Đăng ký khai sinh",
     "keywords": [
-      "khai sinh","đăng ký khai sinh","giấy khai sinh",
-      "con mới sinh","con tôi mới sinh","em bé mới sinh",
-      "trẻ mới sinh","sinh con","làm giấy cho con",
-      "đăng ký cho con","làm khai sinh","bé mới đẻ",
-      "thêm tên cho con","làm giấy khai sinh"
+      "khai sinh","đăng ký khai sinh","giấy khai sinh","làm khai sinh",
+      "con mới sinh","em bé mới sinh","bé mới sinh","trẻ mới sinh",
+      "sinh con","làm giấy cho con","đăng ký cho con","thêm tên cho con"
     ]
   },
 
@@ -15,10 +13,8 @@
     "field": "Tư pháp - Hộ tịch",
     "search": "Đăng ký khai tử",
     "keywords": [
-      "khai tử","đăng ký khai tử","giấy khai tử",
-      "bố mất","mẹ mất","ông mất","bà mất",
-      "qua đời","người mất","người chết",
-      "làm giấy báo tử"
+      "khai tử","đăng ký khai tử","giấy khai tử","qua đời","người mất",
+      "bố mất","mẹ mất","ông mất","bà mất","giấy báo tử"
     ]
   },
 
@@ -26,9 +22,17 @@
     "field": "Tư pháp - Hộ tịch",
     "search": "Đăng ký kết hôn",
     "keywords": [
-      "kết hôn","đăng ký kết hôn","giấy kết hôn",
-      "đăng ký cưới","làm giấy cưới","đi cưới",
-      "vợ chồng","đăng ký vợ chồng"
+      "kết hôn","đăng ký kết hôn","giấy kết hôn","đăng ký cưới",
+      "làm giấy cưới","vợ chồng","độc thân cưới"
+    ]
+  },
+
+  "doc than": {
+    "field": "Tư pháp - Hộ tịch",
+    "search": "Xác nhận tình trạng hôn nhân",
+    "keywords": [
+      "độc thân","xác nhận độc thân","giấy độc thân",
+      "tình trạng hôn nhân","chứng nhận độc thân"
     ]
   },
 
@@ -36,9 +40,8 @@
     "field": "Tư pháp - Hộ tịch",
     "search": "Chứng thực bản sao từ bản chính",
     "keywords": [
-      "chứng thực","công chứng","sao y",
-      "photo công chứng","photo cccd","công chứng cccd",
-      "photo bằng","sao y học bạ","sao y bằng tốt nghiệp",
+      "chứng thực","công chứng","sao y","photo công chứng",
+      "photo cccd","công chứng cccd","photo bằng","học bạ",
       "chứng thực giấy tờ","bản sao"
     ]
   },
@@ -47,11 +50,33 @@
     "field": "Đất đai",
     "search": "Thủ tục đất đai",
     "keywords": [
-      "đất","đất đai","sổ đỏ","sổ hồng",
-      "tách thửa","tách sổ","chia đất",
-      "chuyển nhượng","sang tên","bán đất",
-      "mua đất","cấp sổ","biến động đất",
-      "cho tặng đất","thừa kế đất"
+      "đất","đất đai","sổ đỏ","sổ hồng","bán đất","mua đất",
+      "chia đất","đất ở","đất nông nghiệp","quyền sử dụng đất"
+    ]
+  },
+
+  "tach thua": {
+    "field": "Đất đai",
+    "search": "Tách thửa",
+    "keywords": [
+      "tách thửa","chia thửa","tách đất","chia đất cho con","tách sổ"
+    ]
+  },
+
+  "chuyen nhuong": {
+    "field": "Đất đai",
+    "search": "Đăng ký biến động đất đai",
+    "keywords": [
+      "sang tên","chuyển nhượng","cho tặng đất","thừa kế đất",
+      "biến động đất","chuyển quyền"
+    ]
+  },
+
+  "cap so": {
+    "field": "Đất đai",
+    "search": "Cấp Giấy chứng nhận quyền sử dụng đất",
+    "keywords": [
+      "cấp sổ","cấp sổ đỏ","cấp sổ lần đầu","xin sổ đỏ"
     ]
   },
 
@@ -59,10 +84,24 @@
     "field": "Hộ kinh doanh",
     "search": "Đăng ký hộ kinh doanh",
     "keywords": [
-      "hộ kinh doanh","mở quán","mở cửa hàng",
-      "mở tiệm","kinh doanh","quán cafe",
-      "quán ăn","tiệm tóc","shop quần áo",
-      "đăng ký kinh doanh"
+      "hộ kinh doanh","đăng ký kinh doanh","mở quán","mở cửa hàng",
+      "mở tiệm","quán cà phê","quán ăn","shop quần áo","kinh doanh cá thể"
+    ]
+  },
+
+  "tam ngung kinh doanh": {
+    "field": "Hộ kinh doanh",
+    "search": "Tạm ngừng hộ kinh doanh",
+    "keywords": [
+      "tạm ngừng kinh doanh","đóng cửa tạm thời","ngừng bán"
+    ]
+  },
+
+  "cham dut kinh doanh": {
+    "field": "Hộ kinh doanh",
+    "search": "Chấm dứt hộ kinh doanh",
+    "keywords": [
+      "chấm dứt kinh doanh","giải thể hộ kinh doanh","nghỉ kinh doanh"
     ]
   },
 
@@ -70,28 +109,81 @@
     "field": "An toàn thực phẩm",
     "search": "Cấp giấy chứng nhận an toàn thực phẩm",
     "keywords": [
-      "an toàn thực phẩm","vsattp","giấy attp",
-      "vệ sinh an toàn","quán ăn","nhà hàng",
-      "cơ sở thực phẩm"
+      "an toàn thực phẩm","vsattp","giấy attp","vệ sinh an toàn",
+      "cơ sở thực phẩm","quán ăn","nhà hàng"
+    ]
+  },
+
+  "xây dựng": {
+    "field": "Đất đai",
+    "search": "Cấp giấy phép xây dựng",
+    "keywords": [
+      "xây nhà","giấy phép xây dựng","xây dựng","sửa nhà","làm nhà"
+    ]
+  },
+
+  "môi trường": {
+    "field": "Đất đai",
+    "search": "Thủ tục môi trường",
+    "keywords": [
+      "môi trường","rác thải","ô nhiễm","nước thải","bảo vệ môi trường"
+    ]
+  },
+
+  "nông nghiệp": {
+    "field": "Đất đai",
+    "search": "Thủ tục nông nghiệp",
+    "keywords": [
+      "nông nghiệp","chăn nuôi","trồng trọt","gia súc","gia cầm"
     ]
   },
 
   "bảo trợ xã hội": {
     "field": "Bảo trợ xã hội",
-    "search": "Trợ cấp bảo trợ xã hội",
+    "search": "Giải quyết trợ cấp bảo trợ xã hội",
     "keywords": [
-      "trợ cấp","bảo trợ","người cao tuổi",
-      "khuyết tật","hộ nghèo","hộ cận nghèo",
-      "mai táng phí","người già"
+      "trợ cấp","bảo trợ","người cao tuổi","khuyết tật",
+      "hộ nghèo","hộ cận nghèo","mai táng phí","người già"
     ]
   },
 
   "người có công": {
-    "field": "Người có công",
+    "field": "Bảo trợ xã hội",
     "search": "Chế độ người có công",
     "keywords": [
-      "thương binh","liệt sĩ","người có công",
-      "gia đình có công","chính sách"
+      "người có công","thương binh","liệt sĩ","gia đình có công"
+    ]
+  },
+
+  "giáo dục": {
+    "field": "Bảo trợ xã hội",
+    "search": "Thủ tục giáo dục",
+    "keywords": [
+      "giáo dục","miễn giảm học phí","học sinh","trường học"
+    ]
+  },
+
+  "y tế": {
+    "field": "Bảo trợ xã hội",
+    "search": "Thủ tục bảo hiểm y tế",
+    "keywords": [
+      "y tế","bhyt","bảo hiểm y tế","thẻ bhyt","khám chữa bệnh"
+    ]
+  },
+
+  "văn thư": {
+    "field": "Văn thư",
+    "search": "Văn thư - Trả kết quả",
+    "keywords": [
+      "văn thư","trình ký","trả kết quả","nhận kết quả"
+    ]
+  },
+
+  "hạ tầng số": {
+    "field": "Hạ tầng số",
+    "search": "Hỗ trợ chuyển đổi số",
+    "keywords": [
+      "chuyển đổi số","định danh điện tử","vneid","chữ ký số","dịch vụ công trực tuyến"
     ]
   }
 }
