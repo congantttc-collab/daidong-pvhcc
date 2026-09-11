@@ -1,0 +1,191 @@
+{
+  "land": {
+    "title": "Thủ tục đất đai",
+    "field": "Đất đai",
+    "steps": [
+      {
+        "id": "action",
+        "question": "🏡 Bà con muốn thực hiện nội dung nào?",
+        "options": [
+          "Tách thửa",
+          "Sang tên / Chuyển nhượng",
+          "Cho tặng quyền sử dụng đất",
+          "Thừa kế quyền sử dụng đất",
+          "Cấp sổ lần đầu"
+        ]
+      },
+      {
+        "id": "owner",
+        "question": "📋 Giấy chứng nhận hiện đứng tên ai?",
+        "options": [
+          "Cá nhân",
+          "Vợ chồng",
+          "Hộ gia đình"
+        ]
+      },
+      {
+        "id": "book",
+        "question": "📕 Thửa đất đã có Giấy chứng nhận (Sổ đỏ) chưa?",
+        "options": [
+          "Đã có",
+          "Chưa có"
+        ]
+      }
+    ]
+  },
+
+  "business": {
+    "title": "Hộ kinh doanh",
+    "field": "Hộ kinh doanh",
+    "steps": [
+      {
+        "id": "type",
+        "question": "🏪 Bà con cần thực hiện nội dung nào?",
+        "options": [
+          "Đăng ký hộ kinh doanh",
+          "Tạm ngừng",
+          "Chấm dứt"
+        ]
+      },
+      {
+        "id": "place",
+        "question": "📍 Địa điểm kinh doanh ở xã Đại Đồng phải không?",
+        "options": [
+          "Đúng",
+          "Không"
+        ]
+      }
+    ]
+  },
+
+  "civil": {
+    "title": "Hộ tịch",
+    "field": "Tư pháp - Hộ tịch",
+    "steps": [
+      {
+        "id": "type",
+        "question": "📑 Bà con cần thực hiện thủ tục nào?",
+        "options": [
+          "Khai sinh",
+          "Khai tử",
+          "Kết hôn",
+          "Xác nhận độc thân"
+        ]
+      }
+    ]
+  },
+
+  "social": {
+    "title": "Bảo trợ xã hội",
+    "field": "Bảo trợ xã hội",
+    "steps": [
+      {
+        "id": "group",
+        "question": "❤️ Bà con thuộc nhóm đối tượng nào?",
+        "options": [
+          "Người cao tuổi",
+          "Người khuyết tật",
+          "Hộ nghèo / Cận nghèo",
+          "Mai táng phí"
+        ]
+      }
+    ]
+  },
+
+  "construction": {
+    "title": "Xây dựng",
+    "field": "Đất đai",
+    "steps": [
+      {
+        "id": "kind",
+        "question": "🏠 Công trình của bà con là gì?",
+        "options": [
+          "Xây nhà mới",
+          "Sửa chữa nhà",
+          "Công trình khác"
+        ]
+      }
+    ]
+  },
+
+  "food": {
+    "title": "An toàn thực phẩm",
+    "field": "An toàn thực phẩm",
+    "steps": [
+      {
+        "id": "facility",
+        "question": "🍜 Cơ sở của bà con thuộc loại nào?",
+        "options": [
+          "Quán ăn",
+          "Nhà hàng",
+          "Cơ sở chế biến",
+          "Cửa hàng thực phẩm"
+        ]
+      }
+    ]
+  },
+
+  "education": {
+    "title": "Giáo dục",
+    "field": "Bảo trợ xã hội",
+    "steps": [
+      {
+        "id": "edu",
+        "question": "🎓 Nội dung cần hỗ trợ là gì?",
+        "options": [
+          "Miễn giảm học phí",
+          "Xác nhận học sinh",
+          "Hỗ trợ giáo dục"
+        ]
+      }
+    ]
+  },
+
+  "health": {
+    "title": "Y tế",
+    "field": "Bảo trợ xã hội",
+    "steps": [
+      {
+        "id": "health",
+        "question": "🩺 Bà con cần nội dung nào?",
+        "options": [
+          "Cấp mới BHYT",
+          "Cấp lại BHYT",
+          "Điều chỉnh thông tin BHYT"
+        ]
+      }
+    ]
+  },
+
+  "digital": {
+    "title": "Hạ tầng số",
+    "field": "Hạ tầng số",
+    "steps": [
+      {
+        "id": "digital",
+        "question": "💻 Bà con cần hỗ trợ gì?",
+        "options": [
+          "Định danh điện tử VNeID",
+          "Chữ ký số",
+          "Nộp hồ sơ trực tuyến"
+        ]
+      }
+    ]
+  },
+
+  "office": {
+    "title": "Văn thư",
+    "field": "Văn thư",
+    "steps": [
+      {
+        "id": "office",
+        "question": "📨 Bà con cần gì?",
+        "options": [
+          "Trình ký",
+          "Nhận kết quả",
+          "Tra cứu hồ sơ"
+        ]
+      }
+    ]
+  }
+}
