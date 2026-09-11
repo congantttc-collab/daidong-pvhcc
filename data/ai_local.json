@@ -77,18 +77,12 @@
   ],
 
   "synonyms": {
-    "khai sinh": [
-      "khai sinh",
-      "đăng ký khai sinh",
-      "giấy khai sinh",
-      "làm khai sinh",
-      "con mới sinh",
-      "con tôi mới sinh",
-      "em bé mới sinh",
-      "bé mới sinh",
-      "sinh con",
-      "trẻ mới sinh"
-    ],
+  "khai sinh": ["khai sinh","sinh","em bé","trẻ","con mới sinh","giấy khai sinh"],
+  "khai tử": ["khai tử","qua đời","mất","từ trần","người chết"],
+  "kết hôn": ["kết hôn","đăng ký kết hôn","cưới","vợ chồng"],
+  "chứng thực": ["chứng thực","công chứng","sao y","photo","cccd","căn cước"],
+  "đất đai": ["đất","sổ đỏ","tách","thửa","sang tên","chuyển nhượng","cấp sổ","biến động"]
+},
 
     "khai tử": [
       "khai tử",
