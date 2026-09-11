@@ -1,4 +1,4 @@
-// ===== TRỢ LÝ AI PVHCC ĐẠI ĐỒNG =====
+// ===== TRỢ LÝ AI PVHCC XÃ ĐẠI ĐỒNG =====
 document.addEventListener("DOMContentLoaded", () => {
 
   const aiChat   = document.getElementById("ai-chat");
@@ -10,23 +10,22 @@ document.addEventListener("DOMContentLoaded", () => {
 
   let localData = {};
 
-  // Đọc dữ liệu xã
+  // Đọc dữ liệu địa phương
   fetch("./data/ai_local.json")
     .then(r => r.json())
     .then(data => localData = data)
     .catch(() => console.log("Không đọc được ai_local.json"));
 
-  // Mở cửa sổ
+  // Mở / đóng cửa sổ
   aiToggle.addEventListener("click", () => {
     aiChat.classList.add("active");
   });
 
-  // Đóng cửa sổ
   aiClose.addEventListener("click", () => {
     aiChat.classList.remove("active");
   });
 
-  // Thêm tin nhắn
+  // Hiển thị tin nhắn
   function addMessage(text, me = false){
     const div = document.createElement("div");
     div.className = me ? "ai-message user" : "ai-message bot";
@@ -35,107 +34,71 @@ document.addEventListener("DOMContentLoaded", () => {
     aiBody.scrollTop = aiBody.scrollHeight;
   }
 
-  // Trả lời
-  // Tạo đường dẫn tìm kiếm trên Cổng DVC Quốc gia
-function createDVCLink(keyword){
-    return "https://dichvucong.gov.vn/p/home/dvc-tthc-category.html?keyword="
-        + encodeURIComponent(keyword);
-}
-function reply(q){
+  // Trả lời AI
+  function reply(q){
 
-  const t = q.toLowerCase();
+    const t = q.toLowerCase();
 
-  // ===== Thông tin của xã =====
-  if(t.includes("giờ làm")){
-      return addMessage(`🕒 ${localData.center.working_hours}`);
-  }
+    // ===== Thông tin của xã =====
+    if(t.includes("giờ làm")){
+      addMessage(`🕒 ${localData.center.working_hours}`);
+      return;
+    }
 
-  if(t.includes("điện thoại")){
-      return addMessage(`☎ ${localData.center.phone}`);
-  }
+    if(t.includes("điện thoại") || t.includes("liên hệ")){
+      addMessage(`☎ ${localData.center.phone}`);
+      return;
+    }
 
-  if(t.includes("địa chỉ") || t.includes("ở đâu")){
-      return addMessage(`📍 ${localData.center.address}`);
-  }
+    if(t.includes("địa chỉ") || t.includes("ở đâu")){
+      addMessage(`📍 ${localData.center.address}`);
+      return;
+    }
 
-  if(t.includes("tiếp công dân")){
-      return addMessage(
+    if(t.includes("tiếp công dân")){
+      addMessage(
 `📅 ${localData.citizen_reception.day}
 🕗 ${localData.citizen_reception.time}
 📍 ${localData.citizen_reception.location}`);
-  }
+      return;
+    }
 
-  // ===== Nhận diện thủ tục =====
-// ===== Tra cứu thủ tục từ ai_local.json =====
-if (localData.dvc_links) {
+    // ===== Thủ tục DVC Quốc gia =====
+    if(localData.dvc_links){
 
-    // ===== Tra cứu thủ tục =====
-if (localData.dvc_links) {
-
-    const found = Object.keys(localData.dvc_links)
+      const found = Object.keys(localData.dvc_links)
         .find(key => t.includes(key));
 
-    if (found) {
+      if(found){
 
         const url = localData.dvc_links[found];
 
         addMessage(
-`📌 Tôi đã xác định thủ tục: ${found.toUpperCase()}.
+`📌 <b>${found.toUpperCase()}</b>
 
-Bà con bấm nút dưới đây để mở đúng thủ tục trên Cổng Dịch vụ công Quốc gia.
-
-<a href="${url}" target="_blank" class="ai-link-btn">
-🔗 MỞ THỦ TỤC TRÊN CỔNG DVC
-</a>`, false);
-
-        return;
-    }
-}
-  if(found){
-
-      const url = createDVCLink(found);
-
-      return addMessage(`
-📌 <b>${found.toUpperCase()}</b>
-
-Thủ tục này được tra cứu trên Cổng Dịch vụ công Quốc gia.
+Thủ tục này được thực hiện trên Cổng Dịch vụ công Quốc gia.
 
 <a href="${url}" target="_blank" class="ai-link-btn">
 🔗 MỞ THỦ TỤC TRÊN CỔNG DVC
 </a>`);
+        return;
+      }
+    }
+
+    // ===== Mặc định =====
+    addMessage(
+`Xin chào bà con!
+
+Tôi có thể hỗ trợ:
+
+• Tra cứu thủ tục hành chính
+• Giờ làm việc
+• Tiếp công dân
+• Điện thoại liên hệ
+• Địa chỉ Trung tâm PVHCC`);
   }
 
-  return addMessage(
-"Xin lỗi, tôi chưa hiểu câu hỏi. Bà con có thể hỏi về thủ tục, giờ làm việc, tiếp công dân hoặc số điện thoại."
-  );
-}
-    else if(t.includes("tiếp công dân")){
-      res = "📅 Thứ Tư hằng tuần\n🕗 08:00–11:30\n📍 Phòng Tiếp công dân";
-    }
-    else if(t.includes("điện thoại")){
-      res = "☎ 0984 803 163";
-    }
-    else if(t.includes("địa chỉ")){
-      res = "📍 Số 02 Nguyễn Sỹ Sách, Thôn Dũng 1, xã Đại Đồng";
-    }
-    else if(
-      t.includes("khai sinh") ||
-      t.includes("kết hôn") ||
-      t.includes("khai tử") ||
-      t.includes("chứng thực") ||
-      t.includes("đất đai") ||
-      t.includes("thủ tục")
-    ){
-      res = `📌 Thủ tục này được tra cứu trên Cổng Dịch vụ công Quốc gia.
-
-👉 https://dichvucong.gov.vn
-
-Tôi sẽ hỗ trợ thông tin liên hệ và cán bộ xử lý tại xã Đại Đồng.`;
-    }
-
-    setTimeout(() => addMessage(res), 300);
-  }
-
+  // Gửi tin nhắn
   function send(){
     const txt = aiInput.value.trim();
     if(!txt) return;
@@ -145,16 +108,17 @@ Tôi sẽ hỗ trợ thông tin liên hệ và cán bộ xử lý tại xã Đ�
   }
 
   aiSend.addEventListener("click", send);
-  aiInput.addEventListener("keydown", e => {
-    if(e.key === "Enter") send();
+
+  aiInput.addEventListener("keydown", e=>{
+    if(e.key==="Enter") send();
   });
 
   // Chip gợi ý
   document.querySelectorAll(".ai-chip").forEach(chip=>{
-    chip.onclick = ()=>{
+    chip.addEventListener("click", ()=>{
       aiInput.value = chip.innerText;
       send();
-    }
+    });
   });
 
 });
