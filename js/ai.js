@@ -69,19 +69,22 @@ function reply(q){
 // ===== Tra cứu thủ tục từ ai_local.json =====
 if (localData.dvc_links) {
 
+    // ===== Tra cứu thủ tục =====
+if (localData.dvc_links) {
+
     const found = Object.keys(localData.dvc_links)
         .find(key => t.includes(key));
 
     if (found) {
+
+        const url = localData.dvc_links[found];
 
         addMessage(
 `📌 Tôi đã xác định thủ tục: ${found.toUpperCase()}.
 
 Bà con bấm nút dưới đây để mở đúng thủ tục trên Cổng Dịch vụ công Quốc gia.
 
-<a href="${localData.dvc_links[found]}"
-   target="_blank"
-   class="ai-link-btn">
+<a href="${url}" target="_blank" class="ai-link-btn">
 🔗 MỞ THỦ TỤC TRÊN CỔNG DVC
 </a>`, false);
 
