@@ -14,7 +14,48 @@ document.addEventListener("DOMContentLoaded", () => {
 
     let DATA = {};
     let READY = false;
+// ===== TÌM CÁN BỘ PHỤ TRÁCH =====
+function findOfficers(question){
 
+    if(!DATA.officers) return [];
+
+    const q = question.toLowerCase();
+
+    return DATA.officers.filter(o=>{
+        const f = o.field.toLowerCase();
+
+        return (
+            f.includes(q) ||
+
+            (q.includes("khai sinh") && f.includes("hộ tịch")) ||
+            (q.includes("khai tử") && f.includes("hộ tịch")) ||
+            (q.includes("kết hôn") && f.includes("hộ tịch")) ||
+            (q.includes("chứng thực") && f.includes("hộ tịch")) ||
+            (q.includes("công chứng") && f.includes("hộ tịch")) ||
+            (q.includes("sao y") && f.includes("hộ tịch")) ||
+
+            (q.includes("đất") && f.includes("đất")) ||
+            (q.includes("sổ đỏ") && f.includes("đất")) ||
+            (q.includes("tách thửa") && f.includes("đất")) ||
+            (q.includes("xây dựng") && f.includes("xây dựng")) ||
+
+            (q.includes("hộ kinh doanh") && f.includes("hộ kinh doanh")) ||
+            (q.includes("thế chấp") && f.includes("thế chấp")) ||
+
+            (q.includes("bảo trợ") && f.includes("bảo trợ")) ||
+            (q.includes("người có công") && f.includes("người có công")) ||
+            (q.includes("giáo dục") && f.includes("giáo dục")) ||
+            (q.includes("y tế") && f.includes("y tế")) ||
+
+            (q.includes("văn thư") && f.includes("văn thư")) ||
+            (q.includes("trình ký") && f.includes("trình ký")) ||
+            (q.includes("trả kết quả") && f.includes("trả kết quả")) ||
+
+            (q.includes("chuyển đổi số") && f.includes("hạ tầng số")) ||
+            (q.includes("kỹ năng số") && f.includes("kỹ năng số"))
+        );
+    });
+}
     // ===== ĐỌC DỮ LIỆU JSON =====
     fetch("data/ai_local.json")
         .then(r => r.json())
