@@ -5,28 +5,25 @@
     "category": "Hoạt động",
     "title": "Khai trương Trung tâm Phục vụ Hành chính công xã Đại Đồng",
     "summary": "Trung tâm PVHCC xã Đại Đồng chính thức khai trương, đánh dấu bước chuyển đổi mạnh mẽ trong cải cách hành chính.",
-  "image": "assets/banner/hero.jpg"
-
-  "content": [
-  "Sáng ngày 08/9/2026, UBND xã Đại Đồng chính thức khai trương Trung tâm Phục vụ Hành chính công nhằm nâng cao chất lượng phục vụ người dân và doanh nghiệp.",
-  "Trung tâm được đầu tư theo mô hình hành chính hiện đại, bố trí khu vực tiếp nhận, hướng dẫn, số hóa hồ sơ và trả kết quả theo cơ chế một cửa.",
-  "Người dân có thể thực hiện nhiều thủ tục hành chính ngay tại một địa điểm với quy trình công khai, minh bạch và thuận tiện."
-],
-
+    "image": "assets/banner/hero.jpg",
+    "content": [
+      "Sáng ngày 08/9/2026, UBND xã Đại Đồng chính thức khai trương Trung tâm Phục vụ Hành chính công nhằm nâng cao chất lượng phục vụ người dân và doanh nghiệp.",
+      "Trung tâm được đầu tư theo mô hình hành chính hiện đại, bố trí khu vực tiếp nhận, hướng dẫn, số hóa hồ sơ và trả kết quả theo cơ chế một cửa.",
+      "Người dân có thể thực hiện nhiều thủ tục hành chính ngay tại một địa điểm với quy trình công khai, minh bạch và thuận tiện."
+    ],
     "goals": [
       "Tiếp nhận và giải quyết thủ tục hành chính nhanh chóng.",
       "100% hồ sơ được theo dõi trên môi trường số.",
       "Hỗ trợ nộp hồ sơ trực tuyến mức độ toàn trình."
     ]
   },
-
   {
     "id": 2,
     "date": "07/09/2026",
     "category": "Thông báo",
     "title": "Hướng dẫn nộp hồ sơ trực tuyến mức độ toàn trình",
     "summary": "Hướng dẫn người dân thực hiện nộp hồ sơ trực tuyến trên Cổng Dịch vụ công Quốc gia.",
-  "image": "assets/banner/hero.jpg",
+    "image": "assets/banner/hero.jpg",
     "content": [
       "UBND xã hướng dẫn người dân thực hiện nộp hồ sơ trực tuyến mức độ toàn trình.",
       "Người dân có thể sử dụng tài khoản VNeID hoặc Cổng DVC Quốc gia để đăng nhập."
