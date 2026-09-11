@@ -1340,3 +1340,157 @@ footer iframe{
         font-size:19px;
     }
 }
+/* ===== TRỢ LÝ AI PVHCC ===== */
+
+.ai-fab{
+    position:fixed;
+    right:24px;
+    bottom:24px;
+    width:64px;
+    height:64px;
+    border:none;
+    border-radius:50%;
+    background:#d70018;
+    color:#fff;
+    cursor:pointer;
+    box-shadow:0 10px 28px rgba(0,0,0,.25);
+    z-index:9999;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:30px;
+    transition:.25s;
+}
+
+.ai-fab:hover{
+    transform:translateY(-4px);
+    background:#b80014;
+}
+
+.ai-fab span{
+    position:absolute;
+    right:74px;
+    white-space:nowrap;
+    background:#d70018;
+    color:#fff;
+    padding:8px 12px;
+    border-radius:999px;
+    font-size:13px;
+    opacity:0;
+    transform:translateX(8px);
+    transition:.25s;
+}
+
+.ai-fab:hover span{
+    opacity:1;
+    transform:translateX(0);
+}
+
+.ai-chat{
+    position:fixed;
+    right:24px;
+    bottom:100px;
+    width:360px;
+    height:520px;
+    background:#fff;
+    border-radius:18px;
+    overflow:hidden;
+    box-shadow:0 20px 50px rgba(0,0,0,.22);
+    z-index:9998;
+    display:none;
+    flex-direction:column;
+}
+
+.ai-chat.active{
+    display:flex;
+}
+
+.ai-header{
+    background:#d70018;
+    color:#fff;
+    padding:16px 18px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.ai-header h3{
+    margin:0;
+    font-size:18px;
+}
+
+.ai-header small{
+    opacity:.9;
+}
+
+.ai-header button{
+    background:none;
+    border:none;
+    color:#fff;
+    font-size:20px;
+    cursor:pointer;
+}
+
+.ai-body{
+    flex:1;
+    padding:16px;
+    background:#f8fafc;
+    overflow-y:auto;
+}
+
+.ai-message{
+    padding:12px 14px;
+    border-radius:14px;
+    margin-bottom:12px;
+    line-height:1.6;
+    font-size:14px;
+}
+
+.ai-message.bot{
+    background:#fff;
+    border:1px solid #eee;
+}
+
+.ai-message.user{
+    background:#ffe7ea;
+    margin-left:40px;
+}
+
+.ai-suggest{
+    padding:10px 14px;
+    display:flex;
+    gap:8px;
+    flex-wrap:wrap;
+    border-top:1px solid #eee;
+}
+
+.ai-chip{
+    border:none;
+    background:#f1f5f9;
+    border-radius:999px;
+    padding:7px 12px;
+    cursor:pointer;
+    font-size:13px;
+}
+
+.ai-input{
+    display:flex;
+    border-top:1px solid #eee;
+}
+
+.ai-input input{
+    flex:1;
+    border:none;
+    padding:14px;
+    outline:none;
+    font-size:14px;
+}
+
+.ai-input button{
+    width:60px;
+    border:none;
+    background:#d70018;
+    color:#fff;
+    cursor:pointer;
+    font-size:18px;
+}
