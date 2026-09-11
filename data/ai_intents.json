@@ -1,0 +1,97 @@
+{
+  "khai sinh": {
+    "field": "Tư pháp - Hộ tịch",
+    "search": "Đăng ký khai sinh",
+    "keywords": [
+      "khai sinh","đăng ký khai sinh","giấy khai sinh",
+      "con mới sinh","con tôi mới sinh","em bé mới sinh",
+      "trẻ mới sinh","sinh con","làm giấy cho con",
+      "đăng ký cho con","làm khai sinh","bé mới đẻ",
+      "thêm tên cho con","làm giấy khai sinh"
+    ]
+  },
+
+  "khai tử": {
+    "field": "Tư pháp - Hộ tịch",
+    "search": "Đăng ký khai tử",
+    "keywords": [
+      "khai tử","đăng ký khai tử","giấy khai tử",
+      "bố mất","mẹ mất","ông mất","bà mất",
+      "qua đời","người mất","người chết",
+      "làm giấy báo tử"
+    ]
+  },
+
+  "kết hôn": {
+    "field": "Tư pháp - Hộ tịch",
+    "search": "Đăng ký kết hôn",
+    "keywords": [
+      "kết hôn","đăng ký kết hôn","giấy kết hôn",
+      "đăng ký cưới","làm giấy cưới","đi cưới",
+      "vợ chồng","đăng ký vợ chồng"
+    ]
+  },
+
+  "chứng thực": {
+    "field": "Tư pháp - Hộ tịch",
+    "search": "Chứng thực bản sao từ bản chính",
+    "keywords": [
+      "chứng thực","công chứng","sao y",
+      "photo công chứng","photo cccd","công chứng cccd",
+      "photo bằng","sao y học bạ","sao y bằng tốt nghiệp",
+      "chứng thực giấy tờ","bản sao"
+    ]
+  },
+
+  "đất đai": {
+    "field": "Đất đai",
+    "search": "Thủ tục đất đai",
+    "keywords": [
+      "đất","đất đai","sổ đỏ","sổ hồng",
+      "tách thửa","tách sổ","chia đất",
+      "chuyển nhượng","sang tên","bán đất",
+      "mua đất","cấp sổ","biến động đất",
+      "cho tặng đất","thừa kế đất"
+    ]
+  },
+
+  "hộ kinh doanh": {
+    "field": "Hộ kinh doanh",
+    "search": "Đăng ký hộ kinh doanh",
+    "keywords": [
+      "hộ kinh doanh","mở quán","mở cửa hàng",
+      "mở tiệm","kinh doanh","quán cafe",
+      "quán ăn","tiệm tóc","shop quần áo",
+      "đăng ký kinh doanh"
+    ]
+  },
+
+  "an toàn thực phẩm": {
+    "field": "An toàn thực phẩm",
+    "search": "Cấp giấy chứng nhận an toàn thực phẩm",
+    "keywords": [
+      "an toàn thực phẩm","vsattp","giấy attp",
+      "vệ sinh an toàn","quán ăn","nhà hàng",
+      "cơ sở thực phẩm"
+    ]
+  },
+
+  "bảo trợ xã hội": {
+    "field": "Bảo trợ xã hội",
+    "search": "Trợ cấp bảo trợ xã hội",
+    "keywords": [
+      "trợ cấp","bảo trợ","người cao tuổi",
+      "khuyết tật","hộ nghèo","hộ cận nghèo",
+      "mai táng phí","người già"
+    ]
+  },
+
+  "người có công": {
+    "field": "Người có công",
+    "search": "Chế độ người có công",
+    "keywords": [
+      "thương binh","liệt sĩ","người có công",
+      "gia đình có công","chính sách"
+    ]
+  }
+}
