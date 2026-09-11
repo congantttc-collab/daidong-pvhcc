@@ -1,0 +1,31 @@
+{
+  "center": {
+    "name": "Trung tâm Phục vụ Hành chính công xã Đại Đồng",
+    "address": "Số 02 Nguyễn Sỹ Sách, Thôn Dũng 1, xã Đại Đồng, tỉnh Nghệ An",
+    "phone": "0984 803 163",
+    "email": "hccdaidong@nghean.gov.vn",
+    "working_hours": "Thứ Hai đến Thứ Sáu: 07:00 - 17:00"
+  },
+  "citizen_reception": {
+    "day": "Thứ Tư hằng tuần",
+    "time": "08:00 - 11:30",
+    "location": "Phòng Tiếp công dân - Trung tâm PVHCC"
+  },
+  "staff": [
+    {
+      "field": "Hộ tịch",
+      "name": "Cán bộ Hộ tịch",
+      "phone": "0984 803 163"
+    },
+    {
+      "field": "Chứng thực",
+      "name": "Cán bộ Một cửa",
+      "phone": "0984 803 163"
+    },
+    {
+      "field": "Đất đai",
+      "name": "Cán bộ Địa chính",
+      "phone": "0984 803 163"
+    }
+  ]
+}
