@@ -90,8 +90,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     }
 
-    // ================= TÌM THỦ TỤC =================
-    // ===== AI 3.0 - Nhận diện thủ tục thông minh =====
+    // ================= AI 3.0 - NHẬN DIỆN THỦ TỤC =================
 function detectProcedure(question){
 
     if(!DATA.synonyms) return null;
@@ -110,7 +109,7 @@ function detectProcedure(question){
             const w = word.toLowerCase();
 
             if(q.includes(w)){
-                point += w.length;      // từ càng dài càng chính xác
+                point += w.length;
             }
 
         });
@@ -123,15 +122,7 @@ function detectProcedure(question){
     }
 
     return score > 0 ? best : null;
-
 }
-
-        }
-
-        return null;
-
-    }
-
     // ================= TRẢ LỜI =================
     function reply(question){
 
