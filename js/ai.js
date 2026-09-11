@@ -64,10 +64,24 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     // ===== Thủ tục DVC Quốc gia =====
-    if(localData.dvc_links){
+   // ===== AI hiểu ngôn ngữ tự nhiên =====
+let found = null;
 
-      const found = Object.keys(localData.dvc_links)
-        .find(key => t.includes(key));
+if (localData.synonyms) {
+
+    Object.entries(localData.synonyms).forEach(([procedure, words]) => {
+
+        if (found) return;
+
+        words.forEach(word => {
+            if (t.includes(word.toLowerCase())) {
+                found = procedure;
+            }
+        });
+
+    });
+
+}
 
       if(found){
 
