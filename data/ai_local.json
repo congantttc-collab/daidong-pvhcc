@@ -31,16 +31,18 @@
     }
   ],
 
-  "synonyms": {
-    "khai sinh": [
-      "khai sinh",
-      "đăng ký khai sinh",
-      "giấy khai sinh",
-      "làm khai sinh",
-      "con mới sinh",
-      "em bé mới sinh",
-      "sinh con"
-    ],
+  "khai sinh": [
+  "khai sinh",
+  "đăng ký khai sinh",
+  "giấy khai sinh",
+  "làm khai sinh",
+  "con mới sinh",
+  "con tôi mới sinh",
+  "em bé mới sinh",
+  "sinh con",
+  "trẻ mới sinh",
+  "bé mới sinh"
+]
 
     "khai tử": [
       "khai tử",
