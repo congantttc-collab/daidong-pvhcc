@@ -2,7 +2,7 @@
   "center": {
     "name": "Trung tâm Phục vụ Hành chính công xã Đại Đồng",
     "address": "Số 02 Nguyễn Sỹ Sách, Thôn Dũng 1, xã Đại Đồng, tỉnh Nghệ An",
-    "phone": "0984 803 163",
+    "phone": "0984803163",
     "email": "hccdaidong@nghean.gov.vn",
     "working_hours": "Thứ Hai đến Thứ Sáu: 07:30 - 17:00"
   },
@@ -77,48 +77,11 @@
   ],
 
   "synonyms": {
-  "khai sinh": ["khai sinh","sinh","em bé","trẻ","con mới sinh","giấy khai sinh"],
-  "khai tử": ["khai tử","qua đời","mất","từ trần","người chết"],
-  "kết hôn": ["kết hôn","đăng ký kết hôn","cưới","vợ chồng"],
-  "chứng thực": ["chứng thực","công chứng","sao y","photo","cccd","căn cước"],
-  "đất đai": ["đất","sổ đỏ","tách","thửa","sang tên","chuyển nhượng","cấp sổ","biến động"]
-},
-
-    "khai tử": [
-      "khai tử",
-      "giấy khai tử",
-      "qua đời",
-      "người mất",
-      "bố tôi vừa qua đời",
-      "mẹ tôi mất"
-    ],
-
-    "kết hôn": [
-      "kết hôn",
-      "đăng ký kết hôn",
-      "cưới",
-      "làm giấy kết hôn"
-    ],
-
-    "chứng thực": [
-      "chứng thực",
-      "công chứng",
-      "sao y",
-      "photo công chứng",
-      "photo công chứng cccd",
-      "cccd",
-      "căn cước"
-    ],
-
-    "đất đai": [
-      "đất đai",
-      "sổ đỏ",
-      "tách sổ đỏ",
-      "tách thửa",
-      "cấp sổ",
-      "chuyển nhượng",
-      "biến động đất"
-    ]
+    "khai sinh": ["khai sinh","con mới sinh","em bé","giấy khai sinh","trẻ mới sinh"],
+    "khai tử": ["khai tử","qua đời","mất","người chết"],
+    "kết hôn": ["kết hôn","đăng ký kết hôn","cưới"],
+    "chứng thực": ["chứng thực","công chứng","sao y","photo","cccd","căn cước"],
+    "đất đai": ["đất","sổ đỏ","tách thửa","tách sổ","sang tên","chuyển nhượng"]
   },
 
   "dvc_links": {
