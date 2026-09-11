@@ -1,40 +1,32 @@
 fetch("./data/calendar.json")
   .then(res => res.json())
-  .then(events => {
+  .then(items => {
     const box = document.getElementById("calendar-list");
     if (!box) return;
 
-    const today = new Date();
-    const todayStr = today.toISOString().slice(0, 10);
+    box.innerHTML = items.slice(0, 5).map(item => `
+      <div class="calendar-item">
 
-    box.innerHTML = events.slice(0, 5).map(ev => {
-      const isToday = ev.fullDate === todayStr;
-
-      return `
-      <a href="pages/calendar.html?id=${ev.id}" class="calendar-item ${isToday ? 'today' : ''}">
-        <div class="cal-date">
-          <span class="weekday">${ev.weekday}</span>
-          <span class="day">${ev.day}</span>
-          <span class="month">${ev.month}</span>
+        <div class="calendar-date">
+          <div class="calendar-day">${item.weekday}</div>
+          <div class="calendar-number">${item.day}</div>
+          <div class="calendar-month">${item.month}</div>
         </div>
 
-        <div class="cal-content">
-          <div class="cal-top">
-            <h3>${ev.title}</h3>
-            ${isToday ? '<span class="today-badge">HÔM NAY</span>' : ''}
-          </div>
+        <div class="calendar-content">
+          <h3>${item.title}</h3>
 
-          <div class="cal-meta">
-            📍 ${ev.location}
+          <div class="calendar-meta">
+            <span>📍 ${item.location}</span>
           </div>
         </div>
 
-        <div class="cal-right">
-          <span class="type">${ev.type}</span>
-          <span class="time">${ev.time}</span>
+        <div class="calendar-right">
+          <span class="calendar-type">${item.type}</span>
+          <span class="calendar-time">${item.time}</span>
         </div>
-      </a>
-      `;
-    }).join("");
+
+      </div>
+    `).join("");
   })
   .catch(err => console.error("Calendar:", err));
