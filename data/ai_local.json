@@ -13,12 +13,68 @@
     "location": "Phòng Tiếp công dân - Trung tâm PVHCC"
   },
 
-  "staff": [
-    {
-      "field": "Hộ tịch",
-      "name": "Cán bộ Hộ tịch",
-      "phone": "0984 803 163"
-    },
+  "officers":[
+  {
+    "name":"Trần Võ Hiệp",
+    "position":"Giám đốc",
+    "field":"Chỉ đạo chung",
+    "phone":"0396802062"
+  },
+  {
+    "name":"Nguyễn Đăng Tuấn",
+    "position":"Phó Giám đốc",
+    "field":"Kiểm soát TTHC, Hạ tầng số, Kỹ năng số",
+    "phone":"0984803163"
+  },
+  {
+    "name":"Nguyễn Thị Thu",
+    "position":"Công chức",
+    "field":"Văn thư, Thủ quỹ",
+    "phone":"0976742472"
+  },
+  {
+    "name":"Nguyễn Thị Hiền",
+    "position":"Công chức",
+    "field":"Kế toán, Trình ký, Trả kết quả",
+    "phone":"0382760970"
+  },
+  {
+    "name":"Nguyễn Thị Hoa",
+    "position":"Công chức",
+    "field":"Tư pháp - Hộ tịch",
+    "phone":"0976375977"
+  },
+  {
+    "name":"Trần Thị Bình",
+    "position":"Công chức",
+    "field":"Tư pháp - Hộ tịch",
+    "phone":"0399503325"
+  },
+  {
+    "name":"Nguyễn Hữu Hùng",
+    "position":"Công chức",
+    "field":"Tư pháp - Hộ tịch",
+    "phone":"0362674778"
+  },
+  {
+    "name":"Nguyễn Thị Thúy",
+    "position":"Công chức",
+    "field":"Đất đai, Xây dựng, Nông nghiệp, Môi trường",
+    "phone":"0981426689"
+  },
+  {
+    "name":"Đinh Thị Lan",
+    "position":"Công chức",
+    "field":"An toàn thực phẩm, Hộ kinh doanh, Thế chấp, Công thương",
+    "phone":"0977564346"
+  },
+  {
+    "name":"Nguyễn Thị Kim Oanh",
+    "position":"Công chức",
+    "field":"Người có công, Bảo trợ xã hội, Giáo dục, Y tế",
+    "phone":"0988349191"
+  }
+]
     {
       "field": "Chứng thực",
       "name": "Cán bộ Một cửa",
