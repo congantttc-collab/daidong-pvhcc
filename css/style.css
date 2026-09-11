@@ -1182,3 +1182,108 @@ footer iframe{
 .print{
     background:#6b7280;
 }
+/* ===== VĂN BẢN MỚI BAN HÀNH ===== */
+
+.document-list{
+    display:flex;
+    flex-direction:column;
+    gap:18px;
+    margin-top:30px;
+}
+
+.doc-item{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:20px;
+    background:#fff;
+    border:1px solid #ececec;
+    border-left:4px solid #d70000;
+    border-radius:16px;
+    padding:18px 22px;
+    text-decoration:none;
+    transition:.25s;
+    box-shadow:0 6px 18px rgba(0,0,0,.04);
+}
+
+.doc-item:hover{
+    transform:translateY(-3px);
+    box-shadow:0 12px 28px rgba(0,0,0,.08);
+}
+
+.doc-left{
+    flex:1;
+}
+
+.doc-meta{
+    display:flex;
+    gap:8px;
+    font-size:13px;
+    color:#7b7b7b;
+    margin-bottom:8px;
+}
+
+.doc-left h3{
+    font-size:24px;
+    color:#1a1a1a;
+    margin:0 0 10px;
+    line-height:1.45;
+    font-weight:700;
+}
+
+.doc-left p{
+    color:#666;
+    font-size:15px;
+    line-height:1.6;
+    margin:0;
+}
+
+.doc-right{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    flex-shrink:0;
+}
+
+.pdf-badge{
+    color:#c40000;
+    font-weight:700;
+    font-size:14px;
+}
+
+.type-badge{
+    background:#fdecec;
+    color:#c40000;
+    padding:7px 14px;
+    border-radius:999px;
+    font-size:13px;
+    font-weight:700;
+}
+
+.doc-arrow{
+    color:#d70000;
+    font-size:22px;
+    font-weight:bold;
+    transition:.25s;
+}
+
+.doc-item:hover .doc-arrow{
+    transform:translateX(6px);
+}
+
+@media(max-width:768px){
+
+    .doc-item{
+        flex-direction:column;
+        align-items:flex-start;
+    }
+
+    .doc-right{
+        width:100%;
+        justify-content:flex-end;
+    }
+
+    .doc-left h3{
+        font-size:19px;
+    }
+}
