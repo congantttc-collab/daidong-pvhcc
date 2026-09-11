@@ -36,13 +36,63 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   // Trả lời
-  function reply(q){
-    const t = q.toLowerCase();
-    let res = "Xin lỗi, vui lòng liên hệ Bộ phận Một cửa: 0984 803 163.";
+  // Tạo đường dẫn tìm kiếm trên Cổng DVC Quốc gia
+function createDVCLink(keyword){
+    return "https://dichvucong.gov.vn/p/home/dvc-tthc-category.html?keyword="
+        + encodeURIComponent(keyword);
+}
+function reply(q){
 
-    if(t.includes("giờ làm")){
-      res = "🕒 Thứ Hai đến Thứ Sáu: 07:00–17:00";
-    }
+  const t = q.toLowerCase();
+
+  // ===== Thông tin của xã =====
+  if(t.includes("giờ làm")){
+      return addMessage(`🕒 ${localData.center.working_hours}`);
+  }
+
+  if(t.includes("điện thoại")){
+      return addMessage(`☎ ${localData.center.phone}`);
+  }
+
+  if(t.includes("địa chỉ") || t.includes("ở đâu")){
+      return addMessage(`📍 ${localData.center.address}`);
+  }
+
+  if(t.includes("tiếp công dân")){
+      return addMessage(
+`📅 ${localData.citizen_reception.day}
+🕗 ${localData.citizen_reception.time}
+📍 ${localData.citizen_reception.location}`);
+  }
+
+  // ===== Nhận diện thủ tục =====
+  const procedures = [
+    "khai sinh","kết hôn","khai tử",
+    "chứng thực","đất đai","tách thửa",
+    "cấp sổ đỏ","xác nhận tình trạng hôn nhân",
+    "đổi tên","cải chính hộ tịch"
+  ];
+
+  const found = procedures.find(p => t.includes(p));
+
+  if(found){
+
+      const url = createDVCLink(found);
+
+      return addMessage(`
+📌 <b>${found.toUpperCase()}</b>
+
+Thủ tục này được tra cứu trên Cổng Dịch vụ công Quốc gia.
+
+<a href="${url}" target="_blank" class="ai-link-btn">
+🔗 MỞ THỦ TỤC TRÊN CỔNG DVC
+</a>`);
+  }
+
+  return addMessage(
+"Xin lỗi, tôi chưa hiểu câu hỏi. Bà con có thể hỏi về thủ tục, giờ làm việc, tiếp công dân hoặc số điện thoại."
+  );
+}
     else if(t.includes("tiếp công dân")){
       res = "📅 Thứ Tư hằng tuần\n🕗 08:00–11:30\n📍 Phòng Tiếp công dân";
     }
