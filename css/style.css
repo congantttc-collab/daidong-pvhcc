@@ -1385,10 +1385,9 @@ footer iframe{
     flex-direction:column;
 }
 
-.ai-chat.open{
+.ai-chat.active{
     display:flex;
 }
-
 .ai-header{
   .ai-title{
     flex:1;
