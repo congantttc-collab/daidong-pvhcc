@@ -159,7 +159,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         if(procedure){
 
-            const officers = findOfficers(question);
+            const officers = findOfficers(procedure);
             const url = DATA.dvc_links[procedure];
 
             let html = `
