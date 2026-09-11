@@ -91,23 +91,40 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     // ================= TÌM THỦ TỤC =================
-    function detectProcedure(question){
+    // ===== AI 3.0 - Nhận diện thủ tục thông minh =====
+function detectProcedure(question){
 
-        if(!DATA.synonyms) return null;
+    if(!DATA.synonyms) return null;
 
-        const q = question.toLowerCase();
+    const q = question.toLowerCase();
 
-        for(const name in DATA.synonyms){
+    let best = null;
+    let score = 0;
 
-            const words = DATA.synonyms[name];
+    for(const procedure in DATA.synonyms){
 
-            for(const w of words){
+        let point = 0;
 
-                if(q.includes(w.toLowerCase())){
-                    return name;
-                }
+        DATA.synonyms[procedure].forEach(word=>{
 
+            const w = word.toLowerCase();
+
+            if(q.includes(w)){
+                point += w.length;      // từ càng dài càng chính xác
             }
+
+        });
+
+        if(point > score){
+            score = point;
+            best = procedure;
+        }
+
+    }
+
+    return score > 0 ? best : null;
+
+}
 
         }
 
