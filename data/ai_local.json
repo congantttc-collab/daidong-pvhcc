@@ -76,56 +76,42 @@
     }
   ],
 
-  "synonyms": {
-    "khai sinh": ["khai sinh","con mới sinh","em bé","giấy khai sinh","trẻ mới sinh"],
-    "khai tử": ["khai tử","qua đời","mất","người chết"],
-    "kết hôn": ["kết hôn","đăng ký kết hôn","cưới"],
-    "chứng thực": ["chứng thực","công chứng","sao y","photo","cccd","căn cước"],
-    "đất đai": ["đất","sổ đỏ","tách thửa","tách sổ","sang tên","chuyển nhượng"]
-  },
-
   "dvc_links": {
-    ,
-"intents": {
-  "khai sinh": {
-    "keywords": ["sinh","em bé","trẻ","khai sinh","giấy khai sinh"],
-    "field": "Tư pháp - Hộ tịch"
-  },
-
-  "khai tử": {
-    "keywords": ["mất","qua đời","từ trần","khai tử","người chết"],
-    "field": "Tư pháp - Hộ tịch"
-  },
-
-  "kết hôn": {
-    "keywords": ["kết hôn","cưới","đăng ký kết hôn","vợ chồng"],
-    "field": "Tư pháp - Hộ tịch"
-  },
-
-  "chứng thực": {
-    "keywords": ["công chứng","photo","sao y","cccd","căn cước","chứng thực"],
-    "field": "Tư pháp - Hộ tịch"
-  },
-
-  "đất đai": {
-    "keywords": ["đất","sổ đỏ","tách","thửa","sang tên","chuyển nhượng","cấp sổ"],
-    "field": "Đất đai"
-  },
-
-  "hộ kinh doanh": {
-    "keywords": ["kinh doanh","mở quán","đăng ký hộ","buôn bán"],
-    "field": "Hộ kinh doanh"
-  },
-
-  "bảo trợ xã hội": {
-    "keywords": ["trợ cấp","người cao tuổi","khuyết tật","bảo trợ"],
-    "field": "Bảo trợ xã hội"
-  }
-}
     "khai sinh": "https://dichvucong.gov.vn/p/home/dvc-tthc-thu-tuc-hanh-chinh-chi-tiet.html?ma_thu_tuc=140183",
     "khai tử": "https://thutuc.dichvucong.gov.vn/p/home/dvc-tthc-thu-tuc-hanh-chinh-chi-tiet.html?ma_thu_tuc=111706",
     "kết hôn": "https://thutuc.dichvucong.gov.vn/p/home/dvc-tthc-thu-tuc-hanh-chinh-chi-tiet.html?ma_thu_tuc=123713",
     "chứng thực": "https://thutuc.dichvucong.gov.vn/p/home/dvc-tthc-thu-tuc-hanh-chinh-chi-tiet.html?ma_thu_tuc=111796",
     "đất đai": "https://dichvucong.gov.vn/p/home/dvc-chi-tiet-thu-tuc-dung-chung.html?ma_thu_tuc=1.004746.000.00.00.H01"
+  },
+
+  "intents": {
+    "khai sinh": {
+      "keywords": ["sinh", "em bé", "trẻ", "khai sinh", "giấy khai sinh"],
+      "field": "Tư pháp - Hộ tịch"
+    },
+    "khai tử": {
+      "keywords": ["mất", "qua đời", "từ trần", "khai tử", "người chết"],
+      "field": "Tư pháp - Hộ tịch"
+    },
+    "kết hôn": {
+      "keywords": ["kết hôn", "cưới", "đăng ký kết hôn", "vợ chồng"],
+      "field": "Tư pháp - Hộ tịch"
+    },
+    "chứng thực": {
+      "keywords": ["công chứng", "photo", "sao y", "cccd", "căn cước", "chứng thực"],
+      "field": "Tư pháp - Hộ tịch"
+    },
+    "đất đai": {
+      "keywords": ["đất", "sổ đỏ", "tách", "thửa", "sang tên", "chuyển nhượng", "cấp sổ"],
+      "field": "Đất đai"
+    },
+    "hộ kinh doanh": {
+      "keywords": ["kinh doanh", "mở quán", "đăng ký hộ", "buôn bán"],
+      "field": "Hộ kinh doanh"
+    },
+    "bảo trợ xã hội": {
+      "keywords": ["trợ cấp", "người cao tuổi", "khuyết tật", "bảo trợ"],
+      "field": "Bảo trợ xã hội"
+    }
   }
 }
