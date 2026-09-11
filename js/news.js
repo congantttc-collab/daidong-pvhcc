@@ -22,7 +22,7 @@ fetch("data/news.json")
           <p>${first.summary}</p>
 
           <div class="featured-meta">
-            <span>${first.date}</span>
+          <span>${first.date} • ${first.category}</span>
             <span class="arrow">→</span>
           </div>
         </div>
