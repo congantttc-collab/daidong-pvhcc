@@ -1,121 +1,321 @@
-"intents": {
-  "khai sinh": {
-    "field": "Tư pháp",
-    "keywords": [
-      "khai sinh","đăng ký khai sinh","làm khai sinh","giấy khai sinh",
-      "con mới sinh","con tôi mới sinh","em bé mới sinh","bé mới sinh",
-      "trẻ mới sinh","sinh con","đăng ký cho con"
-    ]
+{
+  "center": {
+    "name": "Trung tâm Phục vụ Hành chính công xã Đại Đồng",
+    "address": "Số 02 Nguyễn Sỹ Sách, Thôn Dũng 1, xã Đại Đồng, tỉnh Nghệ An",
+    "phone": "02383.989.020",
+    "email": "hccdaidong@nghean.gov.vn",
+    "working_hours": "Thứ Hai đến Thứ Sáu: 07:30 - 17:00"
   },
 
-  "khai tử": {
-    "field": "Tư pháp",
-    "keywords": [
-      "khai tử","đăng ký khai tử","giấy khai tử",
-      "bố mất","mẹ mất","ông mất","bà mất",
-      "qua đời","người chết","người mất","từ trần"
-    ]
+  "citizen_reception": {
+    "day": "Thứ Tư hằng tuần",
+    "time": "08:00 - 11:30",
+    "location": "Phòng Tiếp công dân - Trung tâm PVHCC"
   },
 
-  "kết hôn": {
-    "field": "Tư pháp",
-    "keywords": [
-      "kết hôn","đăng ký kết hôn","giấy kết hôn",
-      "làm giấy cưới","đăng ký cưới","đi đăng ký cưới","cưới"
-    ]
+  "officers": [
+    {
+      "name": "Trần Võ Hiệp",
+      "position": "Giám đốc",
+      "field": "Chỉ đạo chung",
+      "phone": "0396802062"
+    },
+    {
+      "name": "Nguyễn Đăng Tuấn",
+      "position": "Phó Giám đốc",
+      "field": "Hạ tầng số",
+      "phone": "0984803163"
+    },
+    {
+      "name": "Nguyễn Thị Thu",
+      "position": "Công chức",
+      "field": "Văn thư",
+      "phone": "0976742472"
+    },
+    {
+      "name": "Nguyễn Thị Hiền",
+      "position": "Công chức",
+      "field": "Kế toán",
+      "phone": "0382760970"
+    },
+    {
+      "name": "Nguyễn Thị Hoa",
+      "position": "Công chức",
+      "field": "Tư pháp",
+      "phone": "0976375977"
+    },
+    {
+      "name": "Trần Thị Bình",
+      "position": "Công chức",
+      "field": "Tư pháp",
+      "phone": "0399503325"
+    },
+    {
+      "name": "Nguyễn Hữu Hùng",
+      "position": "Công chức",
+      "field": "Tư pháp",
+      "phone": "0362674778"
+    },
+    {
+      "name": "Nguyễn Thị Thúy",
+      "position": "Công chức",
+      "field": "Đất đai",
+      "phone": "0981426689"
+    },
+    {
+      "name": "Đinh Thị Lan",
+      "position": "Công chức",
+      "field": "Hộ kinh doanh",
+      "phone": "0977564346"
+    },
+    {
+      "name": "Nguyễn Thị Kim Oanh",
+      "position": "Công chức",
+      "field": "Bảo trợ xã hội",
+      "phone": "0988349191"
+    }
+  ],
+
+  "intents": {
+    "khai sinh": {
+      "field": "Tư pháp",
+      "keywords": [
+        "khai sinh",
+        "đăng ký khai sinh",
+        "giấy khai sinh",
+        "làm khai sinh",
+        "con mới sinh",
+        "con tôi mới sinh",
+        "em bé mới sinh",
+        "bé mới sinh",
+        "trẻ mới sinh",
+        "sinh con"
+      ]
+    },
+
+    "khai tử": {
+      "field": "Tư pháp",
+      "keywords": [
+        "khai tử",
+        "đăng ký khai tử",
+        "giấy khai tử",
+        "bố mất",
+        "mẹ mất",
+        "ông mất",
+        "bà mất",
+        "qua đời",
+        "người chết",
+        "người mất"
+      ]
+    },
+
+    "kết hôn": {
+      "field": "Tư pháp",
+      "keywords": [
+        "kết hôn",
+        "đăng ký kết hôn",
+        "giấy kết hôn",
+        "làm giấy cưới",
+        "đăng ký cưới",
+        "cưới"
+      ]
+    },
+
+    "chứng thực": {
+      "field": "Tư pháp",
+      "keywords": [
+        "chứng thực",
+        "công chứng",
+        "sao y",
+        "photo công chứng",
+        "photo công chứng cccd",
+        "cccd",
+        "căn cước",
+        "photo bằng",
+        "học bạ"
+      ]
+    },
+
+    "đất đai": {
+      "field": "Đất đai",
+      "keywords": [
+        "đất",
+        "đất đai",
+        "sổ đỏ",
+        "sổ hồng",
+        "tách sổ",
+        "tách sổ đỏ",
+        "tách thửa",
+        "bán đất",
+        "mua đất",
+        "sang tên",
+        "chuyển nhượng",
+        "cấp sổ",
+        "biến động đất"
+      ]
+    },
+
+    "hộ kinh doanh": {
+      "field": "Hộ kinh doanh",
+      "keywords": [
+        "hộ kinh doanh",
+        "đăng ký kinh doanh",
+        "mở quán",
+        "mở cửa hàng",
+        "mở tiệm",
+        "kinh doanh cá thể",
+        "quán ăn"
+      ]
+    },
+
+    "an toàn thực phẩm": {
+      "field": "Hộ kinh doanh",
+      "keywords": [
+        "an toàn thực phẩm",
+        "vsattp",
+        "giấy attp",
+        "giấy vệ sinh an toàn thực phẩm",
+        "cơ sở thực phẩm"
+      ]
+    },
+
+    "bảo trợ xã hội": {
+      "field": "Bảo trợ xã hội",
+      "keywords": [
+        "bảo trợ xã hội",
+        "trợ cấp",
+        "người cao tuổi",
+        "khuyết tật",
+        "người già",
+        "hộ nghèo",
+        "hộ cận nghèo",
+        "mai táng phí"
+      ]
+    },
+
+    "người có công": {
+      "field": "Bảo trợ xã hội",
+      "keywords": [
+        "người có công",
+        "thương binh",
+        "liệt sĩ",
+        "gia đình có công"
+      ]
+    },
+
+    "giáo dục": {
+      "field": "Bảo trợ xã hội",
+      "keywords": [
+        "giáo dục",
+        "miễn giảm học phí",
+        "học sinh",
+        "trường học"
+      ]
+    },
+
+    "y tế": {
+      "field": "Bảo trợ xã hội",
+      "keywords": [
+        "y tế",
+        "bhyt",
+        "bảo hiểm y tế",
+        "thẻ bhyt"
+      ]
+    }
   },
 
-  "chứng thực": {
-    "field": "Tư pháp",
-    "keywords": [
-      "chứng thực","công chứng","sao y","photo công chứng",
-      "photo công chứng cccd","công chứng cccd","sao y cccd",
-      "photo bằng","sao y bằng","photo học bạ","chứng thực bản sao",
-      "căn cước","cccd"
-    ]
+  "procedures": {
+    "khai sinh": {
+      "name": "Đăng ký khai sinh",
+      "fee": "Miễn phí",
+      "time": "Giải quyết trong ngày",
+      "level": "Mức độ 4",
+      "documents": [
+        "Tờ khai đăng ký khai sinh",
+        "Giấy chứng sinh hoặc giấy tờ thay thế",
+        "CCCD của cha hoặc mẹ"
+      ]
+    },
+
+    "khai tử": {
+      "name": "Đăng ký khai tử",
+      "fee": "Miễn phí",
+      "time": "Trong ngày",
+      "level": "Mức độ 4",
+      "documents": [
+        "Tờ khai đăng ký khai tử",
+        "Giấy báo tử hoặc giấy tờ thay thế",
+        "CCCD của người đi khai"
+      ]
+    },
+
+    "kết hôn": {
+      "name": "Đăng ký kết hôn",
+      "fee": "Miễn phí",
+      "time": "Trong ngày",
+      "level": "Mức độ 4",
+      "documents": [
+        "Tờ khai đăng ký kết hôn",
+        "CCCD của hai bên"
+      ]
+    },
+
+    "chứng thực": {
+      "name": "Chứng thực bản sao từ bản chính",
+      "fee": "Theo quy định",
+      "time": "Giải quyết ngay",
+      "level": "Mức độ 4",
+      "documents": [
+        "Bản chính giấy tờ",
+        "Bản photocopy",
+        "CCCD của người yêu cầu"
+      ]
+    },
+
+    "đất đai": {
+      "name": "Thủ tục đất đai",
+      "fee": "Theo từng hồ sơ",
+      "time": "Theo quy định",
+      "level": "Mức độ 4",
+      "documents": [
+        "Đơn đề nghị",
+        "Giấy chứng nhận quyền sử dụng đất",
+        "CCCD của người sử dụng đất"
+      ]
+    },
+
+    "hộ kinh doanh": {
+      "name": "Đăng ký hộ kinh doanh",
+      "fee": "Theo quy định",
+      "time": "03 ngày làm việc",
+      "level": "Mức độ 4",
+      "documents": [
+        "Giấy đề nghị đăng ký hộ kinh doanh",
+        "CCCD của chủ hộ",
+        "Địa điểm kinh doanh"
+      ]
+    },
+
+    "bảo trợ xã hội": {
+      "name": "Giải quyết trợ cấp xã hội",
+      "fee": "Miễn phí",
+      "time": "Theo quy định",
+      "level": "Mức độ 4",
+      "documents": [
+        "Đơn đề nghị",
+        "CCCD",
+        "Giấy tờ chứng minh đối tượng"
+      ]
+    }
   },
 
-  "đất đai": {
-    "field": "Đất đai",
-    "keywords": [
-      "đất","đất đai","sổ đỏ","sổ hồng","giấy chứng nhận",
-      "tách sổ","tách sổ đỏ","tách thửa","chia đất",
-      "chuyển nhượng","mua đất","bán đất","sang tên",
-      "cấp sổ","đính chính sổ","biến động đất","đo đạc đất"
-    ]
-  },
-
-  "hộ kinh doanh": {
-    "field": "Hộ kinh doanh",
-    "keywords": [
-      "hộ kinh doanh","đăng ký kinh doanh","mở hộ kinh doanh",
-      "mở quán","mở cửa hàng","mở tiệm","kinh doanh cá thể",
-      "đăng ký quán ăn","đăng ký bán hàng"
-    ]
-  },
-
-  "an toàn thực phẩm": {
-    "field": "An toàn thực phẩm",
-    "keywords": [
-      "an toàn thực phẩm","giấy vệ sinh an toàn thực phẩm",
-      "vsattp","quán ăn","nhà hàng","cơ sở thực phẩm","giấy attp"
-    ]
-  },
-
-  "bảo trợ xã hội": {
-    "field": "Bảo trợ xã hội",
-    "keywords": [
-      "bảo trợ xã hội","trợ cấp","người cao tuổi","khuyết tật",
-      "hộ nghèo","hộ cận nghèo","mai táng phí","trợ cấp xã hội",
-      "xin trợ cấp","người già"
-    ]
-  },
-
-  "người có công": {
-    "field": "Người có công",
-    "keywords": [
-      "người có công","thương binh","liệt sĩ","chính sách",
-      "gia đình có công","hồ sơ người có công"
-    ]
-  },
-
-  "giáo dục": {
-    "field": "Giáo dục",
-    "keywords": [
-      "giáo dục","xác nhận học sinh","học phí","miễn giảm học phí",
-      "hỗ trợ học sinh","trường học"
-    ]
-  },
-
-  "y tế": {
-    "field": "Y tế",
-    "keywords": [
-      "y tế","bảo hiểm y tế","bhyt","cấp thẻ bhyt",
-      "trẻ em bhyt","khám chữa bệnh"
-    ]
-  },
-
-  "văn thư": {
-    "field": "Văn thư",
-    "keywords": [
-      "văn thư","đóng dấu","tiếp nhận văn bản","công văn",
-      "thủ quỹ","văn bản"
-    ]
-  },
-
-  "trả kết quả": {
-    "field": "Kế toán",
-    "keywords": [
-      "trả kết quả","nhận kết quả","lấy hồ sơ","trình ký",
-      "đã nộp hồ sơ","khi nào có kết quả"
-    ]
-  },
-
-  "chuyển đổi số": {
-    "field": "Hạ tầng số",
-    "keywords": [
-      "chuyển đổi số","kỹ năng số","định danh điện tử",
-      "vneid","dịch vụ công trực tuyến","nộp online"
-    ]
+  "dvc_links": {
+    "khai sinh": "https://dichvucong.gov.vn/p/home/dvc-tthc-category.html?keyword=%C4%90%C4%83ng%20k%C3%BD%20khai%20sinh",
+    "khai tử": "https://dichvucong.gov.vn/p/home/dvc-tthc-category.html?keyword=%C4%90%C4%83ng%20k%C3%BD%20khai%20t%E1%BB%AD",
+    "kết hôn": "https://dichvucong.gov.vn/p/home/dvc-tthc-category.html?keyword=%C4%90%C4%83ng%20k%C3%BD%20k%E1%BA%BFt%20h%C3%B4n",
+    "chứng thực": "https://dichvucong.gov.vn/p/home/dvc-tthc-category.html?keyword=Ch%E1%BB%A9ng%20th%E1%BB%B1c%20b%E1%BA%A3n%20sao",
+    "đất đai": "https://dichvucong.gov.vn/p/home/dvc-tthc-category.html?keyword=Th%E1%BB%A7%20t%E1%BB%A5c%20%C4%91%E1%BA%A5t%20%C4%91ai",
+    "hộ kinh doanh": "https://dichvucong.gov.vn/p/home/dvc-tthc-category.html?keyword=%C4%90%C4%83ng%20k%C3%BD%20h%E1%BB%99%20kinh%20doanh",
+    "bảo trợ xã hội": "https://dichvucong.gov.vn/p/home/dvc-tthc-category.html?keyword=Tr%E1%BB%A3%20c%E1%BA%A5p%20x%C3%A3%20h%E1%BB%99i"
   }
 }
