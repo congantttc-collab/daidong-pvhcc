@@ -1,10 +1,10 @@
 fetch("./data/calendar.json")
   .then(res => res.json())
-  .then(items => {
+  .then(data => {
     const box = document.getElementById("calendar-list");
     if (!box) return;
 
-    box.innerHTML = items.slice(0, 5).map(item => `
+    box.innerHTML = data.slice(0, 5).map(item => `
       <div class="calendar-item">
 
         <div class="calendar-date">
