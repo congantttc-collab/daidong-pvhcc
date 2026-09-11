@@ -1,6 +1,8 @@
-fetch("data/news.json")
-  .then(res => res.json())
-  .then(data => {
+const jsonPath = location.pathname.includes("/pages/")
+  ? "../data/news.json"
+  : "data/news.json";
+
+fetch(jsonPath)
     const featured = document.getElementById("featured-news");
     const sidebar = document.getElementById("news-sidebar");
 
