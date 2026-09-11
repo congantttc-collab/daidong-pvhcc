@@ -3,6 +3,9 @@ const jsonPath = location.pathname.includes("/pages/")
   : "data/news.json";
 
 fetch(jsonPath)
+  .then(res => res.json())
+  .then(data => {
+
     const featured = document.getElementById("featured-news");
     const sidebar = document.getElementById("news-sidebar");
 
@@ -23,7 +26,7 @@ fetch(jsonPath)
 
     sidebar.innerHTML = "";
 
-    data.slice(1, 5).forEach(item => {
+    data.slice(1,5).forEach(item => {
       sidebar.innerHTML += `
         <a href="pages/article.html?id=${item.id}" class="news-mini">
           <img src="${item.image}" alt="${item.title}">
@@ -34,5 +37,6 @@ fetch(jsonPath)
         </a>
       `;
     });
+
   })
-  .catch(err => console.error(err));
+  .catch(err => console.error("News:", err));
