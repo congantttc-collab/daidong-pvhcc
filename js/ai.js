@@ -12,11 +12,15 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Đọc dữ liệu địa phương
   fetch("./data/ai_local.json")
-    .then(r => r.json())
-    .then(data => localData = data)
-    .catch(() => console.log("Không đọc được ai_local.json"));
+    .then(res => res.json())
+    .then(data => {
+      localData = data;
+    })
+    .catch(err => {
+      console.error("Không đọc được ai_local.json", err);
+    });
 
-  // Mở / đóng cửa sổ
+  // ===== MỞ / ĐÓNG =====
   aiToggle.addEventListener("click", () => {
     aiChat.classList.add("active");
   });
@@ -25,7 +29,7 @@ document.addEventListener("DOMContentLoaded", () => {
     aiChat.classList.remove("active");
   });
 
-  // Hiển thị tin nhắn
+  // ===== HIỂN THỊ TIN NHẮN =====
   function addMessage(text, me = false){
     const div = document.createElement("div");
     div.className = me ? "ai-message user" : "ai-message bot";
@@ -34,27 +38,36 @@ document.addEventListener("DOMContentLoaded", () => {
     aiBody.scrollTop = aiBody.scrollHeight;
   }
 
-  // Trả lời AI
-  function reply(q){
+  // ===== AI TRẢ LỜI =====
+  function reply(question){
 
-    const t = q.toLowerCase();
+    const t = question.toLowerCase();
 
-    // ===== Thông tin của xã =====
-    if(t.includes("giờ làm")){
+    // Chưa tải dữ liệu
+    if(!localData.center){
+      addMessage("Hệ thống đang tải dữ liệu, bà con vui lòng thử lại sau 1 giây.");
+      return;
+    }
+
+    // ----- Giờ làm việc -----
+    if(t.includes("giờ làm") || t.includes("làm việc")){
       addMessage(`🕒 ${localData.center.working_hours}`);
       return;
     }
 
-    if(t.includes("điện thoại") || t.includes("liên hệ")){
+    // ----- Điện thoại -----
+    if(t.includes("điện thoại") || t.includes("liên hệ") || t.includes("số điện thoại")){
       addMessage(`☎ ${localData.center.phone}`);
       return;
     }
 
+    // ----- Địa chỉ -----
     if(t.includes("địa chỉ") || t.includes("ở đâu")){
       addMessage(`📍 ${localData.center.address}`);
       return;
     }
 
+    // ----- Tiếp công dân -----
     if(t.includes("tiếp công dân")){
       addMessage(
 `📅 ${localData.citizen_reception.day}
@@ -63,31 +76,24 @@ document.addEventListener("DOMContentLoaded", () => {
       return;
     }
 
-    // ===== Thủ tục DVC Quốc gia =====
-   // ===== AI hiểu ngôn ngữ tự nhiên =====
-let found = null;
+    // ===== NHẬN DIỆN THỦ TỤC =====
+    let found = null;
 
-if (localData.synonyms) {
+    if(localData.synonyms){
+      for(const [procedure, words] of Object.entries(localData.synonyms)){
+        if(words.some(w => t.includes(w.toLowerCase()))){
+          found = procedure;
+          break;
+        }
+      }
+    }
 
-    Object.entries(localData.synonyms).forEach(([procedure, words]) => {
+    // ===== MỞ ĐÚNG THỦ TỤC =====
+    if(found && localData.dvc_links && localData.dvc_links[found]){
 
-        if (found) return;
+      const url = localData.dvc_links[found];
 
-        words.forEach(word => {
-            if (t.includes(word.toLowerCase())) {
-                found = procedure;
-            }
-        });
-
-    });
-
-}
-
-      if(found){
-
-        const url = localData.dvc_links[found];
-
-        addMessage(
+      addMessage(
 `📌 <b>${found.toUpperCase()}</b>
 
 Thủ tục này được thực hiện trên Cổng Dịch vụ công Quốc gia.
@@ -95,11 +101,10 @@ Thủ tục này được thực hiện trên Cổng Dịch vụ công Quốc gi
 <a href="${url}" target="_blank" class="ai-link-btn">
 🔗 MỞ THỦ TỤC TRÊN CỔNG DVC
 </a>`);
-        return;
-      }
+      return;
     }
 
-    // ===== Mặc định =====
+    // ===== KHÔNG NHẬN DIỆN =====
     addMessage(
 `Xin chào bà con!
 
@@ -109,27 +114,35 @@ Tôi có thể hỗ trợ:
 • Giờ làm việc
 • Tiếp công dân
 • Điện thoại liên hệ
-• Địa chỉ Trung tâm PVHCC`);
+• Địa chỉ Trung tâm PVHCC
+
+Bà con hãy nhập nội dung cần hỏi nhé!`);
   }
 
-  // Gửi tin nhắn
+  // ===== GỬI =====
   function send(){
     const txt = aiInput.value.trim();
-    if(!txt) return;
+    if(txt === "") return;
+
     addMessage(txt, true);
     aiInput.value = "";
-    reply(txt);
+
+    setTimeout(() => {
+      reply(txt);
+    }, 200);
   }
 
   aiSend.addEventListener("click", send);
 
-  aiInput.addEventListener("keydown", e=>{
-    if(e.key==="Enter") send();
+  aiInput.addEventListener("keydown", e => {
+    if(e.key === "Enter"){
+      send();
+    }
   });
 
-  // Chip gợi ý
-  document.querySelectorAll(".ai-chip").forEach(chip=>{
-    chip.addEventListener("click", ()=>{
+  // ===== CHIP GỢI Ý =====
+  document.querySelectorAll(".ai-chip").forEach(chip => {
+    chip.addEventListener("click", () => {
       aiInput.value = chip.innerText;
       send();
     });
