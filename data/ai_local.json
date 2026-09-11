@@ -86,93 +86,81 @@
 
   "intents": {
     "khai sinh": {
-      "keywords": ["sinh", "em bé", "trẻ", "khai sinh", "giấy khai sinh"],
+      "keywords": ["khai sinh", "con mới sinh", "em bé mới sinh", "giấy khai sinh"],
       "field": "Tư pháp - Hộ tịch"
     },
     "khai tử": {
-      "keywords": ["mất", "qua đời", "từ trần", "khai tử", "người chết"],
+      "keywords": ["khai tử", "qua đời", "người mất", "giấy khai tử"],
       "field": "Tư pháp - Hộ tịch"
     },
     "kết hôn": {
-      "keywords": ["kết hôn", "cưới", "đăng ký kết hôn", "vợ chồng"],
+      "keywords": ["kết hôn", "đăng ký kết hôn", "giấy kết hôn"],
       "field": "Tư pháp - Hộ tịch"
     },
     "chứng thực": {
-      "keywords": ["công chứng", "photo", "sao y", "cccd", "căn cước", "chứng thực"],
+      "keywords": ["chứng thực", "công chứng", "sao y", "cccd"],
       "field": "Tư pháp - Hộ tịch"
     },
     "đất đai": {
-      "keywords": ["đất", "sổ đỏ", "tách", "thửa", "sang tên", "chuyển nhượng", "cấp sổ"],
+      "keywords": ["sổ đỏ", "đất đai", "tách thửa", "chuyển nhượng"],
       "field": "Đất đai"
-    },
-    "hộ kinh doanh": {
-      "keywords": ["kinh doanh", "mở quán", "đăng ký hộ", "buôn bán"],
-      "field": "Hộ kinh doanh"
-    },
-    "bảo trợ xã hội": {
-      "keywords": ["trợ cấp", "người cao tuổi", "khuyết tật", "bảo trợ"],
-      "field": "Bảo trợ xã hội"
     }
-  }
-}
-,
-"procedures": {
-  "khai sinh": {
-    "name": "Đăng ký khai sinh",
-    "fee": "Miễn phí",
-    "time": "Giải quyết trong ngày",
-    "level": "Mức độ 4",
-    "documents": [
-      "Tờ khai đăng ký khai sinh",
-      "Giấy chứng sinh hoặc giấy tờ thay thế",
-      "CCCD của cha hoặc mẹ"
-    ]
   },
 
-  "khai tử": {
-    "name": "Đăng ký khai tử",
-    "fee": "Miễn phí",
-    "time": "Trong ngày",
-    "level": "Mức độ 4",
-    "documents": [
-      "Tờ khai đăng ký khai tử",
-      "Giấy báo tử hoặc giấy tờ thay thế",
-      "CCCD của người đi khai"
-    ]
-  },
-
-  "kết hôn": {
-    "name": "Đăng ký kết hôn",
-    "fee": "Miễn phí",
-    "time": "Trong ngày",
-    "level": "Mức độ 4",
-    "documents": [
-      "Tờ khai đăng ký kết hôn",
-      "CCCD của hai bên"
-    ]
-  },
-
-  "chứng thực": {
-    "name": "Chứng thực bản sao từ bản chính",
-    "fee": "Theo quy định",
-    "time": "Giải quyết ngay",
-    "level": "Mức độ 4",
-    "documents": [
-      "Bản chính giấy tờ",
-      "Bản photocopy",
-      "CCCD của người yêu cầu"
-    ]
-  },
-
-  "đất đai": {
-    "name": "Thủ tục đất đai",
-    "fee": "Theo từng hồ sơ",
-    "time": "Theo quy định",
-    "level": "Mức độ 4",
-    "documents": [
-      "Đơn đề nghị",
-      "Giấy chứng nhận quyền sử dụng đất",
-      "CCCD của người sử dụng đất"
-    ]
+  "procedures": {
+    "khai sinh": {
+      "name": "Đăng ký khai sinh",
+      "fee": "Miễn phí",
+      "time": "Giải quyết trong ngày",
+      "level": "Mức độ 4",
+      "documents": [
+        "Tờ khai đăng ký khai sinh",
+        "Giấy chứng sinh hoặc giấy tờ thay thế",
+        "CCCD của cha hoặc mẹ"
+      ]
+    },
+    "khai tử": {
+      "name": "Đăng ký khai tử",
+      "fee": "Miễn phí",
+      "time": "Trong ngày",
+      "level": "Mức độ 4",
+      "documents": [
+        "Tờ khai đăng ký khai tử",
+        "Giấy báo tử hoặc giấy tờ thay thế",
+        "CCCD của người đi khai"
+      ]
+    },
+    "kết hôn": {
+      "name": "Đăng ký kết hôn",
+      "fee": "Miễn phí",
+      "time": "Trong ngày",
+      "level": "Mức độ 4",
+      "documents": [
+        "Tờ khai đăng ký kết hôn",
+        "CCCD của hai bên"
+      ]
+    },
+    "chứng thực": {
+      "name": "Chứng thực bản sao từ bản chính",
+      "fee": "Theo quy định",
+      "time": "Giải quyết ngay",
+      "level": "Mức độ 4",
+      "documents": [
+        "Bản chính giấy tờ",
+        "Bản photocopy",
+        "CCCD của người yêu cầu"
+      ]
+    },
+    "đất đai": {
+      "name": "Thủ tục đất đai",
+      "fee": "Theo từng hồ sơ",
+      "time": "Theo quy định",
+      "level": "Mức độ 4",
+      "documents": [
+        "Đơn đề nghị",
+        "Giấy chứng nhận quyền sử dụng đất",
+        "CCCD của người sử dụng đất"
+      ]
+    }
   }
 }
