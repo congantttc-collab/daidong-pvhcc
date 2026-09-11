@@ -1245,10 +1245,18 @@ footer iframe{
     flex-shrink:0;
 }
 
-.pdf-badge{
-    color:#c40000;
+.pdf-icon{
+    display:flex;
+    align-items:center;
+    gap:6px;
+    color:#D70000;
     font-weight:700;
-    font-size:14px;
+    font-size:13px;
+}
+
+.pdf-icon svg{
+    width:20px;
+    height:20px;
 }
 
 .type-badge{
@@ -1259,16 +1267,26 @@ footer iframe{
     font-size:13px;
     font-weight:700;
 }
-
+.status-badge{
+    background:#16A34A;
+    color:#fff;
+    font-size:11px;
+    font-weight:700;
+    padding:5px 10px;
+    border-radius:999px;
+}
 .doc-arrow{
-    color:#d70000;
-    font-size:22px;
-    font-weight:bold;
+    margin-left:8px;
+    color:#D70000;
+    font-size:24px;
+    font-weight:700;
+    opacity:.35;
     transition:.25s;
 }
 
 .doc-item:hover .doc-arrow{
-    transform:translateX(6px);
+    opacity:1;
+    transform:translateX(8px);
 }
 
 @media(max-width:768px){
