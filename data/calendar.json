@@ -1,29 +1,57 @@
 [
   {
-    "thu":"THỨ HAI",
-    "ngay":"08",
-    "thang":"09/2026",
-    "noiDung":"Tiếp nhận hồ sơ hành chính",
-    "diaDiem":"Phòng Một cửa",
-    "gio":"07:30",
-    "trangThai":"Tiếp dân"
+    "id": 1,
+    "date": "2026-09-08",
+    "weekday": "THỨ HAI",
+    "day": "08",
+    "month": "09/2026",
+    "title": "Tiếp nhận hồ sơ hành chính",
+    "location": "Phòng Một cửa",
+    "type": "Tiếp dân",
+    "time": "07:30"
   },
   {
-    "thu":"THỨ BA",
-    "ngay":"09",
-    "thang":"09/2026",
-    "noiDung":"Họp cải cách hành chính",
-    "diaDiem":"Hội trường UBND",
-    "gio":"14:00",
-    "trangThai":"Họp"
+    "id": 2,
+    "date": "2026-09-09",
+    "weekday": "THỨ BA",
+    "day": "09",
+    "month": "09/2026",
+    "title": "Họp cải cách hành chính",
+    "location": "Hội trường UBND",
+    "type": "Họp",
+    "time": "14:00"
   },
   {
-    "thu":"THỨ TƯ",
-    "ngay":"10",
-    "thang":"09/2026",
-    "noiDung":"Tiếp công dân định kỳ",
-    "diaDiem":"Phòng Tiếp dân",
-    "gio":"08:00",
-    "trangThai":"Tiếp dân"
+    "id": 3,
+    "date": "2026-09-10",
+    "weekday": "THỨ TƯ",
+    "day": "10",
+    "month": "09/2026",
+    "title": "Tiếp công dân định kỳ",
+    "location": "Phòng Tiếp dân",
+    "type": "Tiếp dân",
+    "time": "08:00"
+  },
+  {
+    "id": 4,
+    "date": "2026-09-11",
+    "weekday": "THỨ NĂM",
+    "day": "11",
+    "month": "09/2026",
+    "title": "Tập huấn sử dụng Hệ thống giải quyết TTHC",
+    "location": "Phòng họp tầng 2",
+    "type": "Tập huấn",
+    "time": "15:00"
+  },
+  {
+    "id": 5,
+    "date": "2026-09-12",
+    "weekday": "THỨ SÁU",
+    "day": "12",
+    "month": "09/2026",
+    "title": "Trả kết quả hồ sơ trực tuyến",
+    "location": "Quầy trả kết quả",
+    "type": "Một cửa",
+    "time": "09:30"
   }
 ]
