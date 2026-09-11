@@ -1,10 +1,9 @@
 // ======================================================
-// TRỢ LÝ AI PVHCC XÃ ĐẠI ĐỒNG 2.0
+// TRỢ LÝ AI PVHCC XÃ ĐẠI ĐỒNG - VERSION 2.1
 // ======================================================
 
 document.addEventListener("DOMContentLoaded", () => {
 
-    // ===== LẤY PHẦN TỬ =====
     const aiChat   = document.getElementById("ai-chat");
     const aiToggle = document.getElementById("ai-toggle");
     const aiClose  = document.getElementById("ai-close");
@@ -14,111 +13,98 @@ document.addEventListener("DOMContentLoaded", () => {
 
     let DATA = {};
     let READY = false;
-// ===== TÌM CÁN BỘ PHỤ TRÁCH =====
-function findOfficers(question){
 
-    if(!DATA.officers) return [];
-
-    const q = question.toLowerCase();
-
-    return DATA.officers.filter(o=>{
-        const f = o.field.toLowerCase();
-
-        return (
-            f.includes(q) ||
-
-            (q.includes("khai sinh") && f.includes("hộ tịch")) ||
-            (q.includes("khai tử") && f.includes("hộ tịch")) ||
-            (q.includes("kết hôn") && f.includes("hộ tịch")) ||
-            (q.includes("chứng thực") && f.includes("hộ tịch")) ||
-            (q.includes("công chứng") && f.includes("hộ tịch")) ||
-            (q.includes("sao y") && f.includes("hộ tịch")) ||
-
-            (q.includes("đất") && f.includes("đất")) ||
-            (q.includes("sổ đỏ") && f.includes("đất")) ||
-            (q.includes("tách thửa") && f.includes("đất")) ||
-            (q.includes("xây dựng") && f.includes("xây dựng")) ||
-
-            (q.includes("hộ kinh doanh") && f.includes("hộ kinh doanh")) ||
-            (q.includes("thế chấp") && f.includes("thế chấp")) ||
-
-            (q.includes("bảo trợ") && f.includes("bảo trợ")) ||
-            (q.includes("người có công") && f.includes("người có công")) ||
-            (q.includes("giáo dục") && f.includes("giáo dục")) ||
-            (q.includes("y tế") && f.includes("y tế")) ||
-
-            (q.includes("văn thư") && f.includes("văn thư")) ||
-            (q.includes("trình ký") && f.includes("trình ký")) ||
-            (q.includes("trả kết quả") && f.includes("trả kết quả")) ||
-
-            (q.includes("chuyển đổi số") && f.includes("hạ tầng số")) ||
-            (q.includes("kỹ năng số") && f.includes("kỹ năng số"))
-        );
-    });
-}
-    // ===== ĐỌC DỮ LIỆU JSON =====
+    // ================= ĐỌC JSON =================
     fetch("data/ai_local.json")
         .then(r => r.json())
         .then(json => {
             DATA = json;
             READY = true;
-            console.log("AI 2.0 READY");
+            console.log("AI 2.1 READY");
         })
-        .catch(err => {
-            console.error("Lỗi đọc ai_local.json", err);
-        });
+        .catch(err => console.error(err));
 
-    // ===== MỞ / ĐÓNG CHAT =====
+    // ================= MỞ / ĐÓNG =================
     aiToggle.onclick = () => aiChat.classList.add("active");
     aiClose.onclick  = () => aiChat.classList.remove("active");
 
-    // ===== THÊM TIN NHẮN =====
-    function addMessage(html, me = false){
-
+    // ================= HIỂN THỊ TIN NHẮN =================
+    function addMessage(text, me = false){
         const div = document.createElement("div");
         div.className = me ? "ai-message user" : "ai-message bot";
-        div.innerHTML = html;
-
+        div.innerHTML = text;
         aiBody.appendChild(div);
         aiBody.scrollTop = aiBody.scrollHeight;
     }
 
-    // ===== NÚT ĐỎ MỞ DVC =====
-    function dvcButton(url){
+    // ================= TÌM CÁN BỘ =================
+    function findOfficers(question){
 
-        return `
-        <a href="${url}"
-           target="_blank"
-           class="ai-link-btn"
-           style="
-              display:block;
-              margin-top:14px;
-              text-align:center;
-              background:#d70018;
-              color:#fff;
-              padding:13px;
-              border-radius:12px;
-              text-decoration:none;
-              font-weight:700;">
-           🔗 MỞ THỦ TỤC TRÊN CỔNG DVC
-        </a>`;
+        if(!DATA.officers) return [];
+
+        const q = question.toLowerCase();
+
+        return DATA.officers.filter(o => {
+
+            const f = o.field.toLowerCase();
+
+            return (
+                f.includes(q) ||
+
+                (q.includes("khai sinh") && f.includes("hộ tịch")) ||
+                (q.includes("con mới sinh") && f.includes("hộ tịch")) ||
+                (q.includes("giấy khai sinh") && f.includes("hộ tịch")) ||
+
+                (q.includes("khai tử") && f.includes("hộ tịch")) ||
+                (q.includes("qua đời") && f.includes("hộ tịch")) ||
+                (q.includes("người mất") && f.includes("hộ tịch")) ||
+
+                (q.includes("kết hôn") && f.includes("hộ tịch")) ||
+
+                (q.includes("chứng thực") && f.includes("hộ tịch")) ||
+                (q.includes("công chứng") && f.includes("hộ tịch")) ||
+                (q.includes("sao y") && f.includes("hộ tịch")) ||
+
+                (q.includes("đất") && f.includes("đất")) ||
+                (q.includes("sổ đỏ") && f.includes("đất")) ||
+                (q.includes("tách thửa") && f.includes("đất")) ||
+                (q.includes("chuyển nhượng") && f.includes("đất")) ||
+
+                (q.includes("hộ kinh doanh") && f.includes("hộ kinh doanh")) ||
+                (q.includes("an toàn thực phẩm") && f.includes("an toàn")) ||
+
+                (q.includes("bảo trợ") && f.includes("bảo trợ")) ||
+                (q.includes("người có công") && f.includes("người có công")) ||
+                (q.includes("giáo dục") && f.includes("giáo dục")) ||
+                (q.includes("y tế") && f.includes("y tế")) ||
+
+                (q.includes("văn thư") && f.includes("văn thư")) ||
+                (q.includes("trình ký") && f.includes("trình ký")) ||
+                (q.includes("trả kết quả") && f.includes("trả kết quả")) ||
+
+                (q.includes("kỹ năng số") && f.includes("hạ tầng số")) ||
+                (q.includes("chuyển đổi số") && f.includes("hạ tầng số"))
+            );
+
+        });
+
     }
 
-    // ===== TÌM THỦ TỤC =====
+    // ================= TÌM THỦ TỤC =================
     function detectProcedure(question){
 
         if(!DATA.synonyms) return null;
 
         const q = question.toLowerCase();
 
-        for(const proc in DATA.synonyms){
+        for(const name in DATA.synonyms){
 
-            const words = DATA.synonyms[proc];
+            const words = DATA.synonyms[name];
 
             for(const w of words){
 
                 if(q.includes(w.toLowerCase())){
-                    return proc;
+                    return name;
                 }
 
             }
@@ -126,132 +112,158 @@ function findOfficers(question){
         }
 
         return null;
+
     }
 
-    // ===== TRẢ LỜI =====
+    // ================= TRẢ LỜI =================
     function reply(question){
 
         if(!READY){
-
-            addMessage("⏳ Hệ thống đang tải dữ liệu, vui lòng thử lại sau 1 giây.");
+            addMessage("⏳ Hệ thống đang khởi tạo dữ liệu, bà con vui lòng thử lại sau vài giây.");
             return;
         }
 
         const q = question.toLowerCase();
 
-        // ---------- Giờ làm ----------
-        if(q.includes("giờ") || q.includes("làm việc")){
-
-            addMessage(`
-                🕒 <b>Giờ làm việc</b><br><br>
-                ${DATA.center.working_hours}
-            `);
-
+        // -------- Giờ làm việc --------
+        if(q.includes("giờ làm") || q.includes("làm việc")){
+            addMessage(`🕒 <b>Giờ làm việc</b><br><br>${DATA.center.working_hours}`);
             return;
         }
 
-        // ---------- Điện thoại ----------
+        // -------- Điện thoại --------
         if(q.includes("điện thoại") || q.includes("liên hệ")){
-
-            addMessage(`
-                ☎ <b>Điện thoại Trung tâm</b><br><br>
-                ${DATA.center.phone}
-            `);
-
+            addMessage(`☎ <b>Đường dây nóng</b><br><br>${DATA.center.phone}`);
             return;
         }
 
-        // ---------- Địa chỉ ----------
+        // -------- Địa chỉ --------
         if(q.includes("địa chỉ") || q.includes("ở đâu")){
-
-            addMessage(`
-                📍 <b>Địa chỉ Trung tâm PVHCC</b><br><br>
-                ${DATA.center.address}
-            `);
-
+            addMessage(`📍 <b>Địa chỉ Trung tâm</b><br><br>${DATA.center.address}`);
             return;
         }
 
-        // ---------- Tiếp công dân ----------
+        // -------- Tiếp công dân --------
         if(q.includes("tiếp công dân")){
-
             addMessage(`
-                📅 <b>Lịch tiếp công dân</b><br><br>
-
-                • ${DATA.citizen_reception.day}<br>
-                • ${DATA.citizen_reception.time}<br>
-                • ${DATA.citizen_reception.location}
-            `);
-
+📅 <b>Lịch tiếp công dân</b><br><br>
+<b>${DATA.citizen_reception.day}</b><br>
+🕗 ${DATA.citizen_reception.time}<br>
+📍 ${DATA.citizen_reception.location}
+`);
             return;
         }
 
-        // ---------- Nhận diện thủ tục ----------
-        const proc = detectProcedure(q);
+        // -------- Thủ tục --------
+        const procedure = detectProcedure(question);
 
-        if(proc){
+        if(procedure){
 
-            const url = DATA.dvc_links[proc];
+            const officers = findOfficers(question);
+            const url = DATA.dvc_links[procedure];
 
-            addMessage(`
-                📌 <b>${proc.toUpperCase()}</b><br><br>
+            let html = `
+📌 <b style="font-size:18px">${procedure.toUpperCase()}</b><br><br>
 
-                Thủ tục này được thực hiện trên Cổng Dịch vụ công Quốc gia.
+Thủ tục được thực hiện trên Cổng Dịch vụ công Quốc gia.<br><br>
 
-                ${dvcButton(url)}
-            `);
+<a href="${url}" target="_blank" class="ai-link-btn">
+🔗 MỞ THỦ TỤC TRÊN CỔNG DVC
+</a>
+`;
 
+            if(officers.length){
+
+                html += `<br><br><b>👨‍💼 CÁN BỘ PHỤ TRÁCH</b>`;
+
+                officers.forEach(o=>{
+
+                    html += `
+<div style="margin-top:10px;padding:10px;border:1px solid #ececec;border-radius:10px;background:#fafafa">
+<b>${o.name}</b><br>
+${o.position}<br>
+📋 ${o.field}<br>
+☎ <a href="tel:${o.phone}" style="color:#d70018;text-decoration:none">${o.phone}</a>
+</div>
+`;
+
+                });
+
+            }
+
+            addMessage(html);
             return;
         }
 
-        // ---------- Không hiểu ----------
+        // -------- Hỏi lĩnh vực --------
+        const officers = findOfficers(question);
+
+        if(officers.length){
+
+            let html = `<b>👨‍💼 Cán bộ phụ trách lĩnh vực này</b><br>`;
+
+            officers.forEach(o=>{
+
+                html += `
+<div style="margin-top:10px;padding:10px;border:1px solid #ececec;border-radius:10px;background:#fafafa">
+<b>${o.name}</b><br>
+${o.position}<br>
+📋 ${o.field}<br>
+☎ <a href="tel:${o.phone}" style="color:#d70018;text-decoration:none">${o.phone}</a>
+</div>
+`;
+
+            });
+
+            addMessage(html);
+            return;
+        }
+
+        // -------- Mặc định --------
         addMessage(`
-            Xin chào bà con!
+👋 <b>Xin chào bà con!</b><br><br>
 
-            Tôi có thể hỗ trợ:
+Tôi là trợ lý AI của Trung tâm PVHCC xã Đại Đồng.
 
-            • Tra cứu thủ tục hành chính
+Tôi có thể hỗ trợ:
 
-            • Giờ làm việc
-
-            • Tiếp công dân
-
-            • Điện thoại liên hệ
-
-            • Địa chỉ Trung tâm PVHCC
-        `);
+• Tra cứu thủ tục hành chính<br>
+• Mở đúng thủ tục trên Cổng DVC Quốc gia<br>
+• Cán bộ phụ trách từng lĩnh vực<br>
+• Giờ làm việc<br>
+• Lịch tiếp công dân<br>
+• Số điện thoại liên hệ
+`);
 
     }
 
-    // ===== GỬI =====
+    // ================= GỬI =================
     function send(){
 
-        const text = aiInput.value.trim();
+        const txt = aiInput.value.trim();
 
-        if(text === "") return;
+        if(!txt) return;
 
-        addMessage(text, true);
+        addMessage(txt, true);
 
         aiInput.value = "";
 
-        setTimeout(() => reply(text), 150);
+        reply(txt);
 
     }
 
     aiSend.onclick = send;
 
-    aiInput.addEventListener("keydown", e => {
+    aiInput.addEventListener("keydown", e=>{
 
-        if(e.key === "Enter"){
-            send();
-        }
+        if(e.key==="Enter") send();
 
     });
 
-    // ===== CHIP GỢI Ý =====
-    document.querySelectorAll(".ai-chip").forEach(chip => {
+    // ================= CHIP =================
+    document.querySelectorAll(".ai-chip").forEach(chip=>{
 
-        chip.onclick = () => {
+        chip.onclick = ()=>{
 
             aiInput.value = chip.innerText;
 
