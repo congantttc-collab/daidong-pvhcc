@@ -12,7 +12,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const input  = document.getElementById("ai-input");
     const send   = document.getElementById("ai-send");
 
-    const API = "http://localhost:3000/chat";
+    const API = "http://127.0.0.1:3000/chat";
 
     toggle.onclick = ()=> chat.classList.add("active");
     close.onclick  = ()=> chat.classList.remove("active");
