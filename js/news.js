@@ -1,14 +1,11 @@
-document.addEventListener("DOMContentLoaded", async () => {
-  const featured = document.getElementById("featured-news");
-  const sidebar = document.getElementById("news-sidebar");
+fetch("data/news.json")
+  .then(res => res.json())
+  .then(news => {
 
-  if (!featured || !sidebar) return;
+    const featured = document.getElementById("featured-news");
+    const sidebar = document.getElementById("news-sidebar");
 
-  try {
-    const res = await fetch("data/news.json");
-    const news = await res.json();
-
-    if (!Array.isArray(news) || news.length === 0) return;
+    if (!featured || !sidebar) return;
 
     // Tin nổi bật
     const first = news[0];
@@ -21,41 +18,28 @@ document.addEventListener("DOMContentLoaded", async () => {
         </div>
 
         <div class="featured-content">
-          <div class="news-date">${first.date}</div>
           <h3>${first.title}</h3>
           <p>${first.summary}</p>
 
-          <div class="read-more">
-            Đọc tiếp
-            <span>→</span>
+          <div class="featured-meta">
+            <span>${first.date}</span>
+            <span class="arrow">→</span>
           </div>
         </div>
       </a>
     `;
 
     // 4 tin nhỏ bên phải
-    sidebar.innerHTML = "";
+    sidebar.innerHTML = news.slice(1,5).map(item => `
+      <a href="pages/article.html?id=${item.id}" class="side-news">
+        <img src="${item.image}" alt="${item.title}">
 
-    news.slice(1, 5).forEach(item => {
-      sidebar.innerHTML += `
-        <a href="pages/article.html?id=${item.id}" class="side-news">
-          <img src="${item.image}" alt="${item.title}">
-          <div class="side-content">
-            <div class="news-date">${item.date}</div>
-            <h4>${item.title}</h4>
-            <span class="arrow">→</span>
-          </div>
-        </a>
-      `;
-    });
+        <div class="side-content">
+          <span class="side-date">${item.date}</span>
+          <h4>${item.title}</h4>
+        </div>
+      </a>
+    `).join("");
 
-  } catch (err) {
-    console.error("Lỗi tải tin tức:", err);
-
-    featured.innerHTML = `
-      <div class="news-error">
-        Không tải được dữ liệu tin tức.
-      </div>
-    `;
-  }
-});
+  })
+  .catch(err => console.error("News:", err));
