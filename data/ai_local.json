@@ -115,3 +115,64 @@
     }
   }
 }
+,
+"procedures": {
+  "khai sinh": {
+    "name": "Đăng ký khai sinh",
+    "fee": "Miễn phí",
+    "time": "Giải quyết trong ngày",
+    "level": "Mức độ 4",
+    "documents": [
+      "Tờ khai đăng ký khai sinh",
+      "Giấy chứng sinh hoặc giấy tờ thay thế",
+      "CCCD của cha hoặc mẹ"
+    ]
+  },
+
+  "khai tử": {
+    "name": "Đăng ký khai tử",
+    "fee": "Miễn phí",
+    "time": "Trong ngày",
+    "level": "Mức độ 4",
+    "documents": [
+      "Tờ khai đăng ký khai tử",
+      "Giấy báo tử hoặc giấy tờ thay thế",
+      "CCCD của người đi khai"
+    ]
+  },
+
+  "kết hôn": {
+    "name": "Đăng ký kết hôn",
+    "fee": "Miễn phí",
+    "time": "Trong ngày",
+    "level": "Mức độ 4",
+    "documents": [
+      "Tờ khai đăng ký kết hôn",
+      "CCCD của hai bên"
+    ]
+  },
+
+  "chứng thực": {
+    "name": "Chứng thực bản sao từ bản chính",
+    "fee": "Theo quy định",
+    "time": "Giải quyết ngay",
+    "level": "Mức độ 4",
+    "documents": [
+      "Bản chính giấy tờ",
+      "Bản photocopy",
+      "CCCD của người yêu cầu"
+    ]
+  },
+
+  "đất đai": {
+    "name": "Thủ tục đất đai",
+    "fee": "Theo từng hồ sơ",
+    "time": "Theo quy định",
+    "level": "Mức độ 4",
+    "documents": [
+      "Đơn đề nghị",
+      "Giấy chứng nhận quyền sử dụng đất",
+      "CCCD của người sử dụng đất"
+    ]
+  }
+}
