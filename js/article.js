@@ -35,7 +35,8 @@ fetch("../data/news.json")
         ${article.summary}
       </div>
 
-     <img src="${article.image}" alt="${article.title}" class="article-cover">
+ // MỚI
+<img src="../${article.image}" alt="${article.title}" class="article-cover">
 
       <div class="article-content">
         ${article.content}
