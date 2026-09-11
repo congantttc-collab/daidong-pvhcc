@@ -1,7 +1,11 @@
 /* ==========================================================
    TRỢ LÝ AI PVHCC XÃ ĐẠI ĐỒNG
-   AI 5.0 PRO - MODULE 3
-   AI CHUYÊN VIÊN MỘT CỬA
+   AI 5.0 PRO - MODULE 4
+   - Hiểu ngôn ngữ tự nhiên
+   - Hội thoại nhiều bước
+   - Tự chọn cán bộ phụ trách
+   - Mở đúng Cổng DVC Quốc gia
+   - Gợi ý hồ sơ, lệ phí, thời hạn (nếu có)
 ========================================================== */
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -16,63 +20,57 @@ document.addEventListener("DOMContentLoaded", () => {
   let DATA = {};
   let INTENTS = {};
   let READY = false;
-
-  // Bộ nhớ hội thoại
   let CONTEXT = null;
 
-  // =========================================
+  // =========================
   // ĐỌC DỮ LIỆU
-  // =========================================
+  // =========================
   Promise.all([
-    fetch("./data/ai_local.json?v=60").then(r=>r.json()),
-    fetch("./data/ai_intents.json?v=60").then(r=>r.json())
+    fetch("./data/ai_local.json?v=70").then(r=>r.json()),
+    fetch("./data/ai_intents.json?v=70").then(r=>r.json())
   ])
   .then(([local,intents])=>{
-      DATA=local;
-      INTENTS=intents;
-      READY=true;
-      console.log("AI 5.0 PRO MODULE 3 READY");
+      DATA = local;
+      INTENTS = intents;
+      READY = true;
+      console.log("AI 5.0 PRO MODULE 4 READY");
   })
   .catch(err=>console.error(err));
 
-  // =========================================
+  // =========================
   // GIAO DIỆN
-  // =========================================
-  if(aiToggle) aiToggle.onclick=()=>aiChat.classList.add("active");
-  if(aiClose) aiClose.onclick=()=>aiChat.classList.remove("active");
+  // =========================
+  aiToggle.onclick = ()=> aiChat.classList.add("active");
+  aiClose.onclick  = ()=> aiChat.classList.remove("active");
 
-  function addMessage(html,me=false){
+  function addMessage(html, me=false){
 
       const div=document.createElement("div");
-      div.className=me?"ai-message user":"ai-message bot";
+      div.className= me ? "ai-message user":"ai-message bot";
       div.innerHTML=html;
+
       aiBody.appendChild(div);
       aiBody.scrollTop=aiBody.scrollHeight;
-
   }
 
   function normalize(str){
-
       return str.toLowerCase()
           .normalize("NFD")
           .replace(/[\u0300-\u036f]/g,"")
           .replace(/đ/g,"d");
-
   }
 
-  function createDVCSearchUrl(keyword){
-
+  function dvc(keyword){
       return "https://dichvucong.gov.vn/p/home/dvc-tthc-category.html?keyword="
-          + encodeURIComponent(keyword);
-
+      + encodeURIComponent(keyword);
   }
 
-  // =========================================
-  // HIỂU NGÔN NGỮ TỰ NHIÊN
-  // =========================================
-  function detectProcedure(question){
+  // =========================
+  // NHẬN DIỆN Ý ĐỊNH
+  // =========================
+  function detect(text){
 
-      const text=normalize(question);
+      const q=normalize(text);
 
       let best=null;
       let score=0;
@@ -82,7 +80,7 @@ document.addEventListener("DOMContentLoaded", () => {
           let s=0;
 
           obj.keywords.forEach(k=>{
-              if(text.includes(normalize(k))) s+=k.length;
+              if(q.includes(normalize(k))) s+=k.length;
           });
 
           if(s>score){
@@ -92,14 +90,13 @@ document.addEventListener("DOMContentLoaded", () => {
 
       });
 
-      return score>0?best:null;
-
+      return best;
   }
 
-  // =========================================
-  // TÌM CÁN BỘ
-  // =========================================
-  function findOfficers(field){
+  // =========================
+  // CÁN BỘ
+  // =========================
+  function officers(field){
 
       if(!DATA.officers) return [];
 
@@ -109,25 +106,25 @@ document.addEventListener("DOMContentLoaded", () => {
 
   }
 
-  // =========================================
-  // HIỂN THỊ CÁN BỘ
-  // =========================================
-  function officerCard(field){
+  // =========================
+  // THẺ CÁN BỘ
+  // =========================
+  function renderOfficer(field){
 
-      const officers=findOfficers(field);
+      const list=officers(field);
 
-      if(!officers.length) return "";
+      if(!list.length) return "";
 
-      let html=`<div style="margin-top:12px"><b>👨‍💼 Cán bộ phụ trách</b></div>`;
+      let html=`<div class="ai-title">👨‍💼 Cán bộ phụ trách</div>`;
 
-      officers.forEach(o=>{
+      list.forEach(o=>{
 
           html+=`
-          <div style="margin-top:8px;padding:10px;border:1px solid #ececec;border-radius:10px;background:#fafafa">
+          <div class="ai-card">
             <b>${o.name}</b><br>
             ${o.position}<br>
             📋 ${o.field}<br>
-            ☎ <a href="tel:${o.phone}" style="color:#d70018;text-decoration:none">${o.phone}</a>
+            ☎ <a href="tel:${o.phone}">${o.phone}</a>
           </div>`;
 
       });
@@ -136,62 +133,65 @@ document.addEventListener("DOMContentLoaded", () => {
 
   }
 
-  // =========================================
-  // HIỂN THỊ THỦ TỤC
-  // =========================================
+  // =========================
+  // THỦ TỤC
+  // =========================
   function renderProcedure(id){
 
-      const item=INTENTS[id];
+      const info=INTENTS[id];
+      const p=DATA.procedures?.[id];
 
-      const url=createDVCSearchUrl(item.search);
+      let html=`<div class="ai-head">📌 ${info.search}</div>`;
 
-      let html=`
-      <div style="font-size:18px;font-weight:bold;color:#d70018">
-        📌 ${item.search}
-      </div>
+      if(p){
 
-      <div style="margin-top:8px">
-        Đây là thủ tục chính thức trên <b>Cổng Dịch vụ công Quốc gia</b>.
-      </div>
-      `;
+          html+=`
+          <div class="ai-info">
+          💰 <b>Lệ phí:</b> ${p.fee}<br>
+          ⏱ <b>Thời hạn:</b> ${p.time}<br>
+          🌐 <b>DVC:</b> ${p.level}
+          </div>
 
-      html+=officerCard(item.field);
+          <div class="ai-title">📄 Hồ sơ cần chuẩn bị</div>
+          <ul>`;
+
+          p.documents.forEach(i=>{
+              html+=`<li>${i}</li>`;
+          });
+
+          html+=`</ul>`;
+      }
+
+      html+=renderOfficer(info.field);
 
       html+=`
-      <a href="${url}" target="_blank" class="ai-link-btn"
-      style="display:block;text-align:center;margin-top:14px">
-      🔗 TRA CỨU TRÊN CỔNG DVC QUỐC GIA
+      <a class="ai-link-btn"
+         target="_blank"
+         href="${dvc(info.search)}">
+         🔗 TRA CỨU TRÊN CỔNG DVC QUỐC GIA
       </a>`;
 
       return html;
-
   }
 
-  // =========================================
+  // =========================
   // HỘI THOẠI NHIỀU BƯỚC
-  // =========================================
-  function handleContext(answer){
+  // =========================
+  function contextReply(text){
 
-      const q=normalize(answer);
+      const q=normalize(text);
 
-      // ----- ĐẤT ĐAI -----
+      // ĐẤT ĐAI
       if(CONTEXT==="dat"){
 
           CONTEXT=null;
 
-          if(q.includes("tach"))
-              return renderProcedure("tach thua");
-
-          if(q.includes("sang") || q.includes("chuyen"))
-              return renderProcedure("chuyen nhuong");
-
-          if(q.includes("cap"))
-              return renderProcedure("cap so");
+          if(q.includes("tach")) return renderProcedure("tach thua");
+          if(q.includes("sang") || q.includes("chuyen")) return renderProcedure("chuyen nhuong");
+          if(q.includes("cap")) return renderProcedure("cap so");
 
           return `
-          Tôi chưa hiểu lựa chọn.
-
-          Bà con trả lời:
+          Bà con vui lòng chọn:
 
           • Tách thửa
 
@@ -201,22 +201,17 @@ document.addEventListener("DOMContentLoaded", () => {
           `;
       }
 
-      // ----- HỘ KINH DOANH -----
+      // HỘ KINH DOANH
       if(CONTEXT==="hkd"){
 
           CONTEXT=null;
 
-          if(q.includes("dang"))
-              return renderProcedure("hộ kinh doanh");
-
-          if(q.includes("tam"))
-              return renderProcedure("tam ngung kinh doanh");
-
-          if(q.includes("cham"))
-              return renderProcedure("cham dut kinh doanh");
+          if(q.includes("dang")) return renderProcedure("hộ kinh doanh");
+          if(q.includes("tam")) return renderProcedure("tam ngung kinh doanh");
+          if(q.includes("cham")) return renderProcedure("cham dut kinh doanh");
 
           return `
-          Bà con trả lời:
+          Bà con chọn:
 
           • Đăng ký
 
@@ -226,64 +221,30 @@ document.addEventListener("DOMContentLoaded", () => {
           `;
       }
 
-      // ----- HỘ TỊCH -----
-      if(CONTEXT==="hotich"){
-
-          CONTEXT=null;
-
-          if(q.includes("khai sinh")) return renderProcedure("khai sinh");
-          if(q.includes("khai tu")) return renderProcedure("khai tử");
-          if(q.includes("ket hon")) return renderProcedure("kết hôn");
-          if(q.includes("doc than")) return renderProcedure("doc than");
-
-          return `
-          Bà con chọn:
-
-          • Khai sinh
-
-          • Khai tử
-
-          • Kết hôn
-
-          • Xác nhận độc thân
-          `;
-      }
-
-      // ----- BẢO TRỢ -----
+      // BẢO TRỢ
       if(CONTEXT==="baotro"){
 
           CONTEXT=null;
-
-          if(q.includes("nguoi gia"))
-              return renderProcedure("bảo trợ xã hội");
-
-          if(q.includes("khuyet"))
-              return renderProcedure("bảo trợ xã hội");
-
-          if(q.includes("ngheo"))
-              return renderProcedure("bảo trợ xã hội");
 
           return renderProcedure("bảo trợ xã hội");
       }
 
       return null;
-
   }
 
-  // =========================================
+  // =========================
   // AI TRẢ LỜI
-  // =========================================
+  // =========================
   function reply(question){
 
       if(!READY){
-          addMessage("⏳ Hệ thống đang tải dữ liệu...");
+          addMessage("⏳ Hệ thống đang khởi tạo dữ liệu...");
           return;
       }
 
-      // Có ngữ cảnh thì xử lý trước
       if(CONTEXT){
 
-          const html=handleContext(question);
+          const html=contextReply(question);
 
           if(html){
               addMessage(html);
@@ -296,44 +257,55 @@ document.addEventListener("DOMContentLoaded", () => {
 
       // THÔNG TIN CHUNG
       if(q.includes("gio lam")){
-          addMessage(`<b>🕒 Giờ làm việc</b><br><br>${DATA.center.working_hours}`);
+
+          addMessage(`
+          <b>🕒 Giờ làm việc</b><br><br>
+          ${DATA.center.working_hours}
+          `);
+
           return;
       }
 
       if(q.includes("dien thoai") || q.includes("lien he")){
-          addMessage(`<b>☎ Điện thoại</b><br><br>${DATA.center.phone}`);
+
+          addMessage(`
+          <b>☎ Liên hệ Trung tâm</b><br><br>
+          ${DATA.center.phone}
+          `);
+
           return;
       }
 
       if(q.includes("dia chi")){
-          addMessage(`<b>📍 Địa chỉ</b><br><br>${DATA.center.address}`);
+
+          addMessage(`
+          <b>📍 Địa chỉ</b><br><br>
+          ${DATA.center.address}
+          `);
+
           return;
       }
 
       if(q.includes("tiep cong dan")){
+
           addMessage(`
           <b>📅 Lịch tiếp công dân</b><br><br>
           ${DATA.citizen_reception.day}<br>
           🕗 ${DATA.citizen_reception.time}<br>
-          📍 ${DATA.citizen_reception.location}`);
+          📍 ${DATA.citizen_reception.location}
+          `);
+
           return;
       }
 
-      // ==============================
-      // CHUYÊN VIÊN MỘT CỬA
-      // ==============================
+      // ===== CHUYÊN VIÊN MỘT CỬA =====
 
-      // ĐẤT ĐAI
-      if(
-          q.includes("dat") ||
-          q.includes("so do") ||
-          q.includes("so hong")
-      ){
+      if(q.includes("so do") || q.includes("dat")){
 
           CONTEXT="dat";
 
           addMessage(`
-          🏡 Bà con cần thực hiện nội dung nào?
+          🏡 Để hướng dẫn chính xác, bà con muốn:
 
           • Tách thửa
 
@@ -341,23 +313,18 @@ document.addEventListener("DOMContentLoaded", () => {
 
           • Cấp sổ lần đầu
 
-          Trả lời đúng một lựa chọn.
+          Chỉ cần trả lời một lựa chọn.
           `);
 
           return;
       }
 
-      // HỘ KINH DOANH
-      if(
-          q.includes("kinh doanh") ||
-          q.includes("mo quan") ||
-          q.includes("cua hang")
-      ){
+      if(q.includes("kinh doanh") || q.includes("mo quan")){
 
           CONTEXT="hkd";
 
           addMessage(`
-          🏪 Bà con muốn thực hiện:
+          🏪 Bà con cần:
 
           • Đăng ký hộ kinh doanh
 
@@ -371,39 +338,7 @@ document.addEventListener("DOMContentLoaded", () => {
           return;
       }
 
-      // HỘ TỊCH
-      if(
-          q.includes("ho tich") ||
-          q.includes("khai sinh") ||
-          q.includes("ket hon") ||
-          q.includes("doc than")
-      ){
-
-          CONTEXT="hotich";
-
-          addMessage(`
-          📑 Lĩnh vực Hộ tịch gồm:
-
-          • Khai sinh
-
-          • Khai tử
-
-          • Kết hôn
-
-          • Xác nhận độc thân
-
-          Bà con chọn nội dung cần thực hiện.
-          `);
-
-          return;
-      }
-
-      // BẢO TRỢ
-      if(
-          q.includes("tro cap") ||
-          q.includes("nguoi gia") ||
-          q.includes("khuyet tat")
-      ){
+      if(q.includes("tro cap") || q.includes("nguoi gia") || q.includes("khuyet tat")){
 
           CONTEXT="baotro";
 
@@ -415,41 +350,38 @@ document.addEventListener("DOMContentLoaded", () => {
           • Người khuyết tật
 
           • Hộ nghèo / Cận nghèo
-
-          Trả lời một lựa chọn.
           `);
 
           return;
       }
 
       // NHẬN DIỆN NHANH
-      const id=detectProcedure(question);
+      const id=detect(question);
 
       if(id){
+
           addMessage(renderProcedure(id));
           return;
       }
 
-      // KHÔNG HIỂU
-      const url=createDVCSearchUrl(question);
-
+      // MẶC ĐỊNH
       addMessage(`
-      Tôi chưa xác định chính xác thủ tục.
+      <b>🔎 Tôi chưa xác định chính xác thủ tục.</b><br><br>
 
-      Tôi sẽ mở Cổng Dịch vụ công Quốc gia với đúng nội dung bà con vừa hỏi.
+      Tôi sẽ chuyển bà con sang Cổng Dịch vụ công Quốc gia với đúng nội dung vừa hỏi.
 
-      <a href="${url}" target="_blank"
-      class="ai-link-btn"
-      style="display:block;text-align:center;margin-top:14px">
-      🔗 TRA CỨU TRÊN CỔNG DVC QUỐC GIA
+      <a class="ai-link-btn"
+         target="_blank"
+         href="${dvc(question)}">
+         🔗 TRA CỨU TRÊN CỔNG DVC QUỐC GIA
       </a>
       `);
 
   }
 
-  // =========================================
-  // GỬI TIN
-  // =========================================
+  // =========================
+  // GỬI
+  // =========================
   function send(){
 
       const txt=aiInput.value.trim();
@@ -461,22 +393,17 @@ document.addEventListener("DOMContentLoaded", () => {
       aiInput.value="";
 
       reply(txt);
-
   }
 
-  if(aiSend) aiSend.onclick=send;
+  aiSend.onclick=send;
 
-  if(aiInput){
+  aiInput.addEventListener("keydown",e=>{
+      if(e.key==="Enter") send();
+  });
 
-      aiInput.addEventListener("keydown",e=>{
-          if(e.key==="Enter") send();
-      });
-
-  }
-
-  document.querySelectorAll(".ai-chip").forEach(chip=>{
-      chip.onclick=()=>{
-          aiInput.value=chip.innerText;
+  document.querySelectorAll(".ai-chip").forEach(c=>{
+      c.onclick=()=>{
+          aiInput.value=c.innerText;
           send();
       };
   });
