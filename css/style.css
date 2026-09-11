@@ -1492,3 +1492,25 @@ footer iframe{
     cursor:pointer;
     font-size:18px;
 }
+/* Nút mở Cổng DVC trong khung AI */
+.ai-link-btn{
+    display:inline-block;
+    margin-top:12px;
+    background:#d70018;
+    color:#fff !important;
+    text-decoration:none;
+    padding:10px 16px;
+    border-radius:10px;
+    font-weight:600;
+    font-size:13px;
+    transition:.2s;
+}
+
+.ai-link-btn:hover{
+    background:#b80014;
+    transform:translateY(-1px);
+}
+
+.ai-link-btn:visited{
+    color:#fff !important;
+}
