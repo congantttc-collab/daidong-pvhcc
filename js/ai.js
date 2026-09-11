@@ -1,151 +1,168 @@
 // ===== TRỢ LÝ AI PVHCC XÃ ĐẠI ĐỒNG =====
+
 document.addEventListener("DOMContentLoaded", () => {
 
-  const aiChat   = document.getElementById("ai-chat");
-  const aiToggle = document.getElementById("ai-toggle");
-  const aiClose  = document.getElementById("ai-close");
-  const aiBody   = document.getElementById("ai-body");
-  const aiInput  = document.getElementById("ai-input");
-  const aiSend   = document.getElementById("ai-send");
+    const aiChat   = document.getElementById("ai-chat");
+    const aiToggle = document.getElementById("ai-toggle");
+    const aiClose  = document.getElementById("ai-close");
+    const aiBody   = document.getElementById("ai-body");
+    const aiInput  = document.getElementById("ai-input");
+    const aiSend   = document.getElementById("ai-send");
 
-  let localData = {};
+    let localData = null;
 
-  // Đọc dữ liệu địa phương
-  fetch("./data/ai_local.json")
-    .then(res => res.json())
-    .then(data => {
-      localData = data;
-    })
-    .catch(err => {
-      console.error("Không đọc được ai_local.json", err);
-    });
+    // ===== ĐỌC DỮ LIỆU ĐỊA PHƯƠNG =====
+    fetch("data/ai_local.json")
+        .then(res => {
+            if (!res.ok) throw new Error("Không tìm thấy ai_local.json");
+            return res.json();
+        })
+        .then(data => {
+            localData = data;
+            console.log("AI LOCAL READY");
+        })
+        .catch(err => {
+            console.error(err);
+        });
 
-  // ===== MỞ / ĐÓNG =====
-  aiToggle.addEventListener("click", () => {
-    aiChat.classList.add("active");
-  });
+    // ===== MỞ / ĐÓNG =====
+    aiToggle.onclick = () => aiChat.classList.add("active");
+    aiClose.onclick  = () => aiChat.classList.remove("active");
 
-  aiClose.addEventListener("click", () => {
-    aiChat.classList.remove("active");
-  });
+    // ===== HIỂN THỊ TIN NHẮN =====
+    function addMessage(text, me = false){
 
-  // ===== HIỂN THỊ TIN NHẮN =====
-  function addMessage(text, me = false){
-    const div = document.createElement("div");
-    div.className = me ? "ai-message user" : "ai-message bot";
-    div.innerHTML = text.replace(/\n/g,"<br>");
-    aiBody.appendChild(div);
-    aiBody.scrollTop = aiBody.scrollHeight;
-  }
-
-  // ===== AI TRẢ LỜI =====
-  function reply(question){
-
-    const t = question.toLowerCase();
-
-    // Chưa tải dữ liệu
-    if(!localData.center){
-      addMessage("Hệ thống đang tải dữ liệu, bà con vui lòng thử lại sau 1 giây.");
-      return;
+        const div = document.createElement("div");
+        div.className = me ? "ai-message user" : "ai-message bot";
+        div.innerHTML = text.replace(/\n/g,"<br>");
+        aiBody.appendChild(div);
+        aiBody.scrollTop = aiBody.scrollHeight;
     }
 
-    // ----- Giờ làm việc -----
-    if(t.includes("giờ làm") || t.includes("làm việc")){
-      addMessage(`🕒 ${localData.center.working_hours}`);
-      return;
-    }
+    // ===== TRẢ LỜI =====
+    function reply(question){
 
-    // ----- Điện thoại -----
-    if(t.includes("điện thoại") || t.includes("liên hệ") || t.includes("số điện thoại")){
-      addMessage(`☎ ${localData.center.phone}`);
-      return;
-    }
+        const t = question.toLowerCase();
 
-    // ----- Địa chỉ -----
-    if(t.includes("địa chỉ") || t.includes("ở đâu")){
-      addMessage(`📍 ${localData.center.address}`);
-      return;
-    }
-
-    // ----- Tiếp công dân -----
-    if(t.includes("tiếp công dân")){
-      addMessage(
-`📅 ${localData.citizen_reception.day}
-🕗 ${localData.citizen_reception.time}
-📍 ${localData.citizen_reception.location}`);
-      return;
-    }
-
-    // ===== NHẬN DIỆN THỦ TỤC =====
-    let found = null;
-
-    if(localData.synonyms){
-      for(const [procedure, words] of Object.entries(localData.synonyms)){
-        if(words.some(w => t.includes(w.toLowerCase()))){
-          found = procedure;
-          break;
+        if(localData === null){
+            addMessage("⏳ Hệ thống đang khởi tạo dữ liệu, bà con vui lòng thử lại sau vài giây.");
+            return;
         }
-      }
-    }
 
-    // ===== MỞ ĐÚNG THỦ TỤC =====
-    if(found && localData.dvc_links && localData.dvc_links[found]){
+        // ===== THÔNG TIN TRUNG TÂM =====
+        if(t.includes("giờ làm") || t.includes("làm việc")){
+            addMessage("🕒 " + localData.center.working_hours);
+            return;
+        }
 
-      const url = localData.dvc_links[found];
+        if(t.includes("điện thoại") || t.includes("liên hệ") || t.includes("số điện thoại")){
+            addMessage("☎ " + localData.center.phone);
+            return;
+        }
 
-      addMessage(
-`📌 <b>${found.toUpperCase()}</b>
+        if(t.includes("địa chỉ") || t.includes("ở đâu")){
+            addMessage("📍 " + localData.center.address);
+            return;
+        }
+
+        if(t.includes("email")){
+            addMessage("📧 " + localData.center.email);
+            return;
+        }
+
+        if(t.includes("tiếp công dân")){
+            addMessage(
+`📅 ${localData.citizen_reception.day}
+
+🕗 ${localData.citizen_reception.time}
+
+📍 ${localData.citizen_reception.location}`);
+            return;
+        }
+
+        // ===== NHẬN DIỆN THỦ TỤC =====
+        let procedure = null;
+
+        if(localData.synonyms){
+
+            for(const [name, words] of Object.entries(localData.synonyms)){
+
+                if(words.some(w => t.includes(w.toLowerCase()))){
+                    procedure = name;
+                    break;
+                }
+
+            }
+
+        }
+
+        // ===== MỞ ĐÚNG THỦ TỤC =====
+        if(procedure && localData.dvc_links[procedure]){
+
+            const url = localData.dvc_links[procedure];
+
+            addMessage(
+`📌 <b>${procedure.toUpperCase()}</b>
 
 Thủ tục này được thực hiện trên Cổng Dịch vụ công Quốc gia.
 
 <a href="${url}" target="_blank" class="ai-link-btn">
 🔗 MỞ THỦ TỤC TRÊN CỔNG DVC
 </a>`);
-      return;
-    }
+            return;
+        }
 
-    // ===== KHÔNG NHẬN DIỆN =====
-    addMessage(
+        // ===== KHÔNG NHẬN DIỆN =====
+        addMessage(
 `Xin chào bà con!
 
 Tôi có thể hỗ trợ:
 
 • Tra cứu thủ tục hành chính
+
 • Giờ làm việc
+
 • Tiếp công dân
+
 • Điện thoại liên hệ
+
 • Địa chỉ Trung tâm PVHCC
 
-Bà con hãy nhập nội dung cần hỏi nhé!`);
-  }
-
-  // ===== GỬI =====
-  function send(){
-    const txt = aiInput.value.trim();
-    if(txt === "") return;
-
-    addMessage(txt, true);
-    aiInput.value = "";
-
-    setTimeout(() => {
-      reply(txt);
-    }, 200);
-  }
-
-  aiSend.addEventListener("click", send);
-
-  aiInput.addEventListener("keydown", e => {
-    if(e.key === "Enter"){
-      send();
+Bà con hãy đặt câu hỏi nhé!`);
     }
-  });
 
-  // ===== CHIP GỢI Ý =====
-  document.querySelectorAll(".ai-chip").forEach(chip => {
-    chip.addEventListener("click", () => {
-      aiInput.value = chip.innerText;
-      send();
+    // ===== GỬI =====
+    function send(){
+
+        const txt = aiInput.value.trim();
+
+        if(txt === "") return;
+
+        addMessage(txt, true);
+
+        aiInput.value = "";
+
+        setTimeout(() => reply(txt), 200);
+    }
+
+    aiSend.onclick = send;
+
+    aiInput.addEventListener("keydown", e => {
+
+        if(e.key === "Enter"){
+            send();
+        }
+
     });
-  });
+
+    // ===== CHIP GỢI Ý =====
+    document.querySelectorAll(".ai-chip").forEach(chip => {
+
+        chip.onclick = () => {
+            aiInput.value = chip.innerText;
+            send();
+        };
+
+    });
 
 });
