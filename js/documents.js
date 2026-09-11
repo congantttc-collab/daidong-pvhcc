@@ -1,4 +1,4 @@
-fetch("data/documents.json")
+fetch("./data/documents.json")
   .then(res => res.json())
   .then(docs => {
     const box = document.getElementById("documents-list");
