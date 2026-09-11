@@ -1,5 +1,5 @@
 // ======================================================
-// TRỢ LÝ AI PVHCC XÃ ĐẠI ĐỒNG - VERSION 2.1
+// TRỢ LÝ AI PVHCC XÃ ĐẠI ĐỒNG - VERSION 3.0
 // ======================================================
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -14,234 +14,242 @@ document.addEventListener("DOMContentLoaded", () => {
     let DATA = {};
     let READY = false;
 
-  // ================= ĐỌC JSON =================
-fetch("./data/ai_local.json?v=3")
-    .then(res => {
-        if (!res.ok) throw new Error("Không tìm thấy ai_local.json");
-        return res.json();
-    })
-    .then(json => {
-        DATA = json;
-        READY = true;
-        console.log("AI 3.0 READY", DATA);
-    })
-    .catch(err => {
-        console.error("Lỗi AI:", err);
-        READY = false;
-    });
+    // ================= ĐỌC DỮ LIỆU JSON =================
+    fetch("./data/ai_local.json?v=3")
+        .then(res => {
+            if (!res.ok) throw new Error("Không đọc được ai_local.json");
+            return res.json();
+        })
+        .then(json => {
+            DATA = json;
+            READY = true;
+            console.log("AI 3.0 READY");
+        })
+        .catch(err => {
+            console.error("AI ERROR:", err);
+            READY = false;
+        });
+
     // ================= MỞ / ĐÓNG =================
     aiToggle.onclick = () => aiChat.classList.add("active");
     aiClose.onclick  = () => aiChat.classList.remove("active");
 
     // ================= HIỂN THỊ TIN NHẮN =================
-    function addMessage(text, me = false){
+    function addMessage(html, me = false){
+
         const div = document.createElement("div");
         div.className = me ? "ai-message user" : "ai-message bot";
-        div.innerHTML = text;
+        div.innerHTML = html;
+
         aiBody.appendChild(div);
         aiBody.scrollTop = aiBody.scrollHeight;
     }
 
-    // ================= TÌM CÁN BỘ =================
-    function findOfficers(question){
+    // ================= BỎ DẤU TIẾNG VIỆT =================
+    function normalize(text){
 
-        if(!DATA.officers) return [];
-
-        const q = question.toLowerCase();
-
-        return DATA.officers.filter(o => {
-
-            const f = o.field.toLowerCase();
-
-            return (
-                f.includes(q) ||
-
-                (q.includes("khai sinh") && f.includes("hộ tịch")) ||
-                (q.includes("con mới sinh") && f.includes("hộ tịch")) ||
-                (q.includes("giấy khai sinh") && f.includes("hộ tịch")) ||
-
-                (q.includes("khai tử") && f.includes("hộ tịch")) ||
-                (q.includes("qua đời") && f.includes("hộ tịch")) ||
-                (q.includes("người mất") && f.includes("hộ tịch")) ||
-
-                (q.includes("kết hôn") && f.includes("hộ tịch")) ||
-
-                (q.includes("chứng thực") && f.includes("hộ tịch")) ||
-                (q.includes("công chứng") && f.includes("hộ tịch")) ||
-                (q.includes("sao y") && f.includes("hộ tịch")) ||
-
-                (q.includes("đất") && f.includes("đất")) ||
-                (q.includes("sổ đỏ") && f.includes("đất")) ||
-                (q.includes("tách thửa") && f.includes("đất")) ||
-                (q.includes("chuyển nhượng") && f.includes("đất")) ||
-
-                (q.includes("hộ kinh doanh") && f.includes("hộ kinh doanh")) ||
-                (q.includes("an toàn thực phẩm") && f.includes("an toàn")) ||
-
-                (q.includes("bảo trợ") && f.includes("bảo trợ")) ||
-                (q.includes("người có công") && f.includes("người có công")) ||
-                (q.includes("giáo dục") && f.includes("giáo dục")) ||
-                (q.includes("y tế") && f.includes("y tế")) ||
-
-                (q.includes("văn thư") && f.includes("văn thư")) ||
-                (q.includes("trình ký") && f.includes("trình ký")) ||
-                (q.includes("trả kết quả") && f.includes("trả kết quả")) ||
-
-                (q.includes("kỹ năng số") && f.includes("hạ tầng số")) ||
-                (q.includes("chuyển đổi số") && f.includes("hạ tầng số"))
-            );
-
-        });
+        return text
+            .toLowerCase()
+            .normalize("NFD")
+            .replace(/[\u0300-\u036f]/g,"")
+            .replace(/đ/g,"d");
 
     }
 
-    // ================= AI 3.0 - NHẬN DIỆN THỦ TỤC =================
-function detectProcedure(question){
+    // ================= AI HIỂU Ý ĐỊNH =================
+    function detectProcedure(question){
 
-    if(!DATA.synonyms) return null;
+        if(!DATA.intents) return null;
 
-    const q = question.toLowerCase();
+        const text = normalize(question);
 
-    let best = null;
-    let score = 0;
+        let best = null;
+        let bestScore = 0;
 
-    for(const procedure in DATA.synonyms){
+        Object.entries(DATA.intents).forEach(([name,intent])=>{
 
-        let point = 0;
+            let score = 0;
 
-        DATA.synonyms[procedure].forEach(word=>{
+            intent.keywords.forEach(word=>{
 
-            const w = word.toLowerCase();
+                const kw = normalize(word);
 
-            if(q.includes(w)){
-                point += w.length;
+                if(text.includes(kw)){
+                    score += kw.length;
+                }
+
+            });
+
+            if(score > bestScore){
+                bestScore = score;
+                best = name;
             }
 
         });
 
-        if(point > score){
-            score = point;
-            best = procedure;
-        }
+        return best;
 
     }
 
-    return score > 0 ? best : null;
-}
-    // ================= TRẢ LỜI =================
-    function reply(question){
+    // ================= TÌM CÁN BỘ =================
+    function findOfficers(procedure){
 
-        if(!READY){
-            addMessage("⏳ Hệ thống đang khởi tạo dữ liệu, bà con vui lòng thử lại sau vài giây.");
-            return;
+        if(!DATA.officers) return [];
+
+        const intent = DATA.intents?.[procedure];
+
+        if(!intent) return [];
+
+        const field = normalize(intent.field);
+
+        return DATA.officers.filter(o =>
+            normalize(o.field).includes(field)
+        );
+
+    }
+
+    // ================= THÔNG TIN CHUNG =================
+    function replyGeneral(question){
+
+        const q = normalize(question);
+
+        if(q.includes("gio lam")){
+            return `
+🕒 <b>GIỜ LÀM VIỆC</b><br><br>
+${DATA.center.working_hours}
+`;
         }
 
-        const q = question.toLowerCase();
-
-        // -------- Giờ làm việc --------
-        if(q.includes("giờ làm") || q.includes("làm việc")){
-            addMessage(`🕒 <b>Giờ làm việc</b><br><br>${DATA.center.working_hours}`);
-            return;
+        if(q.includes("dien thoai") || q.includes("lien he")){
+            return `
+☎ <b>ĐƯỜNG DÂY NÓNG</b><br><br>
+<a href="tel:${DATA.center.phone}" style="color:#d70018;text-decoration:none">
+${DATA.center.phone}
+</a>
+`;
         }
 
-        // -------- Điện thoại --------
-        if(q.includes("điện thoại") || q.includes("liên hệ")){
-            addMessage(`☎ <b>Đường dây nóng</b><br><br>${DATA.center.phone}`);
-            return;
+        if(q.includes("dia chi") || q.includes("o dau")){
+            return `
+📍 <b>ĐỊA CHỈ TRUNG TÂM</b><br><br>
+${DATA.center.address}
+`;
         }
 
-        // -------- Địa chỉ --------
-        if(q.includes("địa chỉ") || q.includes("ở đâu")){
-            addMessage(`📍 <b>Địa chỉ Trung tâm</b><br><br>${DATA.center.address}`);
-            return;
-        }
-
-        // -------- Tiếp công dân --------
-        if(q.includes("tiếp công dân")){
-            addMessage(`
-📅 <b>Lịch tiếp công dân</b><br><br>
+        if(q.includes("tiep cong dan")){
+            return `
+📅 <b>LỊCH TIẾP CÔNG DÂN</b><br><br>
 <b>${DATA.citizen_reception.day}</b><br>
 🕗 ${DATA.citizen_reception.time}<br>
 📍 ${DATA.citizen_reception.location}
-`);
-            return;
+`;
         }
 
-        // -------- Thủ tục --------
-        const procedure = detectProcedure(question);
+        return null;
 
-        if(procedure){
+    }
 
-            const officers = findOfficers(procedure);
-            const url = DATA.dvc_links[procedure];
+    // ================= TRẢ LỜI THỦ TỤC =================
+    function replyProcedure(procedure){
 
-            let html = `
+        const officers = findOfficers(procedure);
+
+        const url = DATA.dvc_links?.[procedure] || "#";
+
+        let html = `
 📌 <b style="font-size:18px">${procedure.toUpperCase()}</b><br><br>
 
-Thủ tục được thực hiện trên Cổng Dịch vụ công Quốc gia.<br><br>
+Thủ tục này được thực hiện trên Cổng Dịch vụ công Quốc gia.<br><br>
 
-<a href="${url}" target="_blank" class="ai-link-btn">
+<a href="${url}" target="_blank"
+style="
+display:block;
+background:#d70018;
+color:#fff;
+text-decoration:none;
+text-align:center;
+padding:12px;
+border-radius:10px;
+font-weight:bold;
+">
 🔗 MỞ THỦ TỤC TRÊN CỔNG DVC
 </a>
 `;
 
-            if(officers.length){
-
-                html += `<br><br><b>👨‍💼 CÁN BỘ PHỤ TRÁCH</b>`;
-
-                officers.forEach(o=>{
-
-                    html += `
-<div style="margin-top:10px;padding:10px;border:1px solid #ececec;border-radius:10px;background:#fafafa">
-<b>${o.name}</b><br>
-${o.position}<br>
-📋 ${o.field}<br>
-☎ <a href="tel:${o.phone}" style="color:#d70018;text-decoration:none">${o.phone}</a>
-</div>
-`;
-
-                });
-
-            }
-
-            addMessage(html);
-            return;
-        }
-
-        // -------- Hỏi lĩnh vực --------
-        const officers = findOfficers(question);
-
         if(officers.length){
 
-            let html = `<b>👨‍💼 Cán bộ phụ trách lĩnh vực này</b><br>`;
+            html += `<br><b>👨‍💼 CÁN BỘ PHỤ TRÁCH</b>`;
 
             officers.forEach(o=>{
 
                 html += `
-<div style="margin-top:10px;padding:10px;border:1px solid #ececec;border-radius:10px;background:#fafafa">
+<div style="
+margin-top:10px;
+padding:10px;
+border:1px solid #ececec;
+border-radius:10px;
+background:#fafafa;
+">
 <b>${o.name}</b><br>
 ${o.position}<br>
 📋 ${o.field}<br>
-☎ <a href="tel:${o.phone}" style="color:#d70018;text-decoration:none">${o.phone}</a>
+☎ <a href="tel:${o.phone}" style="color:#d70018;text-decoration:none">
+${o.phone}
+</a>
 </div>
 `;
 
             });
 
-            addMessage(html);
-            return;
         }
 
-        // -------- Mặc định --------
+        return html;
+
+    }
+
+    // ================= AI TRẢ LỜI =================
+    function reply(question){
+
+        if(!READY){
+
+            addMessage("⏳ Hệ thống đang khởi tạo dữ liệu, bà con vui lòng thử lại sau vài giây.");
+
+            return;
+
+        }
+
+        // 1. Thông tin chung
+        const general = replyGeneral(question);
+
+        if(general){
+
+            addMessage(general);
+
+            return;
+
+        }
+
+        // 2. Thủ tục
+        const procedure = detectProcedure(question);
+
+        if(procedure){
+
+            addMessage(replyProcedure(procedure));
+
+            return;
+
+        }
+
+        // 3. Mặc định
         addMessage(`
 👋 <b>Xin chào bà con!</b><br><br>
 
-Tôi là trợ lý AI của Trung tâm PVHCC xã Đại Đồng.
+Tôi là trợ lý AI của Trung tâm Phục vụ Hành chính công xã Đại Đồng.
 
 Tôi có thể hỗ trợ:
 
 • Tra cứu thủ tục hành chính<br>
-• Mở đúng thủ tục trên Cổng DVC Quốc gia<br>
+• Thành phần hồ sơ<br>
 • Cán bộ phụ trách từng lĩnh vực<br>
 • Giờ làm việc<br>
 • Lịch tiếp công dân<br>
@@ -250,7 +258,7 @@ Tôi có thể hỗ trợ:
 
     }
 
-    // ================= GỬI =================
+    // ================= GỬI TIN =================
     function send(){
 
         const txt = aiInput.value.trim();
@@ -273,7 +281,7 @@ Tôi có thể hỗ trợ:
 
     });
 
-    // ================= CHIP =================
+    // ================= CHIP GỢI Ý =================
     document.querySelectorAll(".ai-chip").forEach(chip=>{
 
         chip.onclick = ()=>{
