@@ -1389,7 +1389,15 @@ footer iframe{
     display:flex;
 }
 .ai-header{
-  .ai-title{
+    background:#d70018;
+    color:#fff;
+    padding:16px 18px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.ai-title{
     flex:1;
 }
 
@@ -1399,14 +1407,6 @@ footer iframe{
     object-fit:contain;
     margin:0 8px;
 }
-    background:#d70018;
-    color:#fff;
-    padding:16px 18px;
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-}
-
 .ai-header h3{
     margin:0;
     font-size:18px;
