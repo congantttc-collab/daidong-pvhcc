@@ -18,10 +18,18 @@ fetch("./data/documents.json")
           <p>${doc.summary}</p>
         </div>
 
-        <div class="doc-right">
-          <span class="pdf-badge">PDF</span>
-          <span class="type-badge">${doc.type}</span>
-          <span class="doc-arrow">→</span>
+       <div class="doc-right">
+    <div class="pdf-icon">
+        <icon name=file-pdf color="#D70000" size=lg/>
+        <span>PDF</span>
+    </div>
+
+    <span class="type-badge">${doc.type}</span>
+
+    <span class="status-badge">MỚI</span>
+
+    <span class="doc-arrow">➜</span>
+</div>
         </div>
       </a>
     `).join("");
