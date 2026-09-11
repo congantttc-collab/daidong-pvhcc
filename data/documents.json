@@ -1,5 +1,52 @@
 [
   {
-    "title": "Văn bản mẫu"
+    "id": 1,
+    "date": "08/09/2026",
+    "number": "35/QĐ-UBND",
+    "type": "Quyết định",
+    "title": "Quyết định công bố thủ tục hành chính thuộc thẩm quyền giải quyết của UBND xã Đại Đồng",
+    "summary": "Công bố danh mục thủ tục hành chính thuộc thẩm quyền giải quyết của UBND xã Đại Đồng theo mô hình chính quyền địa phương hai cấp.",
+    "pdf": "documents/35-QD-UBND.pdf",
+    "category": "Quyết định"
+  },
+  {
+    "id": 2,
+    "date": "07/09/2026",
+    "number": "112/TB-UBND",
+    "type": "Thông báo",
+    "title": "Thông báo lịch tiếp công dân định kỳ tháng 9 năm 2026",
+    "summary": "Lịch tiếp công dân định kỳ của Chủ tịch UBND xã Đại Đồng trong tháng 9/2026.",
+    "pdf": "documents/112-TB-UBND.pdf",
+    "category": "Thông báo"
+  },
+  {
+    "id": 3,
+    "date": "06/09/2026",
+    "number": "98/KH-UBND",
+    "type": "Kế hoạch",
+    "title": "Kế hoạch thực hiện cải cách hành chính năm 2026",
+    "summary": "Kế hoạch triển khai các nhiệm vụ cải cách hành chính và chuyển đổi số của UBND xã.",
+    "pdf": "documents/98-KH-UBND.pdf",
+    "category": "Kế hoạch"
+  },
+  {
+    "id": 4,
+    "date": "05/09/2026",
+    "number": "81/CV-UBND",
+    "type": "Công văn",
+    "title": "Công văn hướng dẫn tiếp nhận hồ sơ trực tuyến mức độ toàn trình",
+    "summary": "Hướng dẫn Bộ phận Một cửa tiếp nhận và xử lý hồ sơ trực tuyến trên Cổng DVC Quốc gia.",
+    "pdf": "documents/81-CV-UBND.pdf",
+    "category": "Công văn"
+  },
+  {
+    "id": 5,
+    "date": "04/09/2026",
+    "number": "75/TB-PVHCC",
+    "type": "Thông báo",
+    "title": "Thông báo thời gian làm việc của Trung tâm PVHCC xã Đại Đồng",
+    "summary": "Quy định thời gian tiếp nhận và trả kết quả hồ sơ hành chính tại Trung tâm PVHCC.",
+    "pdf": "documents/75-TB-PVHCC.pdf",
+    "category": "Thông báo"
   }
 ]
