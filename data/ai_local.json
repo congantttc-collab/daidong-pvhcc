@@ -31,18 +31,19 @@
     }
   ],
 
-  "khai sinh": [
-  "khai sinh",
-  "đăng ký khai sinh",
-  "giấy khai sinh",
-  "làm khai sinh",
-  "con mới sinh",
-  "con tôi mới sinh",
-  "em bé mới sinh",
-  "sinh con",
-  "trẻ mới sinh",
-  "bé mới sinh"
-]
+  "synonyms": {
+    "khai sinh": [
+      "khai sinh",
+      "đăng ký khai sinh",
+      "giấy khai sinh",
+      "làm khai sinh",
+      "con mới sinh",
+      "con tôi mới sinh",
+      "em bé mới sinh",
+      "bé mới sinh",
+      "sinh con",
+      "trẻ mới sinh"
+    ],
 
     "khai tử": [
       "khai tử",
@@ -56,8 +57,8 @@
     "kết hôn": [
       "kết hôn",
       "đăng ký kết hôn",
-      "giấy kết hôn",
-      "cưới"
+      "cưới",
+      "làm giấy kết hôn"
     ],
 
     "chứng thực": [
@@ -65,7 +66,7 @@
       "công chứng",
       "sao y",
       "photo công chứng",
-      "chứng thực bản sao",
+      "photo công chứng cccd",
       "cccd",
       "căn cước"
     ],
