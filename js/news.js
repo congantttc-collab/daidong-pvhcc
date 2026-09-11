@@ -22,7 +22,7 @@ fetch("data/news.json")
     `;
 
     // ===== 4 tin mới =====
-    const list = document.getElementById("news-list");
+   const list = document.getElementById("news-sidebar");
     list.innerHTML = "";
 
     others.forEach(item => {
