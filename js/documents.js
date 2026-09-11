@@ -26,7 +26,7 @@ fetch("./data/documents.json")
 
     <span class="type-badge">${doc.type}</span>
 
-    <span class="status-badge">MỚI</span>
+    ${doc.id <= 2 ? '<span class="status-badge">MỚI</span>' : ''}
 
     <span class="doc-arrow">➜</span>
 </div>
