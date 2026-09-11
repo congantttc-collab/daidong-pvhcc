@@ -29,5 +29,44 @@
       "Người dân có thể sử dụng tài khoản VNeID hoặc Cổng DVC Quốc gia để đăng nhập."
     ],
     "goals": []
+  },
+  {
+    "id": 3,
+    "date": "06/09/2026",
+    "category": "Hoạt động",
+    "title": "Tập huấn sử dụng Hệ thống thông tin giải quyết TTHC",
+    "summary": "Cán bộ Trung tâm được tập huấn nghiệp vụ và quy trình số hóa hồ sơ.",
+    "image": "assets/banner/hero.jpg",
+    "content": [
+      "Lớp tập huấn giúp nâng cao kỹ năng tiếp nhận và xử lý hồ sơ điện tử.",
+      "Đồng thời thống nhất quy trình nghiệp vụ trong toàn Trung tâm."
+    ],
+    "goals": []
+  },
+  {
+    "id": 4,
+    "date": "05/09/2026",
+    "category": "Thông báo",
+    "title": "Lịch tiếp công dân định kỳ tháng 9 năm 2026",
+    "summary": "Thông báo lịch tiếp công dân của lãnh đạo UBND xã Đại Đồng.",
+    "image": "assets/banner/hero.jpg",
+    "content": [
+      "UBND xã công bố lịch tiếp công dân định kỳ theo quy định.",
+      "Người dân chủ động đăng ký nội dung trước khi đến làm việc."
+    ],
+    "goals": []
+  },
+  {
+    "id": 5,
+    "date": "04/09/2026",
+    "category": "Chuyển đổi số",
+    "title": "Đẩy mạnh số hóa hồ sơ tại Bộ phận Một cửa",
+    "summary": "100% hồ sơ đủ điều kiện được thực hiện số hóa và lưu trữ điện tử.",
+    "image": "assets/banner/hero.jpg",
+    "content": [
+      "Trung tâm tiếp tục triển khai mạnh mẽ chuyển đổi số trong giải quyết TTHC.",
+      "Việc số hóa giúp giảm thời gian tra cứu và nâng cao chất lượng phục vụ."
+    ],
+    "goals": []
   }
 ]
