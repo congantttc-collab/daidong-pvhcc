@@ -1,4 +1,4 @@
-fetch("../data/news.json")
+fetch("data/news.json")
   .then(res => res.json())
   .then(data => {
     const featured = document.getElementById("featured-news");
