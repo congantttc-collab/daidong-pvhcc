@@ -14,16 +14,21 @@ document.addEventListener("DOMContentLoaded", () => {
     let DATA = {};
     let READY = false;
 
-    // ================= ĐỌC JSON =================
-    fetch("data/ai_local.json")
-        .then(r => r.json())
-        .then(json => {
-            DATA = json;
-            READY = true;
-            console.log("AI 2.1 READY");
-        })
-        .catch(err => console.error(err));
-
+  // ================= ĐỌC JSON =================
+fetch("./data/ai_local.json?v=3")
+    .then(res => {
+        if (!res.ok) throw new Error("Không tìm thấy ai_local.json");
+        return res.json();
+    })
+    .then(json => {
+        DATA = json;
+        READY = true;
+        console.log("AI 3.0 READY", DATA);
+    })
+    .catch(err => {
+        console.error("Lỗi AI:", err);
+        READY = false;
+    });
     // ================= MỞ / ĐÓNG =================
     aiToggle.onclick = () => aiChat.classList.add("active");
     aiClose.onclick  = () => aiChat.classList.remove("active");
