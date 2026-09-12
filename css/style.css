@@ -69,30 +69,41 @@ body{
     margin:6px 0 0;
 }
 
-/* MENU */
-
-.menu{
-  background:#8b0000;
-  position:sticky;
-  top:0;
-  z-index:999;
+/* ===== THANH MENU ===== */
+.navbar{
+    background:#a50000;
+    border-top:3px solid #d4af37;
+    border-bottom:3px solid #d4af37;
 }
 
-.menu .container{
-  display:flex;
-  flex-wrap:wrap;
+.nav-menu{
+    margin:0;
+    padding:0;
+    list-style:none;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    flex-wrap:wrap;
 }
 
-.menu a{
-  color:#fff;
-  text-decoration:none;
-  padding:14px 18px;
-  font-weight:600;
+.nav-menu li{
+    margin:0;
 }
 
-.menu a:hover{
-  background:rgba(255,255,255,.15);
-  color:var(--gold);
+.nav-menu a{
+    display:block;
+    color:#fff;
+    text-decoration:none;
+    padding:16px 14px;
+    font-weight:600;
+    font-size:16px;
+    transition:.3s;
+}
+
+.nav-menu a:hover,
+.nav-menu a.active{
+    background:#c62828;
+    color:#ffd700;
 }
 /* ===== THANH THÔNG BÁO ===== */
 
