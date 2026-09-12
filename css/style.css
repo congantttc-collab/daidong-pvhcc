@@ -1898,10 +1898,29 @@ footer iframe{
 .org-section{display:block;}
 .mobile-org{display:none;}
 
-/* Điện thoại */
+/* Chỉ dùng 1 khối cơ cấu tổ chức cho mọi thiết bị */
+.mobile-org{display:none !important;}
+
 @media (max-width:768px){
 
-    .org-section{display:none !important;}
-    .mobile-org{display:block !important;}
+    .leader-grid{
+        grid-template-columns:repeat(3,1fr);
+        gap:8px;
+    }
 
+    .staff-grid{
+        grid-template-columns:repeat(4,1fr);
+        gap:8px;
+    }
+
+    .avatar{width:60px;height:60px;}
+    .avatar-sm{width:46px;height:46px;}
+
+    .person-card h4,
+    .staff-card h5{font-size:10px;}
+
+    .person-card span,
+    .person-card strong{
+        font-size:9px;
+    }
 }
