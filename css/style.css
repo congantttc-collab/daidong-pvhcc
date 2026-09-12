@@ -2051,3 +2051,65 @@ footer iframe{
 #co-cau-to-chuc p{
     color:#B30000 !important;
 }
+/* ===== TIÊU ĐỀ CÁC MỤC TRANG CHỦ ===== */
+
+.news h2,
+.documents h2,
+.schedule h2{
+    text-align:center;
+    color:#b30000;
+    font-size:30px;
+    font-weight:800;
+    text-transform:uppercase;
+    margin-bottom:10px;
+    position:relative;
+}
+
+/* gạch vàng trang trí */
+.news h2::after,
+.documents h2::after,
+.schedule h2::after{
+    content:"";
+    display:block;
+    width:180px;
+    height:4px;
+    background:#d4af37;
+    margin:12px auto 0;
+    border-radius:10px;
+}
+
+/* mô tả */
+.news .section-desc,
+.documents .section-desc,
+.schedule .section-desc{
+    text-align:center;
+    color:#5f6b7a;
+    font-size:18px;
+    max-width:900px;
+    margin:0 auto 35px;
+    line-height:1.6;
+}
+
+/* Mobile */
+@media (max-width:768px){
+
+    .news h2,
+    .documents h2,
+    .schedule h2{
+        font-size:24px;
+    }
+
+    .news .section-desc,
+    .documents .section-desc,
+    .schedule .section-desc{
+        font-size:15px;
+        margin-bottom:25px;
+        padding:0 12px;
+    }
+
+    .news h2::after,
+    .documents h2::after,
+    .schedule h2::after{
+        width:120px;
+    }
+}
