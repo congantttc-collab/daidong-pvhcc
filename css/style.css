@@ -784,69 +784,100 @@ grid-template-columns:1fr;
     justify-content:center;
     font-size:36px;
 }
-/* ===== THỐNG KÊ HỒ SƠ ===== */
+/* ================= THỐNG KÊ HỒ SƠ ================= */
 
-.stats{
-    background:#c40000;
-    padding:55px 0 65px;
+.statistics{
+    background:#c90000;
+    padding:50px 0 60px;
 }
 
-.stats h2{
+.statistics .container{
+    width:1200px;
+    max-width:95%;
+    margin:auto;
+}
+
+.statistics h2{
     text-align:center;
     color:#FFD700;
     font-size:42px;
     font-weight:800;
+    letter-spacing:1px;
+    margin-bottom:35px;
     text-transform:uppercase;
-    margin-bottom:40px;
+    text-shadow:2px 2px 6px rgba(0,0,0,.35);
 }
 
 .stats-grid{
     display:grid;
     grid-template-columns:repeat(4,1fr);
-    gap:28px;
+    gap:26px;
 }
 
 .stat-card{
-    background:#d40000;
+    background:#d80a0a;
+    border:1px solid rgba(255,255,255,.25);
     border-radius:22px;
-    padding:38px 20px;
+    min-height:190px;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
     text-align:center;
-    box-shadow:0 8px 22px rgba(0,0,0,.15);
+    box-shadow:0 12px 28px rgba(0,0,0,.18);
+    transition:.3s;
 }
 
-/* Áp trực tiếp cho số */
-.stat-card h3{
-    font-size:64px;
-    font-weight:800;
+.stat-card:hover{
+    transform:translateY(-4px);
+}
+
+.stat-card .number{
     color:#FFD700;
-    margin:0 0 16px;
+    font-size:58px;
+    font-weight:800;
     line-height:1;
+    margin-bottom:18px;
 }
 
-/* Chữ mô tả */
-.stat-card p{
+.stat-card .label{
+    color:#fff;
     font-size:24px;
     font-weight:600;
-    color:#fff;
-    margin:0;
+    line-height:1.45;
+    padding:0 18px;
 }
 
+/* Điện thoại */
 @media (max-width:768px){
+
+    .statistics{
+        padding:40px 0;
+    }
+
+    .statistics h2{
+        font-size:30px;
+        margin-bottom:24px;
+    }
 
     .stats-grid{
         grid-template-columns:repeat(2,1fr);
+        gap:14px;
     }
 
-    .stats h2{
-        font-size:30px;
+    .stat-card{
+        min-height:140px;
+        border-radius:16px;
     }
 
-    .stat-card h3{
-        font-size:42px;
+    .stat-card .number{
+        font-size:38px;
+        margin-bottom:10px;
     }
 
-    .stat-card p{
-        font-size:16px;
+    .stat-card .label{
+        font-size:15px;
+        padding:0 10px;
     }
 }
 /* ===== TIN TỨC 5.2.1 ===== */
