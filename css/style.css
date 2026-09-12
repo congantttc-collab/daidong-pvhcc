@@ -313,19 +313,47 @@ section h2{
 @media (max-width:768px){
 
     .hero{
-        height:1350px;
+        height:980px;
+        overflow:visible;
     }
 
+    /* 3 lãnh đạo vẫn 3 người/1 hàng */
     .leader-grid{
-        grid-template-columns:1fr;
+        grid-template-columns:repeat(3,1fr);
+        gap:8px;
     }
 
+    /* 8 công chức thành 4x2 */
     .staff-grid{
-        grid-template-columns:repeat(2,1fr);
+        grid-template-columns:repeat(4,1fr);
+        gap:8px;
     }
 
-    .section-title.light h2{
-        font-size:30px;
+    .person-card,
+    .staff-card{
+        padding:6px 2px;
+    }
+
+    .avatar{
+        width:64px;
+        height:64px;
+    }
+
+    .avatar-sm{
+        width:48px;
+        height:48px;
+    }
+
+    .person-card h4,
+    .staff-card h5{
+        font-size:11px;
+    }
+
+    .person-card span,
+    .person-card strong,
+    .staff-card p{
+        font-size:9px;
+        line-height:1.2;
     }
 }
 /* GRID */
