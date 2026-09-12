@@ -156,50 +156,55 @@ body{
 
 .hero{
     position:relative;
-    min-height:980px;
+    height:900px;
     overflow:hidden;
+    padding:0;
 }
 
-.hero img{
+.hero > img{
     position:absolute;
-    inset:0;
+    top:0;
+    left:0;
     width:100%;
     height:100%;
     object-fit:cover;
+    z-index:1;
 }
 
 .hero-overlay{
     position:absolute;
     inset:0;
-    background:rgba(120,0,0,.18);
-    z-index:1;
+    background:rgba(0,0,0,.25);
+    z-index:2;
 }
 
-/* CƠ CẤU ĐÈ LÊN ẢNH */
+/* Khối cơ cấu nổi trên ảnh */
 .org-section{
     position:absolute;
     inset:0;
-    z-index:2;
+    z-index:3;
     background:transparent;
-    padding:35px 0 40px;
+    padding:35px 0;
 }
 
 .org-section .container{
     width:1200px;
     max-width:95%;
-    margin:auto;
+    margin:0 auto;
 }
 
+/* Tiêu đề */
 .section-title.light{
     text-align:center;
-    margin-bottom:18px;
+    margin-bottom:20px;
 }
 
 .section-title.light h2{
     color:#FFD700;
-    font-size:38px;
-    margin-bottom:8px;
-    text-shadow:2px 2px 6px rgba(0,0,0,.5);
+    font-size:42px;
+    font-weight:800;
+    text-shadow:2px 2px 8px rgba(0,0,0,.6);
+    margin-bottom:6px;
 }
 
 .section-title.light p{
@@ -210,77 +215,78 @@ body{
 .group-title.light{
     color:#FFD700;
     font-size:24px;
+    font-weight:700;
     margin:18px 0;
-    text-shadow:1px 1px 4px rgba(0,0,0,.6);
+    text-shadow:1px 1px 5px rgba(0,0,0,.7);
 }
 
-/* LÃNH ĐẠO */
+/* Lãnh đạo */
 .leader-grid{
     display:grid;
     grid-template-columns:repeat(3,1fr);
-    gap:28px;
-    margin-bottom:28px;
+    gap:26px;
+    margin-bottom:26px;
 }
 
-/* CÔNG CHỨC */
+/* Công chức */
 .staff-grid{
     display:grid;
     grid-template-columns:repeat(4,1fr);
-    gap:22px;
+    gap:18px;
 }
 
 .person-card,
 .staff-card{
-    background:rgba(255,255,255,.88);
-    backdrop-filter:blur(5px);
-    border-radius:16px;
-    padding:18px 14px;
+    background:rgba(255,255,255,.82);
+    backdrop-filter:blur(6px);
+    border-radius:14px;
+    padding:16px 12px;
     text-align:center;
-    box-shadow:0 8px 20px rgba(0,0,0,.18);
+    box-shadow:0 6px 18px rgba(0,0,0,.18);
 }
 
 .avatar{
-    width:120px;
-    height:120px;
+    width:118px;
+    height:118px;
     border-radius:50%;
     border:4px solid #D4AF37;
     object-fit:cover;
     display:block;
     margin:0 auto 12px;
-    background:#eee;
+    background:#e9e9e9;
 }
 
 .avatar-sm{
-    width:88px;
-    height:88px;
+    width:82px;
+    height:82px;
     border-radius:50%;
     border:3px solid #D4AF37;
     object-fit:cover;
     display:block;
     margin:0 auto 10px;
-    background:#eee;
+    background:#e9e9e9;
 }
 
 .person-card h4,
 .staff-card h5{
-    margin:8px 0 4px;
     color:#8B0000;
     font-size:18px;
+    margin:6px 0;
 }
 
 .person-card span,
 .staff-card p{
     display:block;
-    font-size:14px;
     color:#444;
-    margin:2px 0;
+    font-size:14px;
+    line-height:1.35;
 }
 
 .person-card strong{
     display:block;
-    margin-top:6px;
     color:#C00000;
     font-size:16px;
+    margin-top:6px;
 }
 
 /* SECTION CHUNG */
@@ -295,14 +301,11 @@ section h2{
     margin-bottom:36px;
 }
 
-@media(max-width:768px){
+/* Mobile */
+@media (max-width:768px){
 
     .hero{
-        min-height:1280px;
-    }
-
-    .hero img{
-        height:100%;
+        height:1350px;
     }
 
     .leader-grid{
@@ -316,9 +319,7 @@ section h2{
     .section-title.light h2{
         font-size:30px;
     }
-
 }
-
 /* GRID */
 /* ===== LIÊN KẾT NHANH ===== */
 
