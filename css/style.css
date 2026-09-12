@@ -237,14 +237,28 @@ body{
 
 .person-card,
 .staff-card{
-    background:transparent;      /* bỏ nền trắng */
-    border:none;                /* bỏ viền */
-    box-shadow:none;            /* bỏ đổ bóng */
-    backdrop-filter:none;
-    text-align:center;
-    padding:10px 6px;
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+    backdrop-filter: none !important;
+    padding: 10px 6px;
+    text-align: center;
+}
+.person-card h4,
+.staff-card h5,
+.person-card span,
+.staff-card p,
+.person-card strong{
+    text-shadow: 2px 2px 6px rgba(0,0,0,.9);
 }
 
+.person-card h4,
+.staff-card h5{ color:#fff; }
+
+.person-card span,
+.staff-card p{ color:#f2f2f2; }
+
+.person-card strong{ color:#FFD700; }
 .avatar{
     width:118px;
     height:118px;
