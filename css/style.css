@@ -312,42 +312,36 @@ section h2{
 /* Mobile */
 @media (max-width:768px){
 
+    /* Cho khối cơ cấu tự giãn, không bị cắt */
     .hero{
-        height:980px;
+        min-height:auto;
+        height:auto;
         overflow:visible;
     }
 
-    /* 3 lãnh đạo vẫn 3 người/1 hàng */
+    .org-section{
+        position:relative;
+        inset:auto;
+        padding:25px 0 35px;
+    }
+
+    /* 3 lãnh đạo */
     .leader-grid{
         grid-template-columns:repeat(3,1fr);
         gap:8px;
     }
 
-    /* 8 công chức thành 4x2 */
+    /* 8 công chức = 4 cột x 2 hàng */
     .staff-grid{
         grid-template-columns:repeat(4,1fr);
         gap:8px;
     }
 
-    .person-card,
-    .staff-card{
-        padding:6px 2px;
-    }
-
-    .avatar{
-        width:64px;
-        height:64px;
-    }
-
-    .avatar-sm{
-        width:48px;
-        height:48px;
-    }
+    .avatar{width:62px;height:62px;}
+    .avatar-sm{width:46px;height:46px;}
 
     .person-card h4,
-    .staff-card h5{
-        font-size:11px;
-    }
+    .staff-card h5{font-size:11px;}
 
     .person-card span,
     .person-card strong,
