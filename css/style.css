@@ -69,7 +69,8 @@ body{
     margin:6px 0 0;
 }
 
-/* ===== THANH MENU ===== */
+/* ===== THANH MENU 2 HÀNG ===== */
+
 .navbar{
     background:#a50000;
     border-top:3px solid #d4af37;
@@ -80,23 +81,29 @@ body{
     margin:0;
     padding:0;
     list-style:none;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    flex-wrap:wrap;
+
+    display:grid;
+    grid-template-columns:repeat(8,1fr);
 }
 
 .nav-menu li{
-    margin:0;
+    border:1px solid rgba(255,255,255,.08);
 }
 
 .nav-menu a{
-    display:block;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    min-height:52px;
+    padding:8px 6px;
+
     color:#fff;
     text-decoration:none;
-    padding:16px 14px;
+    text-align:center;
     font-weight:600;
-    font-size:16px;
+    font-size:15px;
+    line-height:1.25;
     transition:.3s;
 }
 
@@ -104,6 +111,22 @@ body{
 .nav-menu a.active{
     background:#c62828;
     color:#ffd700;
+}
+
+/* ===== ĐIỆN THOẠI ===== */
+
+@media (max-width:768px){
+
+    .nav-menu{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .nav-menu a{
+        min-height:48px;
+        font-size:14px;
+        padding:10px 6px;
+    }
+
 }
 /* ===== THANH THÔNG BÁO ===== */
 
