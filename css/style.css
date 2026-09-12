@@ -174,16 +174,16 @@ body{
     background:rgba(0,0,0,.18);
 }
 
-/* ================= CƠ CẤU TỔ CHỨC ================= */
+/* ===== CƠ CẤU TỔ CHỨC ===== */
 
 .org-section{
-    background:#ffffff;
-    padding:45px 0;
+    background:linear-gradient(180deg,#0E5A8A 0%, #1273B6 100%);
+    padding:45px 0 55px;
 }
 
 .org-section .container{
-    width:1200px;
-    max-width:95%;
+    width:1280px;
+    max-width:96%;
     margin:auto;
 }
 
@@ -193,144 +193,157 @@ body{
 }
 
 .section-title h2{
-    color:#b30000;
-    font-size:34px;
-    margin-bottom:6px;
+    color:#FFD700;
+    font-size:38px;
     font-weight:800;
+    text-transform:uppercase;
+    text-shadow:0 3px 8px rgba(0,0,0,.35);
 }
 
 .section-title p{
-    color:#666;
-    font-size:16px;
+    color:#EAF6FF;
+    font-size:17px;
 }
 
+/* Tiêu đề nhóm */
 .group-title{
-    color:#b30000;
-    border-left:4px solid #d4af37;
-    padding-left:10px;
-    margin:18px 0 16px;
-    font-size:22px;
+    color:#FFD700;
+    font-size:28px;
+    font-weight:700;
+    border-left:5px solid #FFD700;
+    padding-left:14px;
+    margin:26px 0 18px;
 }
 
-/* 3 lãnh đạo */
-
+/* Lãnh đạo */
 .leader-grid{
     display:grid;
     grid-template-columns:repeat(3,1fr);
     gap:22px;
-    margin-bottom:30px;
+    margin-bottom:28px;
 }
 
-/* 8 công chức */
-
+/* Công chức */
 .staff-grid{
     display:grid;
     grid-template-columns:repeat(8,1fr);
     gap:12px;
 }
 
+/* Thẻ cán bộ */
 .person-card,
 .staff-card{
+    background:linear-gradient(180deg,#FFE89A,#F4C842);
+    border:2px solid #E0B000;
+    border-radius:16px;
     text-align:center;
-    background:transparent;
-    border:none;
-    box-shadow:none;
-    padding:8px 4px;
+    box-shadow:0 8px 18px rgba(0,0,0,.22);
 }
 
+.person-card{
+    padding:18px 12px;
+}
+
+.staff-card{
+    padding:14px 8px;
+}
+
+/* Ảnh */
 .avatar{
-    width:100px;
-    height:100px;
+    width:108px;
+    height:108px;
     border-radius:50%;
-    border:3px solid #d4af37;
+    border:4px solid #B8860B;
     object-fit:cover;
     display:block;
-    margin:0 auto 10px;
-    background:#ececec;
+    margin:0 auto 12px;
+    background:#fff;
 }
 
 .avatar-sm{
-    width:64px;
-    height:64px;
+    width:68px;
+    height:68px;
     border-radius:50%;
-    border:2px solid #d4af37;
+    border:3px solid #B8860B;
     object-fit:cover;
     display:block;
     margin:0 auto 8px;
-    background:#ececec;
+    background:#fff;
 }
 
-.person-card h4{
-    color:#8b0000;
-    font-size:16px;
-    margin:4px 0;
+/* Chữ */
+.person-card h4,
+.staff-card h5{
+    color:#B30000;
+    font-weight:800;
+    margin:6px 0 4px;
 }
 
-.person-card span,
+.person-card span{
+    display:block;
+    color:#7A0000;
+    font-size:14px;
+    line-height:1.3;
+}
+
 .person-card strong{
     display:block;
-    font-size:12px;
-    line-height:1.3;
-    color:#555;
-}
-
-.person-card strong{
-    color:#b30000;
-}
-
-.staff-card h5{
-    color:#8b0000;
-    font-size:11px;
-    margin:4px 0;
-    line-height:1.2;
+    color:#C40000;
+    margin-top:6px;
+    font-size:16px;
 }
 
 .staff-card p{
-    color:#666;
-    font-size:10px;
-    margin:0;
+    color:#7A0000;
+    font-size:12px;
 }
 
-/* ================= MOBILE ================= */
-
+/* Mobile */
 @media (max-width:768px){
 
-    .hero{
-        height:220px;
-    }
+    .section-title h2{font-size:28px;}
+    .group-title{font-size:20px;}
 
     .leader-grid{
         grid-template-columns:repeat(3,1fr);
-        gap:10px;
+        gap:8px;
     }
 
     .staff-grid{
         grid-template-columns:repeat(4,1fr);
-        gap:10px;
+        gap:8px;
     }
 
     .avatar{
-        width:68px;
-        height:68px;
+        width:62px;
+        height:62px;
+        border-width:3px;
     }
 
     .avatar-sm{
-        width:52px;
-        height:52px;
+        width:46px;
+        height:46px;
     }
 
-    .person-card h4{
-        font-size:11px;
+    .person-card{
+        padding:10px 6px;
     }
 
+    .staff-card{
+        padding:8px 4px;
+    }
+
+    .person-card h4,
     .staff-card h5{
         font-size:10px;
+        line-height:1.2;
     }
 
     .person-card span,
     .person-card strong,
     .staff-card p{
         font-size:9px;
+        line-height:1.2;
     }
 }
 /* GRID */
