@@ -787,14 +787,14 @@ grid-template-columns:1fr;
 /* ===== THỐNG KÊ HỒ SƠ ===== */
 
 .stats{
-    background:#b30000;
-    padding:60px 0;
+    background:#c40000;
+    padding:55px 0 65px;
 }
 
 .stats h2{
     text-align:center;
     color:#FFD700;
-    font-size:40px;
+    font-size:42px;
     font-weight:800;
     text-transform:uppercase;
     margin-bottom:40px;
@@ -807,55 +807,48 @@ grid-template-columns:1fr;
 }
 
 .stat-card{
-    background:#c40000;
-    border:1px solid rgba(255,255,255,.18);
+    background:#d40000;
     border-radius:22px;
-    min-height:190px;
-    display:flex;
-    flex-direction:column;
-    justify-content:center;
-    align-items:center;
+    padding:38px 20px;
     text-align:center;
+    box-shadow:0 8px 22px rgba(0,0,0,.15);
 }
 
-.stat-number{
+/* Áp trực tiếp cho số */
+.stat-card h3{
     font-size:64px;
     font-weight:800;
     color:#FFD700;
+    margin:0 0 16px;
     line-height:1;
-    margin-bottom:18px;
 }
 
+/* Chữ mô tả */
 .stat-card p{
-    color:#fff;
     font-size:24px;
     font-weight:600;
+    color:#fff;
     margin:0;
 }
 
 @media (max-width:768px){
 
-    .stats h2{
-        font-size:28px;
-    }
-
     .stats-grid{
         grid-template-columns:repeat(2,1fr);
     }
 
-    .stat-card{
-        min-height:150px;
+    .stats h2{
+        font-size:30px;
     }
 
-    .stat-number{
+    .stat-card h3{
         font-size:42px;
     }
 
     .stat-card p{
-        font-size:17px;
+        font-size:16px;
     }
 }
-
 /* ===== TIN TỨC 5.2.1 ===== */
 
 .news{
