@@ -107,12 +107,12 @@ body{
 }
 /* ===== THANH THÔNG BÁO ===== */
 
-.notice-bar{
-    background:#ffd54f;
-    border-top:1px solid #e6b800;
-    border-bottom:1px solid #e6b800;
-    position: relative;
-    z-index: 1;
+..notice-bar{
+    background:#f3cc4a;
+    padding:18px 0;     /* giảm chiều cao */
+    min-height:72px;    /* chỉ đủ 2 hàng chữ */
+    display:flex;
+    align-items:center;
 }
 .notice-wrap{
     display:flex;
