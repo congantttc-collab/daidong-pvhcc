@@ -1837,3 +1837,30 @@ footer iframe{
         font-size:9px;
     }
 }
+/* ===== MÀU CHỮ CƠ CẤU TỔ CHỨC (PC + MOBILE) ===== */
+
+#co-cau-to-chuc .section-title h2,
+#co-cau-to-chuc .section-title p,
+#co-cau-to-chuc .group-title,
+#co-cau-to-chuc .person-card h4,
+#co-cau-to-chuc .person-card span,
+#co-cau-to-chuc .person-card strong,
+#co-cau-to-chuc .staff-card h5,
+#co-cau-to-chuc .staff-card p{
+    color:#D60000 !important;
+}
+
+/* Giữ màu đỏ cả trên điện thoại */
+@media (max-width:768px){
+    #co-cau-to-chuc .section-title h2,
+    #co-cau-to-chuc .section-title p,
+    #co-cau-to-chuc .group-title,
+    #co-cau-to-chuc .person-card h4,
+    #co-cau-to-chuc .person-card span,
+    #co-cau-to-chuc .person-card strong,
+    #co-cau-to-chuc .staff-card h5,
+    #co-cau-to-chuc .staff-card p{
+        color:#D60000 !important;
+        text-shadow:none !important;
+    }
+}
