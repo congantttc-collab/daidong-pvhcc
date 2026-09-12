@@ -1890,3 +1890,28 @@ footer iframe{
         text-shadow:none !important;
     }
 }
+/* ===== GHI ĐÈ MÀU ĐỎ CHO CƠ CẤU TỔ CHỨC - PC & MOBILE ===== */
+
+#co-cau-to-chuc h2,
+#co-cau-to-chuc h3,
+#co-cau-to-chuc h4,
+#co-cau-to-chuc h5,
+#co-cau-to-chuc p,
+#co-cau-to-chuc span,
+#co-cau-to-chuc strong{
+    color:#D60000 !important;
+    text-shadow:none !important;
+}
+
+@media (max-width:768px){
+    #co-cau-to-chuc h2,
+    #co-cau-to-chuc h3,
+    #co-cau-to-chuc h4,
+    #co-cau-to-chuc h5,
+    #co-cau-to-chuc p,
+    #co-cau-to-chuc span,
+    #co-cau-to-chuc strong{
+        color:#D60000 !important;
+        text-shadow:none !important;
+    }
+}
