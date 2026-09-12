@@ -312,43 +312,53 @@ section h2{
 /* Mobile */
 @media (max-width:768px){
 
-    /* Cho khối cơ cấu tự giãn, không bị cắt */
     .hero{
-        min-height:auto;
-        height:auto;
-        overflow:visible;
+        height:240px;
+        overflow:hidden;
     }
 
     .org-section{
         position:relative;
-        inset:auto;
+        background:#fff;
+        margin-top:0;
         padding:25px 0 35px;
     }
 
-    /* 3 lãnh đạo */
+    .section-title h2{
+        color:#b30000;
+        text-shadow:none;
+        font-size:28px;
+    }
+
+    .section-title p{
+        color:#666;
+    }
+
+    .group-title{
+        color:#b30000;
+        text-shadow:none;
+    }
+
     .leader-grid{
-        grid-template-columns:repeat(3,1fr);
-        gap:8px;
+        grid-template-columns:1fr;
+        gap:15px;
     }
 
-    /* 8 công chức = 4 cột x 2 hàng */
     .staff-grid{
-        grid-template-columns:repeat(4,1fr);
-        gap:8px;
+        grid-template-columns:repeat(2,1fr);
+        gap:12px;
     }
 
-    .avatar{width:62px;height:62px;}
-    .avatar-sm{width:46px;height:46px;}
-
-    .person-card h4,
-    .staff-card h5{font-size:11px;}
-
-    .person-card span,
-    .person-card strong,
-    .staff-card p{
-        font-size:9px;
-        line-height:1.2;
+    .person-card,
+    .staff-card{
+        background:#fff;
+        border-radius:12px;
+        box-shadow:0 2px 8px rgba(0,0,0,.08);
+        padding:12px;
     }
+
+    .avatar{width:88px;height:88px;}
+    .avatar-sm{width:70px;height:70px;}
 }
 /* GRID */
 /* ===== LIÊN KẾT NHANH ===== */
