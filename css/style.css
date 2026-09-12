@@ -1895,8 +1895,3 @@ footer iframe{
 .desktop-hero{display:block;}
 .mobile-org{display:none;}
 
-/* Điện thoại chỉ hiện khối Mobile */
-@media (max-width:768px){
-    .desktop-hero{display:none !important;}
-    .mobile-org{display:block !important;}
-}
