@@ -152,213 +152,186 @@ body{
     from{transform:translateX(0);}
     to{transform:translateX(-100%);}
 }
-/* ================= HERO + CƠ CẤU TỔ CHỨC ================= */
+/* ================= HERO ================= */
 
 .hero{
     position:relative;
-    height:900px;
+    height:420px;
     overflow:hidden;
     padding:0;
 }
 
-.hero > img{
-    position:absolute;
-    top:0;
-    left:0;
+.hero img{
     width:100%;
     height:100%;
     object-fit:cover;
-    z-index:1;
+    display:block;
 }
 
 .hero-overlay{
     position:absolute;
     inset:0;
-    background:rgba(0,0,0,.25);
-    z-index:2;
+    background:rgba(0,0,0,.18);
 }
 
-/* Khối cơ cấu nổi trên ảnh */
+/* ================= CƠ CẤU TỔ CHỨC ================= */
+
 .org-section{
-    position:absolute;
-    inset:0;
-    z-index:3;
-    background:transparent;
-    padding:35px 0;
+    background:#ffffff;
+    padding:45px 0;
 }
 
 .org-section .container{
     width:1200px;
     max-width:95%;
-    margin:0 auto;
+    margin:auto;
 }
 
-/* Tiêu đề */
-.section-title.light{
+.section-title{
     text-align:center;
-    margin-bottom:20px;
+    margin-bottom:28px;
 }
 
-.section-title.light h2{
-    color:#FFD700;
-    font-size:42px;
-    font-weight:800;
-    text-shadow:2px 2px 8px rgba(0,0,0,.6);
+.section-title h2{
+    color:#b30000;
+    font-size:34px;
     margin-bottom:6px;
+    font-weight:800;
 }
 
-.section-title.light p{
-    color:#fff;
-    font-size:18px;
+.section-title p{
+    color:#666;
+    font-size:16px;
 }
 
-.group-title.light{
-    color:#FFD700;
-    font-size:24px;
-    font-weight:700;
-    margin:18px 0;
-    text-shadow:1px 1px 5px rgba(0,0,0,.7);
+.group-title{
+    color:#b30000;
+    border-left:4px solid #d4af37;
+    padding-left:10px;
+    margin:18px 0 16px;
+    font-size:22px;
 }
 
-/* Lãnh đạo */
+/* 3 lãnh đạo */
+
 .leader-grid{
     display:grid;
     grid-template-columns:repeat(3,1fr);
-    gap:26px;
-    margin-bottom:26px;
+    gap:22px;
+    margin-bottom:30px;
 }
 
-/* Công chức */
+/* 8 công chức */
+
 .staff-grid{
     display:grid;
-    grid-template-columns:repeat(4,1fr);
-    gap:18px;
+    grid-template-columns:repeat(8,1fr);
+    gap:12px;
 }
 
 .person-card,
 .staff-card{
-    background: transparent !important;
-    border: none !important;
-    box-shadow: none !important;
-    backdrop-filter: none !important;
-    padding: 10px 6px;
-    text-align: center;
-}
-.person-card h4,
-.staff-card h5,
-.person-card span,
-.staff-card p,
-.person-card strong{
-    text-shadow: 2px 2px 6px rgba(0,0,0,.9);
+    text-align:center;
+    background:transparent;
+    border:none;
+    box-shadow:none;
+    padding:8px 4px;
 }
 
-.person-card h4,
-.staff-card h5{ color:#fff; }
-
-.person-card span,
-.staff-card p{ color:#f2f2f2; }
-
-.person-card strong{ color:#FFD700; }
 .avatar{
-    width:118px;
-    height:118px;
+    width:100px;
+    height:100px;
     border-radius:50%;
-    border:4px solid #D4AF37;
-    object-fit:cover;
-    display:block;
-    margin:0 auto 12px;
-    background:#e9e9e9;
-}
-
-.avatar-sm{
-    width:82px;
-    height:82px;
-    border-radius:50%;
-    border:3px solid #D4AF37;
+    border:3px solid #d4af37;
     object-fit:cover;
     display:block;
     margin:0 auto 10px;
-    background:#e9e9e9;
+    background:#ececec;
 }
 
-.person-card h4,
-.staff-card h5{
-    color:#ffffff;
-    text-shadow:2px 2px 5px rgba(0,0,0,.9);
+.avatar-sm{
+    width:64px;
+    height:64px;
+    border-radius:50%;
+    border:2px solid #d4af37;
+    object-fit:cover;
+    display:block;
+    margin:0 auto 8px;
+    background:#ececec;
+}
+
+.person-card h4{
+    color:#8b0000;
+    font-size:16px;
+    margin:4px 0;
 }
 
 .person-card span,
-.staff-card p{
-    color:#f5f5f5;
-    text-shadow:1px 1px 4px rgba(0,0,0,.9);
+.person-card strong{
+    display:block;
+    font-size:12px;
+    line-height:1.3;
+    color:#555;
 }
 
 .person-card strong{
-    color:#FFD700;
-    text-shadow:1px 1px 4px rgba(0,0,0,.9);
-}
-/* SECTION CHUNG */
-section{
-    padding:60px 0;
+    color:#b30000;
 }
 
-section h2{
-    text-align:center;
-    color:var(--red);
-    font-size:34px;
-    margin-bottom:36px;
+.staff-card h5{
+    color:#8b0000;
+    font-size:11px;
+    margin:4px 0;
+    line-height:1.2;
 }
 
-/* Mobile */
+.staff-card p{
+    color:#666;
+    font-size:10px;
+    margin:0;
+}
+
+/* ================= MOBILE ================= */
+
 @media (max-width:768px){
 
     .hero{
-        height:240px;
-        overflow:hidden;
-    }
-
-    .org-section{
-        position:relative;
-        background:#fff;
-        margin-top:0;
-        padding:25px 0 35px;
-    }
-
-    .section-title h2{
-        color:#b30000;
-        text-shadow:none;
-        font-size:28px;
-    }
-
-    .section-title p{
-        color:#666;
-    }
-
-    .group-title{
-        color:#b30000;
-        text-shadow:none;
+        height:220px;
     }
 
     .leader-grid{
-        grid-template-columns:1fr;
-        gap:15px;
+        grid-template-columns:repeat(3,1fr);
+        gap:10px;
     }
 
     .staff-grid{
-        grid-template-columns:repeat(2,1fr);
-        gap:12px;
+        grid-template-columns:repeat(4,1fr);
+        gap:10px;
     }
 
-    .person-card,
-    .staff-card{
-        background:#fff;
-        border-radius:12px;
-        box-shadow:0 2px 8px rgba(0,0,0,.08);
-        padding:12px;
+    .avatar{
+        width:68px;
+        height:68px;
     }
 
-    .avatar{width:88px;height:88px;}
-    .avatar-sm{width:70px;height:70px;}
+    .avatar-sm{
+        width:52px;
+        height:52px;
+    }
+
+    .person-card h4{
+        font-size:11px;
+    }
+
+    .staff-card h5{
+        font-size:10px;
+    }
+
+    .person-card span,
+    .person-card strong,
+    .staff-card p{
+        font-size:9px;
+    }
 }
 /* GRID */
 /* ===== LIÊN KẾT NHANH ===== */
