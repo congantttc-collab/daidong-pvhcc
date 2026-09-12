@@ -1928,3 +1928,43 @@ footer iframe{
         text-shadow:none !important;
     }
 }
+/* ===== GHI ĐÈ GIAO DIỆN CƠ CẤU TỔ CHỨC ===== */
+
+#co-cau-to-chuc{
+    background:#0A6FB6 !important;
+    padding:45px 0 55px;
+}
+
+#co-cau-to-chuc .section-title h2{
+    color:#FFD700 !important;
+    text-shadow:none !important;
+}
+
+#co-cau-to-chuc .section-title p{
+    color:#EAF6FF !important;
+}
+
+#co-cau-to-chuc .group-title{
+    color:#FFD700 !important;
+    border-left:5px solid #FFD700;
+}
+
+#co-cau-to-chuc .person-card,
+#co-cau-to-chuc .staff-card{
+    background:#F6D14A !important;
+    border:1px solid #D4AF37 !important;
+    box-shadow:0 6px 16px rgba(0,0,0,.18);
+}
+
+#co-cau-to-chuc .avatar,
+#co-cau-to-chuc .avatar-sm{
+    background:#fff !important;
+}
+
+#co-cau-to-chuc h4,
+#co-cau-to-chuc h5,
+#co-cau-to-chuc span,
+#co-cau-to-chuc strong,
+#co-cau-to-chuc p{
+    color:#B30000 !important;
+}
