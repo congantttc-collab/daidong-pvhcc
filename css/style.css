@@ -1894,4 +1894,14 @@ footer iframe{
 /* PC mặc định */
 .desktop-hero{display:block;}
 .mobile-org{display:none;}
+/* Mặc định */
+.org-section{display:block;}
+.mobile-org{display:none;}
 
+/* Điện thoại */
+@media (max-width:768px){
+
+    .org-section{display:none !important;}
+    .mobile-org{display:block !important;}
+
+}
