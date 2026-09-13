@@ -2454,3 +2454,149 @@ footer iframe{
     }
 
 }
+/* ===================================================
+   ĐỊA ĐIỂM CÁC CƠ QUAN, ĐƠN VỊ
+=================================================== */
+
+.map-system{
+    background:#f5f9ff;
+    padding:45px 0;
+}
+
+.map-card{
+    display:flex;
+    align-items:center;
+    gap:28px;
+
+    text-decoration:none;
+    color:#fff;
+
+    background:linear-gradient(135deg,#D70000 0%,#B80000 60%,#920000 100%);
+    border-radius:26px;
+
+    padding:34px;
+    overflow:hidden;
+    position:relative;
+
+    box-shadow:0 18px 40px rgba(170,0,0,.28);
+
+    transition:.35s;
+}
+
+.map-card:hover{
+    transform:translateY(-6px);
+    box-shadow:0 24px 48px rgba(170,0,0,.38);
+}
+
+.map-card::before{
+    content:"";
+    position:absolute;
+    top:-60px;
+    right:-60px;
+    width:180px;
+    height:180px;
+    background:rgba(255,215,0,.13);
+    border-radius:50%;
+}
+
+.map-icon{
+    width:120px;
+    height:120px;
+    min-width:120px;
+
+    border-radius:50%;
+
+    background:linear-gradient(180deg,#FFF176,#FFD700,#F4C400);
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    font-size:64px;
+
+    box-shadow:
+        inset 0 3px 8px rgba(255,255,255,.6),
+        0 8px 22px rgba(0,0,0,.28);
+
+    animation:mapPulse 2s ease-in-out infinite;
+}
+
+.map-content{
+    flex:1;
+}
+
+.map-content h3{
+    margin:0 0 10px;
+    color:#FFD700;
+    font-size:34px;
+    font-weight:800;
+    letter-spacing:1px;
+}
+
+.map-content p{
+    margin:0 0 22px;
+    color:#FFF4B8;
+    font-size:18px;
+    line-height:1.6;
+}
+
+.map-btn{
+    display:inline-block;
+
+    background:linear-gradient(180deg,#FFF176,#FFD700,#F4C400);
+
+    color:#A00000;
+
+    padding:14px 26px;
+
+    border-radius:14px;
+
+    font-size:18px;
+    font-weight:800;
+    letter-spacing:.5px;
+
+    box-shadow:0 6px 16px rgba(255,215,0,.35);
+}
+
+@keyframes mapPulse{
+    0%,100%{
+        transform:scale(1);
+    }
+    50%{
+        transform:scale(1.08);
+    }
+}
+
+/* ================= MOBILE ================= */
+
+@media (max-width:768px){
+
+    .map-card{
+        flex-direction:column;
+        text-align:center;
+        padding:24px 18px;
+        gap:18px;
+    }
+
+    .map-icon{
+        width:90px;
+        height:90px;
+        min-width:90px;
+        font-size:48px;
+    }
+
+    .map-content h3{
+        font-size:24px;
+    }
+
+    .map-content p{
+        font-size:15px;
+    }
+
+    .map-btn{
+        width:100%;
+        font-size:15px;
+        padding:12px;
+    }
+
+}
