@@ -2795,3 +2795,76 @@ textarea,
 select{
     border-radius:14px;
 }
+/* =====================================================
+   BO GÓC ĐỒNG BỘ TOÀN BỘ WEBSITE
+===================================================== */
+
+/* Các khối chính */
+.leader-card,
+.staff-card,
+.stat-card,
+.news-main,
+.news-side article,
+.document-card,
+.schedule-card,
+.fb-card,
+.map-card,
+.service-card,
+.tool-card,
+.quick-card,
+.feature-card{
+    border-radius:24px !important;
+    overflow:hidden;
+    box-shadow:0 10px 28px rgba(0,0,0,.12);
+}
+
+/* Cơ cấu tổ chức */
+.leader-card img,
+.staff-card img{
+    border-radius:50%;
+}
+
+/* Tin tức */
+.news-main img,
+.news-side img{
+    border-radius:20px;
+}
+
+/* Thống kê hồ sơ */
+.stat-card{
+    border:1px solid rgba(255,255,255,.18);
+}
+
+/* Facebook địa phương */
+.fb-card{
+    transition:.25s;
+}
+
+.fb-card:hover{
+    transform:translateY(-4px);
+}
+
+/* Địa điểm cơ quan */
+.map-card{
+    border-radius:30px !important;
+}
+
+/* Nút bấm */
+button,
+.btn,
+.map-btn,
+.fb-btn{
+    border-radius:16px !important;
+}
+
+/* Ô nhập liệu */
+input,
+textarea,
+select{
+    border-radius:14px;
+}
+
+/* Iframe nếu sau này dùng */
+iframe{
+    border-radius:20px;
+}
