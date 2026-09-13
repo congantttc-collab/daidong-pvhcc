@@ -131,7 +131,7 @@ body{
 /* ===== THANH THÔNG BÁO ===== */
 
 .notice-bar{
-    background:#E9C548;
+    background:#FFD83D;              /* Vàng tươi */
     border-top:2px solid #D4AF37;
     border-bottom:2px solid #D4AF37;
     width:100%;
@@ -165,10 +165,13 @@ body{
 }
 
 .notice-text marquee{
-    color:#7A0000;
-    font-size:24px;
-    font-weight:700;
+    width:100%;
+    color:#E60000;                  /* Đỏ tươi */
+    font-size:26px;                /* Lớn hơn */
+    font-weight:800;
     line-height:58px;
+    font-family:"Segoe UI", Arial, sans-serif;
+    letter-spacing:.3px;
 }
 /* ================= HERO ================= */
 
