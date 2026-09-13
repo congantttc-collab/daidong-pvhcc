@@ -152,7 +152,7 @@ body{
 
 /* KHỐI THÔNG BÁO NỔI */
 .notice-title{
-    flex:0 0 290px;
+    flex:0 0 150px;
     height:64px;
 
     background:linear-gradient(180deg,#F20A0A 0%,#D60000 55%,#A80000 100%);
@@ -163,7 +163,7 @@ body{
     justify-content:center;
     gap:10px;
 
-    font-size:22px;
+    font-size:16px;
     font-weight:900;
     letter-spacing:1px;
     white-space:nowrap;
@@ -1244,7 +1244,7 @@ grid-template-columns:1fr;
     display:flex;
     flex-direction:column;
     align-items:flex-end;
-    gap:10px;
+    gap:6px;
 }
 
 .calendar-type{
