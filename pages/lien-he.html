@@ -27,49 +27,47 @@ body{
     margin-bottom:8px;
 }
 
-.header p{
-    font-size:16px;
-    color:#fff;
-}
+.header p{font-size:16px}
 
 .container{
-    max-width:1100px;
-    margin:30px auto;
+    max-width:1200px;
+    margin:28px auto;
     padding:0 15px;
+}
+
+.hotline{
+    background:#fff8e6;
+    border:2px solid #f3b600;
+    color:#b30000;
+    text-align:center;
+    font-size:22px;
+    font-weight:700;
+    padding:18px;
+    border-radius:14px;
+    margin-bottom:22px;
 }
 
 .section-title{
     background:#fff;
     border-left:6px solid #FFD700;
-    padding:16px 20px;
-    border-radius:12px;
-    margin-bottom:20px;
+    border-radius:14px;
+    padding:18px 22px;
+    margin-bottom:22px;
     box-shadow:0 4px 12px rgba(0,0,0,.08);
 }
 
 .section-title h2{
     color:#b30000;
-}
-
-.hotline{
-    background:#fff8e6;
-    border:2px solid #FFD700;
-    color:#b30000;
-    text-align:center;
-    font-size:20px;
-    font-weight:bold;
-    padding:18px;
-    border-radius:14px;
-    margin-bottom:25px;
+    margin-bottom:6px;
 }
 
 .staff-grid{
     display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+    grid-template-columns:repeat(auto-fit,minmax(340px,1fr));
     gap:18px;
 }
 
-/* THẺ CÁN BỘ */
+/* THẺ */
 .staff-card{
     background:#fff;
     border-radius:16px;
@@ -78,78 +76,80 @@ body{
     border-left:6px solid #d10000;
 }
 
+.leader{
+    border-left-color:#FFD700;
+    background:#fffdf4;
+}
+
 .staff-card h3{
     color:#b30000;
     font-size:22px;
-    margin-bottom:8px;
+    margin-bottom:10px;
+    text-transform:uppercase;
 }
 
 .position{
-    color:#444;
+    display:inline-block;
+    background:#fce7e7;
+    color:#9f0000;
+    font-size:13px;
     font-weight:700;
-    line-height:1.5;
-    margin-bottom:10px;
+    padding:6px 12px;
+    border-radius:30px;
+    margin-bottom:12px;
 }
 
 .field{
-    color:#666;
-    font-size:15px;
-    line-height:1.6;
+    line-height:1.65;
+    color:#444;
     margin-bottom:18px;
+    min-height:72px;
 }
 
 .call-btn{
-    display:inline-block;
+    display:block;
+    width:100%;
+    text-align:center;
     background:#16a34a;
     color:#fff;
     text-decoration:none;
-    padding:11px 18px;
+    padding:12px;
     border-radius:10px;
-    font-weight:bold;
+    font-weight:700;
     transition:.25s;
 }
 
-.call-btn:hover{
-    background:#15803d;
-}
-
-.leader{
-    border-left:6px solid #FFD700;
-    background:#fffdf4;
-}
+.call-btn:hover{background:#15803d}
 
 .footer{
     margin-top:35px;
     background:#fff;
     border-radius:16px;
-    padding:20px;
+    padding:24px;
     text-align:center;
     box-shadow:0 4px 12px rgba(0,0,0,.08);
 }
 
 .back{
     display:inline-block;
-    margin-top:15px;
+    margin-top:16px;
     background:#c40000;
     color:#fff;
     text-decoration:none;
-    padding:12px 24px;
+    padding:12px 26px;
     border-radius:10px;
-    font-weight:bold;
+    font-weight:700;
 }
 
-.back:hover{
-    background:#9f0000;
-}
+.back:hover{background:#990000}
 
 @media(max-width:768px){
 
-.header h1{
-    font-size:24px;
-}
+.header h1{font-size:25px}
 
 .hotline{
     font-size:18px;
+    padding:15px;
 }
 
 .staff-grid{
@@ -158,6 +158,10 @@ body{
 
 .staff-card h3{
     font-size:20px;
+}
+
+.field{
+    min-height:auto;
 }
 
 }
@@ -184,72 +188,120 @@ body{
 
     <div class="staff-grid">
 
-        <!-- Lãnh đạo 1 -->
+        <!-- LÃNH ĐẠO -->
+
         <div class="staff-card leader">
             <h3>TRƯƠNG ĐĂNG HÀO</h3>
-
-            <div class="position">
-                Ủy viên BTV Đảng ủy • Phó Chủ tịch UBND xã
-            </div>
-
+            <div class="position">LÃNH ĐẠO PHỤ TRÁCH</div>
             <div class="field">
-                Phụ trách lãnh đạo Trung tâm Phục vụ Hành chính công.
+                Ủy viên Ban Thường vụ Đảng ủy, Phó Chủ tịch UBND xã. Lãnh đạo, chỉ đạo hoạt động Trung tâm Phục vụ Hành chính công.
             </div>
-
-            <a href="tel:0967432666" class="call-btn">
-                📞 Gọi ngay: 0967 432 666
-            </a>
+            <a href="tel:0967432666" class="call-btn">📞 Gọi ngay: 0967 432 666</a>
         </div>
 
-        <!-- Lãnh đạo 2 -->
         <div class="staff-card leader">
             <h3>TRẦN VÕ HIỆP</h3>
-
-            <div class="position">
-                Ủy viên BCH Đảng ủy • Bí thư Chi bộ • Giám đốc Trung tâm
-            </div>
-
+            <div class="position">GIÁM ĐỐC TRUNG TÂM</div>
             <div class="field">
-                Chỉ đạo, điều hành toàn diện hoạt động của Trung tâm.
+                Ủy viên BCH Đảng ủy, Bí thư Chi bộ. Chỉ đạo, điều hành toàn diện hoạt động của Trung tâm Phục vụ Hành chính công.
             </div>
-
-            <a href="tel:0396802062" class="call-btn">
-                📞 Gọi ngay: 0396 802 062
-            </a>
+            <a href="tel:0396802062" class="call-btn">📞 Gọi ngay: 0396 802 062</a>
         </div>
 
-        <!-- Lãnh đạo 3 -->
         <div class="staff-card leader">
             <h3>NGUYỄN ĐĂNG TUẤN</h3>
-
-            <div class="position">
-                Phó Bí thư Chi bộ • Phó Giám đốc Trung tâm
-            </div>
-
+            <div class="position">PHÓ GIÁM ĐỐC</div>
             <div class="field">
-                Kiểm soát TTHC, hỗ trợ hạ tầng số, chuyển đổi số và kỹ năng số cho công dân.
+                Kiểm soát thủ tục hành chính, hỗ trợ hạ tầng số, chuyển đổi số và hướng dẫn kỹ năng số cho tổ chức, công dân.
             </div>
+            <a href="tel:0984803163" class="call-btn">📞 Gọi ngay: 0984 803 163</a>
+        </div>
 
-            <a href="tel:0984803163" class="call-btn">
-                📞 Gọi ngay: 0984 803 163
-            </a>
+        <!-- CÔNG CHỨC -->
+
+        <div class="staff-card">
+            <h3>NGUYỄN THỊ THU</h3>
+            <div class="position">CÔNG CHỨC</div>
+            <div class="field">
+                Công chức phụ trách lĩnh vực <b>Văn thư – Thủ quỹ</b>.
+            </div>
+            <a href="tel:0976742472" class="call-btn">📞 Gọi ngay: 0976 742 472</a>
+        </div>
+
+        <div class="staff-card">
+            <h3>NGUYỄN THỊ HIỀN</h3>
+            <div class="position">CÔNG CHỨC</div>
+            <div class="field">
+                Công chức phụ trách Kế toán, trình ký và trả kết quả</b>.
+            </div>
+            <a href="tel:0382760970" class="call-btn">📞 Gọi ngay: 0382 760 970</a>
+        </div>
+
+        <div class="staff-card">
+            <h3>NGUYỄN THỊ HOA</h3>
+            <div class="position">CÔNG CHỨC</div>
+            <div class="field">
+                Công chức phụ trách tiếp nhận, giải quyết lĩnh vực <b>Tư pháp – Hộ tịch</b>.
+            </div>
+            <a href="tel:0976375977" class="call-btn">📞 Gọi ngay: 0976 375 977</a>
+        </div>
+
+        <div class="staff-card">
+            <h3>TRẦN THỊ BÌNH</h3>
+            <div class="position">CÔNG CHỨC</div>
+            <div class="field">
+                Công chức phụ trách tiếp nhận, giải quyết lĩnh vực <b>Tư pháp – Hộ tịch</b>.
+            </div>
+            <a href="tel:0399503325" class="call-btn">📞 Gọi ngay: 0399 503 325</a>
+        </div>
+
+        <div class="staff-card">
+            <h3>NGUYỄN HỮU HÙNG</h3>
+            <div class="position">CÔNG CHỨC</div>
+            <div class="field">
+                Công chức phụ trách tiếp nhận, giải quyết lĩnh vực <b>Tư pháp – Hộ tịch</b>.
+            </div>
+            <a href="tel:0362674778" class="call-btn">📞 Gọi ngay: 0362 674 778</a>
+        </div>
+
+        <div class="staff-card">
+            <h3>NGUYỄN THỊ THÚY</h3>
+            <div class="position">CÔNG CHỨC</div>
+            <div class="field">
+                Công chức phụ trách tiếp nhận, giải quyết lĩnh vực <b>Đất đai – Xây dựng – Nông nghiệp – Môi trường</b>.
+            </div>
+            <a href="tel:0981426689" class="call-btn">📞 Gọi ngay: 0981 426 689</a>
+        </div>
+
+        <div class="staff-card">
+            <h3>ĐINH THỊ LAN</h3>
+            <div class="position">CÔNG CHỨC</div>
+            <div class="field">
+                Công chức phụ trách tiếp nhận, giải quyết lĩnh vực <b>An toàn thực phẩm, Hộ kinh doanh, Thế chấp, Xóa thế chấp và Công thương</b>.
+            </div>
+            <a href="tel:0977564346" class="call-btn">📞 Gọi ngay: 0977 564 346</a>
+        </div>
+
+        <div class="staff-card">
+            <h3>NGUYỄN THỊ KIM OANH</h3>
+            <div class="position">CÔNG CHỨC</div>
+            <div class="field">
+                Công chức phụ trách tiếp nhận, giải quyết lĩnh vực <b>Người có công, Bảo trợ xã hội, Giáo dục và Y tế</b>.
+            </div>
+            <a href="tel:0988349191" class="call-btn">📞 Gọi ngay: 0988 349 191</a>
         </div>
 
     </div>
 
     <div class="footer">
         <h3>TRUNG TÂM PHỤC VỤ HÀNH CHÍNH CÔNG XÃ ĐẠI ĐỒNG</h3>
-
         <p>📍 Số 02 Nguyễn Sỹ Sách, Thôn Dũng 1, xã Đại Đồng, tỉnh Nghệ An</p>
-
         <p>🕒 Thứ Hai – Thứ Sáu: 07:00–11:30 | 13:30–17:00</p>
 
-        <a class="back" href="../index.html">
-            ← Quay về Trang chủ
-        </a>
+        <a class="back" href="../index.html">← Quay về Trang chủ</a>
 
         <p style="margin-top:18px;color:#666;font-size:14px">
-            © 2026 Trung tâm PVHCC xã Đại Đồng
+            © 2026 Trung tâm Phục vụ Hành chính công xã Đại Đồng
         </p>
     </div>
 
