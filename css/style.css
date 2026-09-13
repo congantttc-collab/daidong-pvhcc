@@ -2600,3 +2600,119 @@ footer iframe{
     }
 
 }
+/* ==================================================
+   FOOTER TRUNG TÂM PVHCC XÃ ĐẠI ĐỒNG
+================================================== */
+
+.footer{
+    margin-top:50px;
+    background:linear-gradient(180deg,#C70000 0%,#A90000 100%);
+    color:#fff;
+}
+
+.footer-info{
+    text-align:center;
+    padding:48px 20px 40px;
+}
+
+.footer-info h3{
+    margin:0;
+    color:#FFD700;
+    font-size:34px;
+    font-weight:800;
+    text-transform:uppercase;
+    letter-spacing:.6px;
+    line-height:1.4;
+}
+
+.footer-line{
+    width:120px;
+    height:4px;
+    background:#FFD700;
+    border-radius:999px;
+    margin:18px auto 28px;
+}
+
+.footer-info p{
+    margin:12px 0;
+    font-size:20px;
+    color:#FFF6D5;
+    line-height:1.8;
+    font-weight:500;
+}
+
+.footer-copy{
+    background:#860000;
+    border-top:2px solid rgba(255,215,0,.35);
+    text-align:center;
+    padding:22px 18px;
+}
+
+.copy-line{
+    color:#FFE082;
+    font-size:18px;
+    font-weight:700;
+    margin-bottom:10px;
+}
+
+.author-line{
+    color:#FFFFFF;
+    font-size:17px;
+    line-height:1.7;
+    margin-bottom:10px;
+}
+
+.author-line strong{
+    color:#FFD700;
+    font-size:19px;
+    font-weight:800;
+    letter-spacing:.5px;
+}
+
+.rights-line{
+    color:#FFD54F;
+    font-size:14px;
+    font-weight:700;
+    letter-spacing:2px;
+}
+
+/* ================= MOBILE ================= */
+
+@media (max-width:768px){
+
+    .footer-info{
+        padding:34px 18px;
+    }
+
+    .footer-info h3{
+        font-size:24px;
+    }
+
+    .footer-line{
+        width:90px;
+        margin:14px auto 22px;
+    }
+
+    .footer-info p{
+        font-size:16px;
+        line-height:1.7;
+    }
+
+    .copy-line{
+        font-size:14px;
+    }
+
+    .author-line{
+        font-size:14px;
+    }
+
+    .author-line strong{
+        font-size:15px;
+    }
+
+    .rights-line{
+        font-size:11px;
+        letter-spacing:1px;
+    }
+
+}
