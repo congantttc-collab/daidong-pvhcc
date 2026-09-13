@@ -4,52 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Liên hệ - Trung tâm PVHCC xã Đại Đồng</title>
-.staff-card{
-    background:#fff;
-    border-radius:16px;
-    padding:20px;
-    box-shadow:0 6px 16px rgba(0,0,0,.08);
-    border-left:6px solid #d10000;
-}
 
-.staff-card h3{
-    color:#b30000;
-    font-size:22px;
-    margin-bottom:6px;
-}
-
-.staff-card .position{
-    color:#444;
-    font-weight:700;
-    line-height:1.5;
-    margin-bottom:8px;
-}
-
-.staff-card .field{
-    color:#666;
-    font-size:15px;
-    line-height:1.6;
-    margin-bottom:15px;
-}
-
-.call-btn{
-    display:inline-block;
-    background:#16a34a;
-    color:#fff;
-    text-decoration:none;
-    padding:10px 18px;
-    border-radius:10px;
-    font-weight:700;
-}
-
-.call-btn:hover{
-    background:#15803d;
-}
-
-.leader{
-    border-left:6px solid #FFD700;
-    background:#fffdf4;
-}
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
 
@@ -114,6 +69,55 @@ body{
     gap:18px;
 }
 
+/* THẺ CÁN BỘ */
+.staff-card{
+    background:#fff;
+    border-radius:16px;
+    padding:20px;
+    box-shadow:0 6px 16px rgba(0,0,0,.08);
+    border-left:6px solid #d10000;
+}
+
+.staff-card h3{
+    color:#b30000;
+    font-size:22px;
+    margin-bottom:8px;
+}
+
+.position{
+    color:#444;
+    font-weight:700;
+    line-height:1.5;
+    margin-bottom:10px;
+}
+
+.field{
+    color:#666;
+    font-size:15px;
+    line-height:1.6;
+    margin-bottom:18px;
+}
+
+.call-btn{
+    display:inline-block;
+    background:#16a34a;
+    color:#fff;
+    text-decoration:none;
+    padding:11px 18px;
+    border-radius:10px;
+    font-weight:bold;
+    transition:.25s;
+}
+
+.call-btn:hover{
+    background:#15803d;
+}
+
+.leader{
+    border-left:6px solid #FFD700;
+    background:#fffdf4;
+}
+
 .footer{
     margin-top:35px;
     background:#fff;
@@ -134,8 +138,28 @@ body{
     font-weight:bold;
 }
 
+.back:hover{
+    background:#9f0000;
+}
+
 @media(max-width:768px){
-    .header h1{font-size:24px;}
+
+.header h1{
+    font-size:24px;
+}
+
+.hotline{
+    font-size:18px;
+}
+
+.staff-grid{
+    grid-template-columns:1fr;
+}
+
+.staff-card h3{
+    font-size:20px;
+}
+
 }
 </style>
 </head>
@@ -155,67 +179,74 @@ body{
 
     <div class="section-title">
         <h2>DANH SÁCH CÁN BỘ, CÔNG CHỨC</h2>
-        <p>Thông tin liên hệ và lĩnh vực phụ trách tại Trung tâm PVHCC xã Đại Đồng.</p>
+        <p>Thông tin liên hệ và lĩnh vực phụ trách tại Trung tâm Phục vụ Hành chính công xã Đại Đồng.</p>
     </div>
 
     <div class="staff-grid">
 
+        <!-- Lãnh đạo 1 -->
         <div class="staff-card leader">
-    <h3>TRƯƠNG ĐĂNG HÀO</h3>
+            <h3>TRƯƠNG ĐĂNG HÀO</h3>
 
-    <div class="position">
-        Ủy viên BTV Đảng ủy • Phó Chủ tịch UBND xã
-    </div>
+            <div class="position">
+                Ủy viên BTV Đảng ủy • Phó Chủ tịch UBND xã
+            </div>
 
-    <div class="field">
-        Phụ trách lãnh đạo Trung tâm Phục vụ Hành chính công.
-    </div>
+            <div class="field">
+                Phụ trách lãnh đạo Trung tâm Phục vụ Hành chính công.
+            </div>
 
-    <a href="tel:0967432666" class="call-btn">
-        📞 Gọi ngay: 0967 432 666
-    </a>
-</div>
+            <a href="tel:0967432666" class="call-btn">
+                📞 Gọi ngay: 0967 432 666
+            </a>
+        </div>
 
-<div class="staff-card leader">
-    <h3>TRẦN VÕ HIỆP</h3>
+        <!-- Lãnh đạo 2 -->
+        <div class="staff-card leader">
+            <h3>TRẦN VÕ HIỆP</h3>
 
-    <div class="position">
-        Ủy viên BCH Đảng ủy • Bí thư Chi bộ • Giám đốc Trung tâm
-    </div>
+            <div class="position">
+                Ủy viên BCH Đảng ủy • Bí thư Chi bộ • Giám đốc Trung tâm
+            </div>
 
-    <div class="field">
-        Chỉ đạo, điều hành toàn diện hoạt động của Trung tâm.
-    </div>
+            <div class="field">
+                Chỉ đạo, điều hành toàn diện hoạt động của Trung tâm.
+            </div>
 
-    <a href="tel:0396802062" class="call-btn">
-        📞 Gọi ngay: 0396 802 062
-    </a>
-</div>
+            <a href="tel:0396802062" class="call-btn">
+                📞 Gọi ngay: 0396 802 062
+            </a>
+        </div>
 
-<div class="staff-card leader">
-    <h3>NGUYỄN ĐĂNG TUẤN</h3>
+        <!-- Lãnh đạo 3 -->
+        <div class="staff-card leader">
+            <h3>NGUYỄN ĐĂNG TUẤN</h3>
 
-    <div class="position">
-        Phó Bí thư Chi bộ • Phó Giám đốc Trung tâm
-    </div>
+            <div class="position">
+                Phó Bí thư Chi bộ • Phó Giám đốc Trung tâm
+            </div>
 
-    <div class="field">
-        Kiểm soát TTHC, hỗ trợ hạ tầng số, chuyển đổi số và kỹ năng số cho công dân.
-    </div>
+            <div class="field">
+                Kiểm soát TTHC, hỗ trợ hạ tầng số, chuyển đổi số và kỹ năng số cho công dân.
+            </div>
 
-    <a href="tel:0984803163" class="call-btn">
-        📞 Gọi ngay: 0984 803 163
-    </a>
-</div>
+            <a href="tel:0984803163" class="call-btn">
+                📞 Gọi ngay: 0984 803 163
+            </a>
+        </div>
 
     </div>
 
     <div class="footer">
         <h3>TRUNG TÂM PHỤC VỤ HÀNH CHÍNH CÔNG XÃ ĐẠI ĐỒNG</h3>
+
         <p>📍 Số 02 Nguyễn Sỹ Sách, Thôn Dũng 1, xã Đại Đồng, tỉnh Nghệ An</p>
+
         <p>🕒 Thứ Hai – Thứ Sáu: 07:00–11:30 | 13:30–17:00</p>
 
-        <a class="back" href="../index.html">← Quay về Trang chủ</a>
+        <a class="back" href="../index.html">
+            ← Quay về Trang chủ
+        </a>
 
         <p style="margin-top:18px;color:#666;font-size:14px">
             © 2026 Trung tâm PVHCC xã Đại Đồng
