@@ -1,45 +1,46 @@
-fetch("data/news.json")
-  .then(res => res.json())
-  .then(news => {
+const API = "https://script.google.com/macros/s/AKfycbygLfolmilb0eD-sfgT4vshz9IXI65DUHhh7-Uw_hkcYVKC7tD_beGoipCLZSD-jYDlbg/exec";
 
-    const featured = document.getElementById("featured-news");
-    const sidebar = document.getElementById("news-sidebar");
+async function getNews() {
+  const res = await fetch(API + "?api=news");
+  const data = await res.json();
+  return data;
+}
 
-    if (!featured || !sidebar) return;
+async function renderNews() {
 
-    // Tin nổi bật
-    const first = news[0];
+  const list = await getNews();
 
-    featured.innerHTML = `
-      <a href="pages/article.html?id=${first.id}" class="featured-card">
-        <div class="featured-image">
-          <img src="${first.image}" alt="${first.title}">
-          <span class="featured-badge">TIN NỔI BẬT</span>
-        </div>
+  const wrap = document.getElementById("news-list");
+  if (!wrap) return;
 
-        <div class="featured-content">
-          <h3>${first.title}</h3>
-          <p>${first.summary}</p>
+  list.sort((a,b)=> b.ngay.localeCompare(a.ngay));
 
-          <div class="featured-meta">
-          <span>${first.date} • ${first.category}</span>
-            <span class="arrow">→</span>
-          </div>
-        </div>
+  wrap.innerHTML = list.map((n,i)=>`
+
+    <article class="news-card ${i===0?'featured':''}">
+      <a href="pages/article.html?id=${n.id}">
+        <img src="${n.anh}" alt="${n.tieude}">
       </a>
-    `;
 
-    // 4 tin nhỏ bên phải
-    sidebar.innerHTML = news.slice(1,5).map(item => `
-      <a href="pages/article.html?id=${item.id}" class="side-news">
-        <img src="${item.image}" alt="${item.title}">
+      <div class="news-body">
+        <div class="news-date">${n.ngay}</div>
 
-        <div class="side-content">
-          <span class="side-date">${item.date}</span>
-          <h4>${item.title}</h4>
-        </div>
-      </a>
-    `).join("");
+        <h3>
+          <a href="pages/article.html?id=${n.id}">
+            ${n.tieude}
+          </a>
+        </h3>
 
-  })
-  .catch(err => console.error("News:", err));
+        <p>${n.tomtat}</p>
+
+        <a class="read-more" href="pages/article.html?id=${n.id}">
+          Đọc tiếp →
+        </a>
+      </div>
+    </article>
+
+  `).join("");
+
+}
+
+document.addEventListener("DOMContentLoaded", renderNews);
