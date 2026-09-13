@@ -131,52 +131,78 @@ body{
 /* ===== THANH THÔNG BÁO ===== */
 
 .notice-bar{
-    background:#FFD83D;                 /* Vàng tươi */
+    width:100%;
+    background:#FFD83D;
     border-top:2px solid #D4AF37;
     border-bottom:2px solid #D4AF37;
-    width:100%;
 }
 
 .notice-wrap{
     display:flex;
     align-items:center;
     width:100%;
-    max-width:100%;
     margin:0;
     padding:0;
 }
 
 .notice-title{
-    min-width:250px;
+    flex:0 0 290px;
+    height:64px;
     background:#C70000;
     color:#fff;
+    display:flex;
+    align-items:center;
+    justify-content:center;
     font-size:22px;
     font-weight:800;
-    padding:16px 24px;
-    text-align:center;
+    letter-spacing:.5px;
     white-space:nowrap;
 }
 
-.notice-text{
+.notice-marquee{
     flex:1;
+    height:64px;
     overflow:hidden;
-    padding:0 18px;
+    display:flex;
+    align-items:center;
     background:#FFD83D;
+    position:relative;
 }
 
-/* Chữ chạy */
-.notice-text marquee{
-    display:block;
-    width:100%;
-    height:58px;
-    line-height:58px;
-
-    color:#E60000 !important;          /* Đỏ tươi */
-    font-size:28px !important;         /* To hơn */
-    font-weight:800 !important;
+.notice-track{
+    display:inline-block;
+    white-space:nowrap;
+    padding-left:100%;
+    color:#E60000;
+    font-size:30px;
+    font-weight:800;
     font-family:"Segoe UI", Arial, sans-serif;
-    letter-spacing:.3px;
-    background:transparent;
+    animation:noticeScroll 28s linear infinite;
+}
+
+@keyframes noticeScroll{
+    from{ transform:translateX(0); }
+    to{ transform:translateX(-100%); }
+}
+
+/* Điện thoại */
+@media (max-width:768px){
+
+    .notice-title{
+        flex:0 0 150px;
+        font-size:16px;
+        height:52px;
+    }
+
+    .notice-marquee{
+        height:52px;
+    }
+
+    .notice-track{
+        font-size:18px;
+        animation-duration:22s;
+    }
+
 }
 /* ===== CƠ CẤU TỔ CHỨC ===== */
 
