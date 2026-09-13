@@ -1614,30 +1614,83 @@ footer iframe{
 
 .ai-fab{
     position:fixed;
-    right:24px;
-    bottom:24px;
-    width:72px;
-    height:72px;
+    right:18px;
+    bottom:20px;
+
+    display:flex;
+    align-items:center;
+    gap:10px;
+
     border:none;
-    border-radius:50%;
-    overflow:hidden;
-    padding:0;
-    background:transparent;
+    border-radius:50px;
+    padding:6px 16px 6px 6px;
+
+    background:#ffffff;
     cursor:pointer;
     box-shadow:0 10px 28px rgba(0,0,0,.25);
+    border:2px solid #D4AF37;
     z-index:9999;
     transition:.25s;
 }
+
 .ai-fab img{
-    width:100%;
-    height:100%;
+    width:58px;
+    height:58px;
     object-fit:cover;
     border-radius:50%;
     display:block;
+    flex-shrink:0;
 }
+
 .ai-fab:hover{
     transform:translateY(-4px);
-    background:#b80014;
+}
+
+/* Chữ bên cạnh ảnh */
+
+.ai-label{
+    display:flex;
+    flex-direction:column;
+    align-items:flex-start;
+    line-height:1.05;
+}
+
+.ai-label small{
+    color:#1877F2;
+    font-size:10px;
+    font-weight:700;
+    letter-spacing:.5px;
+    text-transform:uppercase;
+}
+
+.ai-label strong{
+    color:#B30000;
+    font-size:17px;
+    font-weight:800;
+}
+
+@media (max-width:768px){
+
+    .ai-fab{
+        right:12px;
+        bottom:14px;
+        padding:5px 12px 5px 5px;
+        gap:8px;
+    }
+
+    .ai-fab img{
+        width:48px;
+        height:48px;
+    }
+
+    .ai-label small{
+        font-size:9px;
+    }
+
+    .ai-label strong{
+        font-size:13px;
+    }
+
 }
 
 .ai-chat{
