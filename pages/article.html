@@ -1,42 +1,179 @@
 <!DOCTYPE html>
 <html lang="vi">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Đang tải bài viết...</title>
-  <link rel="icon" type="image/png" href="../assets/logo/cchc.png">
-  <link rel="stylesheet" href="../css/style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Bài viết</title>
+
+<link rel="stylesheet" href="../css/style.css">
+
+<style>
+body{
+    margin:0;
+    background:#eef1f5;
+    font-family:Arial,Helvetica,sans-serif;
+    color:#222;
+}
+.header{
+    background:#b30000;
+    color:#fff;
+    padding:14px 0;
+}
+.header .box{
+    width:min(1180px,94%);
+    margin:auto;
+    display:flex;
+    align-items:center;
+    gap:12px;
+}
+.logo{
+    width:56px;height:56px;border-radius:50%;
+}
+.brand h1{
+    margin:0;
+    color:#ffd500;
+    font-size:26px;
+}
+.brand p{
+    margin:2px 0 0;
+    font-size:13px;
+}
+.main{
+    width:min(920px,94%);
+    margin:30px auto;
+}
+.breadcrumb{
+    font-size:13px;
+    color:#777;
+    margin-bottom:15px;
+}
+.tag{
+    display:inline-block;
+    background:#d50000;
+    color:#fff;
+    padding:6px 12px;
+    border-radius:30px;
+    font-size:12px;
+    font-weight:bold;
+    margin-bottom:12px;
+}
+.title{
+    font-size:42px;
+    line-height:1.2;
+    margin:0 0 10px;
+    color:#0d1b3d;
+}
+.meta{
+    color:#777;
+    font-size:14px;
+    margin-bottom:18px;
+}
+.summary{
+    background:#fff4f4;
+    border-left:4px solid #d50000;
+    padding:16px 18px;
+    border-radius:8px;
+    font-size:18px;
+    margin-bottom:22px;
+}
+.hero{
+    width:100%;
+    border-radius:14px;
+    display:block;
+    object-fit:cover;
+    margin-bottom:22px;
+}
+.content{
+    background:#fff;
+    padding:28px;
+    border-radius:14px;
+    box-shadow:0 5px 18px rgba(0,0,0,.08);
+}
+.content p{
+    font-size:20px;
+    line-height:1.9;
+    text-align:justify;
+    margin:0 0 18px;
+}
+.share{
+    margin-top:28px;
+    padding-top:20px;
+    border-top:1px solid #ddd;
+    display:flex;
+    gap:10px;
+}
+.btn{
+    text-decoration:none;
+    padding:10px 18px;
+    border-radius:8px;
+    font-weight:bold;
+    color:#fff;
+}
+.fb{background:#1877f2}
+.zalo{background:#0a6cff}
+.home{
+    background:#555;
+}
+</style>
 </head>
+
 <body>
 
-  <header class="topbar">
-    <div class="container nav">
-      <a href="../index.html" class="logo">
-        <img src="../assets/logo/cchc.png" alt="Logo Trung tâm">
-        <div class="title">
-          <h1>TRUNG TÂM PVHCC XÃ ĐẠI ĐỒNG</h1>
-          <p>Phục vụ Nhân dân tận tâm - Chuyên nghiệp</p>
-        </div>
-      </a>
+<div class="header">
+  <div class="box">
+    <img class="logo" src="../assets/logo.png">
+    <div class="brand">
+      <h1>TRUNG TÂM PVHCC XÃ ĐẠI ĐỒNG</h1>
+      <p>Phục vụ Nhân dân tận tâm • Chuyên nghiệp</p>
     </div>
-  </header>
+  </div>
+</div>
 
-  <section class="article-page">
-    <div class="container article-wrap">
+<div class="main" id="article">
+Đang tải...
+</div>
 
-      <div class="breadcrumb">
-        <a href="../index.html">Trang chủ</a> /
-        <a href="../index.html#news">Tin tức</a> /
-        <span id="bc-category">Bài viết</span>
-      </div>
+<script>
+const API="https://script.google.com/macros/s/AKfycbygLfolmilb0eD-sfgT4vshz9IXI65DUHhh7-Uw_hkcYVKC7tD_beGoipCLZSD-jYDlbg/exec";
 
-      <div id="article-container">
-        <p>Đang tải bài viết...</p>
-      </div>
+const id=new URLSearchParams(location.search).get("id");
 
-    </div>
-  </section>
+fetch(API+"?api=news")
+.then(r=>r.json())
+.then(list=>{
 
-  <script src="../js/article.js"></script>
+const item=list.find(x=>x.id===id)||list[0];
+
+document.getElementById("article").innerHTML=`
+<div class="breadcrumb">Trang chủ / Tin tức</div>
+
+<div class="tag">HOẠT ĐỘNG</div>
+
+<h1 class="title">${item.tieude}</h1>
+
+<div class="meta">🗓 ${item.ngay} • Trung tâm PVHCC xã Đại Đồng</div>
+
+<div class="summary">${item.tomtat}</div>
+
+<img class="hero" src="${item.anh}">
+
+<div class="content">
+${item.noidung.split("\n").filter(x=>x.trim()).map(x=>`<p>${x}</p>`).join("")}
+
+<div class="share">
+<a class="btn fb" target="_blank"
+href="https://www.facebook.com/sharer/sharer.php?u=${location.href}">Facebook</a>
+
+<a class="btn zalo" target="_blank"
+href="https://zalo.me/share?url=${location.href}">Zalo</a>
+
+<a class="btn home" href="../index.html">Trang chủ</a>
+</div>
+</div>
+`;
+
+});
+</script>
+
 </body>
 </html>
